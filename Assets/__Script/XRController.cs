@@ -216,7 +216,7 @@ public class XRController : MonoBehaviour
             else if (currentModel.CompareTag("DriverWithHealingAbutment"))
             {
                 healingAbutment.SetActive(true);
-                UpdateControllerModel (healingAbutmentM);
+                UpdateControllerModel (driverM);
             }
             else if (currentModel.CompareTag("DriverWithAbutment"))
             {
