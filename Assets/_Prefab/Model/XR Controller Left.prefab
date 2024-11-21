@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 8270855663187062767}
   m_Layer: 0
   m_Name: XR Controller Left
-  m_TagString: Untagged
+  m_TagString: Controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

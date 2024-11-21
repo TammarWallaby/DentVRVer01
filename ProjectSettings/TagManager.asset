@@ -3,7 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tool
+  - Abutment
+  - Drill2
+  - Drill3
+  - Drill4
+  - Driver
+  - DriverWithAbutment
+  - DriverWithHealingAbutment
+  - Elevator
+  - Fixture
+  - Handpiece
+  - HandpieceWithDrill2
+  - HandpieceWithDrill3
+  - HandpieceWithDrill4
+  - HandpieceWithFixture
+  - HealingAbutment
+  - Scalpel
+  - Syringe
+  - TorqueRatchet
+  - Controller
+  - Handpiece2
+  - Driver2
+  - Driver3
   layers:
   - Default
   - TransparentFX
@@ -11,7 +34,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tool
   - 
   - 
   - 
