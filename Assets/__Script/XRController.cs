@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRController : MonoBehaviour
 {
-    [Header("Tools in Scene")] // Scene¿¡ ¹èÄ¡ÇÒ °ü»ó¿ë µµ±¸µé, Tag¿Í Layer ¸ğµÎ Tool·Î ¼³Á¤
+    [Header("Tools in Scene")] // Sceneì— ë°°ì¹˜í•  ê´€ìƒìš© ë„êµ¬ë“¤, Tagì™€ Layer ëª¨ë‘ Toolë¡œ ì„¤ì •
     public GameObject abutment;
     public GameObject drill2;
     public GameObject drill3;
@@ -23,7 +23,7 @@ public class XRController : MonoBehaviour
     public GameObject syringe;
     public GameObject torqueRatchet;
 
-    [Header("Tools Model")] // Prefab¿¡¼­ °¡Á®¿À´Â °Çµ¥, Tag¸¦ ¼³Á¤ÇØÁà¾ß ÇÔ. Layer´Â ÀÏ´Ü ¾øÀ½
+    [Header("Tools Model")] // Prefabì—ì„œ ê°€ì ¸ì˜¤ëŠ” ê±´ë°, Tagë¥¼ ì„¤ì •í•´ì¤˜ì•¼ í•¨. LayerëŠ” ì¼ë‹¨ ì—†ìŒ
     public GameObject abutmentM;
     public GameObject drill2M;
     public GameObject drill3M;
@@ -47,8 +47,8 @@ public class XRController : MonoBehaviour
     public GameObject torqueRatchetM;
 
     [Header("Interaction LayerMask")]
-    public InteractionLayerMask defaultMask; // ±âº» ·¹ÀÌ¾î¸¶½ºÅ©
-    public InteractionLayerMask maskWithoutTool; // µµ±¸ »ç¿ë ÁßÀÎ °æ¿ì »óÈ£ÀÛ¿ë ·¹ÀÌ¾î¸¶½ºÅ©
+    public InteractionLayerMask defaultMask; // ê¸°ë³¸ ë ˆì´ì–´ë§ˆìŠ¤í¬
+    public InteractionLayerMask maskWithoutTool; // ë„êµ¬ ì‚¬ìš© ì¤‘ì¸ ê²½ìš° ìƒí˜¸ì‘ìš© ë ˆì´ì–´ë§ˆìŠ¤í¬
 
     [Header("Main Setting")]
     public XRController oppositeController;
@@ -56,9 +56,9 @@ public class XRController : MonoBehaviour
     public ActionBasedController controller;
     public XRRayInteractor interactor;
     public float combineDistance = 10f;
-    [SerializeField] private InputActionReference selectRef; // ±×¸³ ¹öÆ° Àü¿ë
-    [SerializeField] private InputActionReference triggerRef; // Æ®¸®°Å ¹öÆ° Àü¿ë
-    [SerializeField] private GameObject currentModel; // ÇöÀç ¸ğµ¨ ÃßÀû¿ë ¿ÀºêÁ§Æ®
+    [SerializeField] private InputActionReference selectRef; // ê·¸ë¦½ ë²„íŠ¼ ì „ìš©
+    [SerializeField] private InputActionReference triggerRef; // íŠ¸ë¦¬ê±° ë²„íŠ¼ ì „ìš©
+    [SerializeField] private GameObject currentModel; // í˜„ì¬ ëª¨ë¸ ì¶”ì ìš© ì˜¤ë¸Œì íŠ¸
 
     private RaycastHit raycastHit;
 
@@ -81,7 +81,7 @@ public class XRController : MonoBehaviour
 
     private void Update()
     {
-        if (currentModel.tag == "Controller") // ÀÌ°Å ³ªÁß¿¡ ¼öÁ¤ÇØ¾ß ÇÔ 
+        if (currentModel.tag == "Controller") // ì´ê±° ë‚˜ì¤‘ì— ìˆ˜ì •í•´ì•¼ í•¨ 
         {
             interactor.interactionLayers = defaultMask;
         }
@@ -192,7 +192,7 @@ public class XRController : MonoBehaviour
         }
         else
         {
-            // °áÇÕ µµ±¸ ¸ÕÀú ÆÇÁ¤
+            // ê²°í•© ë„êµ¬ ë¨¼ì € íŒì •
             if (currentModel.CompareTag("HandpieceWithDrill2")) 
             {
                 drill2.SetActive(true);
@@ -223,7 +223,7 @@ public class XRController : MonoBehaviour
                 abutment.SetActive(true);
                 UpdateControllerModel(driver3M);
             }
-            else // °áÇÕ µµ±¸ ÀÌ¿Ü ÆÇÁ¤
+            else // ê²°í•© ë„êµ¬ ì´ì™¸ íŒì •
             {
                 if (currentModel.CompareTag("Abutment"))
                 {
@@ -329,13 +329,13 @@ public class XRController : MonoBehaviour
 
     private void UpdateControllerModel(GameObject newModelPrefab)
     {
-        // ±âÁ¸ ¸ğµ¨ÀÌ ÀÖ´Ù¸é Á¦°Å
+        // ê¸°ì¡´ ëª¨ë¸ì´ ìˆë‹¤ë©´ ì œê±°
         if (currentModel != null)
         {
             Destroy(currentModel);
         }
 
-        // »õ ¸ğµ¨ »ı¼º ¹× ¼³Á¤
+        // ìƒˆ ëª¨ë¸ ìƒì„± ë° ì„¤ì •
         if (newModelPrefab != null)
         {
             currentModel = Instantiate(newModelPrefab.gameObject, controller.transform);
