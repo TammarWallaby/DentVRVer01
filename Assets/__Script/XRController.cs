@@ -23,7 +23,7 @@ public class XRController : MonoBehaviour
     public GameObject syringe;
     public GameObject torqueRatchet;
 
-    [Header("Tools Model")] // Prefab에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
+    [Header("Tools Model")] // Prefab 폴더에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
     public GameObject abutmentM;
     public GameObject drill2M;
     public GameObject drill3M;
@@ -55,7 +55,7 @@ public class XRController : MonoBehaviour
     public GameObject controllerM;
     public ActionBasedController controller;
     public XRRayInteractor interactor;
-    public float combineDistance = 10f;
+    public float combineDistance = 10f; // 결합 도구 결합 시, 좌우 컨트롤러 거리
     [SerializeField] private InputActionReference selectRef; // 그립 버튼 전용
     [SerializeField] private InputActionReference triggerRef; // 트리거 버튼 전용
     [SerializeField] private GameObject currentModel; // 현재 모델 추적용 오브젝트
@@ -81,13 +81,19 @@ public class XRController : MonoBehaviour
 
     private void Update()
     {
-        if (currentModel.tag == "Controller") // 이거 나중에 수정해야 함 
+        if (currentModel.tag == "Controller")
         {
-            interactor.interactionLayers = defaultMask;
+            if(interactor.interactionLayers!=defaultMask)
+            {
+                interactor.interactionLayers = defaultMask;
+            }
         }
         else
         {
-            interactor.interactionLayers = maskWithoutTool;
+            if (interactor.interactionLayers != maskWithoutTool)
+            {
+                interactor.interactionLayers = maskWithoutTool;
+            }
         }
     }
 
