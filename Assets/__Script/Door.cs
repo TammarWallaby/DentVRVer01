@@ -36,6 +36,14 @@ public class Door : MonoBehaviour
         Player.Instance.OnStateChanged -= DoorOpen;
     }
 
+    //private void Update()
+    //{
+    //    if (Player.Instance.CurrentState == doorOpenState)
+    //    {
+
+    //    }
+    //}
+
     void DoorOpen(Player.PlayerState currentState)
     {
         if (doorOpened==false)
