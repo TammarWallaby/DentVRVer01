@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 13bb55c5d436d4544aea11c40212c677
+guid: a3e01637a93fa4d4a9f6042f49fa87fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ColorWhite
-    second: {fileID: 2100000, guid: f4b30fe60367b9d4faad62a80f6c5f6b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: DoorT2
-    second: {fileID: 2100000, guid: 187d42abc8f594040906637519fcf997, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: G
-    second: {fileID: 2100000, guid: 3fc6f8cd7ba06714eab6aa2334be386b, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

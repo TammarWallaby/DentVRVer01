@@ -1,20 +1,18 @@
 ﻿/* XR Origin에 들어갈 스크립트
  * 플레이어의 현재 상태를 추적 할 용도
- * 다른 스크립트에서 Player.Instance.(currentState||ChangeState()||IsInState());로 사용하면 됨
+ * 다른 스크립트에서 Player.Instance.(CurrentState||ChangeState()||IsInState());로 사용하면 됨
  */
 
 
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // 싱글톤 인스턴스
     public static Player Instance { get; private set; }
-
-    // 열거형은 그대로 유지
     public enum PlayerState
     {
         Start,
@@ -45,22 +43,25 @@ public class Player : MonoBehaviour
     }
 
     // 현재 플레이어 상태
-    public PlayerState currentState;
+    [SerializeField] private PlayerState currentState;
+    public PlayerState CurrentState
+    {
+        get { return currentState; }
+        private set { currentState = value; }
+    }
 
-    // Awake 메서드에서 싱글톤 패턴 초기화
+    public event Action<PlayerState> OnStateChanged;
+
     private void Awake()
     {
-        // 이미 인스턴스가 존재하면 현재 오브젝트 제거
         if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
             return;
         }
 
-        // 현재 인스턴스를 설정
         Instance = this;
 
-        // 초기 상태 설정
         currentState = PlayerState.Start;
     }
 
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
     public void ChangeState(PlayerState newState)
     {
         currentState = newState;
-        Debug.Log($"Player state changed to: {newState}");
+        OnStateChanged?.Invoke(CurrentState);
     }
 
     // 현재 상태 확인 메서드
