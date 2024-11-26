@@ -1607,7 +1607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416724087}
   m_Layer: 0
-  m_Name: RoomFixture
+  m_Name: RoomFixturePlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6141,7 +6141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1465605023}
   m_Layer: 0
-  m_Name: RoomPeeling
+  m_Name: RoomElevation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6511,7 +6511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1545039338}
   m_Layer: 0
-  m_Name: RoomCrown
+  m_Name: RoomCrownPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6620,7 +6620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571944908}
   m_Layer: 0
-  m_Name: RoomWaiting
+  m_Name: RoomWait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7479,6 +7479,7 @@ GameObject:
   - component: {fileID: 1685256671}
   - component: {fileID: 1685256675}
   - component: {fileID: 1685256674}
+  - component: {fileID: 1685256676}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -7576,6 +7577,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!114 &1685256676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685256670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2fa86d7a936d74181f8c21b4e7071e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757530382
 GameObject:
   m_ObjectHideFlags: 0
@@ -8938,7 +8951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934434173}
   m_Layer: 0
-  m_Name: RoomAPlace
+  m_Name: RoomAbutmentPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9365,7 +9378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035164107}
   m_Layer: 0
-  m_Name: RoomDrilling
+  m_Name: RoomDrill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

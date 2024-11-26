@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* XR Origin의 Left Controller와 Right Controller에 들어갈 스크립트
+ * 컨트롤러의 현재 도구 교체 및 도구 결합
+ */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
