@@ -1,6 +1,6 @@
-/* XR Origin¿¡ µé¾î°¥ ½ºÅ©¸³Æ®
- * ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç »óÅÂ¸¦ ÃßÀû ÇÒ ¿ëµµ
- * ´Ù¸¥ ½ºÅ©¸³Æ®¿¡¼­ Player.Instance.(CurrentState||ChangeState()||IsInState());·Î »ç¿ëÇÏ¸é µÊ
+ï»¿/* XR Originì— ë“¤ì–´ê°ˆ ìŠ¤í¬ë¦½íŠ¸
+ * í”Œë ˆì´ì–´ì˜ í˜„ì¬ ìƒíƒœë¥¼ ì¶”ì  í•  ìš©ë„
+ * ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ Player.Instance.(currentState||ChangeState()||IsInState());ë¡œ ì‚¬ìš©í•˜ë©´ ë¨
  */
 
 
@@ -11,10 +11,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º
+    // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
     public static Player Instance { get; private set; }
 
-    // ¿­°ÅÇüÀº ±×´ë·Î À¯Áö
+    // ì—´ê±°í˜•ì€ ê·¸ëŒ€ë¡œ ìœ ì§€
     public enum PlayerState
     {
         Start,
@@ -44,36 +44,36 @@ public class Player : MonoBehaviour
         Finish
     }
 
-    // ÇöÀç ÇÃ·¹ÀÌ¾î »óÅÂ
-    public PlayerState CurrentState { get; private set; }
+    // í˜„ì¬ í”Œë ˆì´ì–´ ìƒíƒœ
+    public PlayerState currentState;
 
-    // Awake ¸Ş¼­µå¿¡¼­ ½Ì±ÛÅæ ÆĞÅÏ ÃÊ±âÈ­
+    // Awake ë©”ì„œë“œì—ì„œ ì‹±ê¸€í†¤ íŒ¨í„´ ì´ˆê¸°í™”
     private void Awake()
     {
-        // ÀÌ¹Ì ÀÎ½ºÅÏ½º°¡ Á¸ÀçÇÏ¸é ÇöÀç ¿ÀºêÁ§Æ® Á¦°Å
+        // ì´ë¯¸ ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ë©´ í˜„ì¬ ì˜¤ë¸Œì íŠ¸ ì œê±°
         if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
             return;
         }
 
-        // ÇöÀç ÀÎ½ºÅÏ½º¸¦ ¼³Á¤
+        // í˜„ì¬ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ì„¤ì •
         Instance = this;
 
-        // ÃÊ±â »óÅÂ ¼³Á¤
-        CurrentState = PlayerState.Start;
+        // ì´ˆê¸° ìƒíƒœ ì„¤ì •
+        currentState = PlayerState.Start;
     }
 
-    // »óÅÂ º¯°æ ¸Ş¼­µå
+    // ìƒíƒœ ë³€ê²½ ë©”ì„œë“œ
     public void ChangeState(PlayerState newState)
     {
-        CurrentState = newState;
+        currentState = newState;
         Debug.Log($"Player state changed to: {newState}");
     }
 
-    // ÇöÀç »óÅÂ È®ÀÎ ¸Ş¼­µå
+    // í˜„ì¬ ìƒíƒœ í™•ì¸ ë©”ì„œë“œ
     public bool IsInState(PlayerState state)
     {
-        return CurrentState == state;
+        return currentState == state;
     }
 }
