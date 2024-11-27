@@ -5,13 +5,14 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class SurgeryManager : MonoBehaviour
 {
     [Header("Main Setting")]
-    public InputActionReference selectRef;
+    public InputActionReference triggerRef;
     public XRController controller;
     public Player player;
 
@@ -77,8 +78,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject crown1;
     
 
-
-    private void Awake()
+    public void Anesthesia(InputAction.CallbackContext obj)
     {
         
     }
