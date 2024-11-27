@@ -11,6 +11,20 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRController : MonoBehaviour
 {
+    [Header("Main Setting")]
+    public XRController oppositeController;
+    public GameObject controllerM;
+    public ActionBasedController controller;
+    public XRRayInteractor interactor;
+    public float combineDistance = 10f; // 결합 도구 결합 시, 좌우 컨트롤러 거리
+    public InputActionReference selectRef; // 그립 버튼 전용
+    public InputActionReference triggerRef; // 트리거 버튼 전용
+    public GameObject currentModel; // 현재 모델 추적용 오브젝트
+
+    [Header("Interaction LayerMask")]
+    public InteractionLayerMask defaultMask; // 기본 레이어마스크
+    public InteractionLayerMask maskWithoutTool; // 도구 사용 중인 경우 상호작용 레이어마스크
+
     [Header("Tools in Scene")] // Scene에 배치할 관상용 도구들, Tag와 Layer 모두 Tool로 설정
     public GameObject abutment;
     public GameObject drill2;
@@ -36,8 +50,6 @@ public class XRController : MonoBehaviour
     public GameObject driverM;
     public GameObject driver2M;
     public GameObject driver3M;
-    public GameObject driverWithAbutmentM;
-    public GameObject driverWithHealingAbutmentM;
     public GameObject elevatorM;
     public GameObject fixtureM;
     public GameObject handpieceM;
@@ -45,27 +57,13 @@ public class XRController : MonoBehaviour
     public GameObject handpieceWithDrill2M;
     public GameObject handpieceWithDrill3M;
     public GameObject handpieceWithDrill4M;
-    public GameObject handpieceWithFixtureM;
     public GameObject healingAbutmentM;
     public GameObject scalpelM;
     public GameObject syringeM;
     public GameObject torqueRatchetM;
 
-    [Header("Interaction LayerMask")]
-    public InteractionLayerMask defaultMask; // 기본 레이어마스크
-    public InteractionLayerMask maskWithoutTool; // 도구 사용 중인 경우 상호작용 레이어마스크
 
-    [Header("Main Setting")]
-    public XRController oppositeController;
-    public GameObject controllerM;
-    public ActionBasedController controller;
-    public XRRayInteractor interactor;
-    public float combineDistance = 10f; // 결합 도구 결합 시, 좌우 컨트롤러 거리
-    [SerializeField] private InputActionReference selectRef; // 그립 버튼 전용
-    [SerializeField] private InputActionReference triggerRef; // 트리거 버튼 전용
-    [SerializeField] private GameObject currentModel; // 현재 모델 추적용 오브젝트
-
-    private RaycastHit raycastHit;
+    public RaycastHit raycastHit;
 
     private void Awake()
     {
@@ -73,6 +71,7 @@ public class XRController : MonoBehaviour
         {
             selectRef.action.started += SelectTool;
         }
+
         if (triggerRef != null)
         {
             triggerRef.action.started += CombineTool;
@@ -219,21 +218,6 @@ public class XRController : MonoBehaviour
                 drill4.SetActive(true);
                 UpdateControllerModel(handpieceM);
             }
-            else if (currentModel.CompareTag("HandpieceWithFixture"))
-            {
-                fixture.SetActive(true);
-                UpdateControllerModel(handpiece2M);
-            }
-            else if (currentModel.CompareTag("DriverWithHealingAbutment"))
-            {
-                healingAbutment.SetActive(true);
-                UpdateControllerModel (driverM);
-            }
-            else if (currentModel.CompareTag("DriverWithAbutment"))
-            {
-                abutment.SetActive(true);
-                UpdateControllerModel(driver3M);
-            }
             else // 결합 도구 이외 판정
             {
                 if (currentModel.CompareTag("Abutment"))
@@ -319,21 +303,6 @@ public class XRController : MonoBehaviour
             {
                 UpdateControllerModel(controllerM);
                 oppositeController.UpdateControllerModel(handpieceWithDrill4M);
-            }
-            else if (currentModel.CompareTag("Fixture") && oppositeController.currentModel.CompareTag("Handpiece2"))
-            {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(handpieceWithFixtureM);
-            }
-            else if (currentModel.CompareTag("HealingAbutment") && oppositeController.currentModel.CompareTag("Driver"))
-            {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(driverWithHealingAbutmentM);
-            }
-            else if (currentModel.CompareTag("Abutment") && oppositeController.currentModel.CompareTag("Driver3"))
-            {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(driverWithAbutmentM);
             }
         }
     }
