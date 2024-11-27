@@ -34,19 +34,20 @@ public class TextSlider : MonoBehaviour
 
     private IEnumerator SlideText(RectTransform fromPanel, RectTransform toPanel, Vector2 fromStart, Vector2 toStart, Vector2 offset)
     {
-        // 현재 텍스트 비활성화
-        fromPanel.gameObject.SetActive(false);
-        // 다음 텍스트 활성화
+        // 활성화된 패널에서 비활성화된 패널로 위치 전환
+        fromPanel.anchoredPosition = fromStart;
+        toPanel.anchoredPosition = toStart + offset;
+
+        // 비활성화된 패널을 즉시 활성화
         toPanel.gameObject.SetActive(true);
 
-        // 텍스트의 위치 업데이트
-        fromPanel.anchoredPosition = fromStart + offset;  // 첫 번째 텍스트 위치
-        toPanel.anchoredPosition = toStart;  // 두 번째 텍스트 위치
-
-        // 상태 반전: 텍스트 전환
-        showingFirstText = !showingFirstText;
-
-        // 다음 텍스트가 활성화된 후 상태 유지
+        // 슬라이드 애니메이션 없이 즉시 활성화, 위치 초기화
         yield return null;
+
+        // 기존 패널을 비활성화
+        fromPanel.gameObject.SetActive(false);
+
+        // 상태 반전
+        showingFirstText = !showingFirstText;
     }
 }
