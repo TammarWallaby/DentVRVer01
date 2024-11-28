@@ -990,10 +990,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uCDE8:\n\n\uC8FC\uC0AC\uAE30\uB97C \uC774\uC6A9\uD574\uC11C \uC77C\uC2DC\uC801\uC73C\uB85C
-    \uC758\uC2DD, \uAC10\uAC01, \uC6B4\uB3D9 \uBC0F \uBC18\uC0AC\uC791\uC6A9\uC744
-    \uCC28\uB2E8\uD558\uB294 \uD589\uC704, \uB610\uB294 \uADF8\uB807\uAC8C \uB41C
-    \uC0C1\uD0DC\uB85C \uB9CC\uB4DC\uB294 \uD589\uB3D9"
+  m_Text: "\uC808\uAC1C"
 --- !u!222 &276529245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4684,10 +4681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uCDE8:\n\n\uC8FC\uC0AC\uAE30\uB97C \uC774\uC6A9\uD574\uC11C \uC77C\uC2DC\uC801\uC73C\uB85C
-    \uC758\uC2DD, \uAC10\uAC01, \uC6B4\uB3D9 \uBC0F \uBC18\uC0AC\uC791\uC6A9\uC744
-    \uCC28\uB2E8\uD558\uB294 \uD589\uC704, \uB610\uB294 \uADF8\uB807\uAC8C \uB41C
-    \uC0C1\uD0DC\uB85C \uB9CC\uB4DC\uB294 \uD589\uB3D9"
+  m_Text: "\uD53D\uC2A4\uCCD0"
 --- !u!222 &825277907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11815,10 +11809,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uCDE8:\n\n\uC8FC\uC0AC\uAE30\uB97C \uC774\uC6A9\uD574\uC11C \uC77C\uC2DC\uC801\uC73C\uB85C
-    \uC758\uC2DD, \uAC10\uAC01, \uC6B4\uB3D9 \uBC0F \uBC18\uC0AC\uC791\uC6A9\uC744
-    \uCC28\uB2E8\uD558\uB294 \uD589\uC704, \uB610\uB294 \uADF8\uB807\uAC8C \uB41C
-    \uC0C1\uD0DC\uB85C \uB9CC\uB4DC\uB294 \uD589\uB3D9"
+  m_Text: "\uBC15\uB9AC"
 --- !u!222 &1778883681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13553,10 +13544,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB9C8\uCDE8:\n\n\uC8FC\uC0AC\uAE30\uB97C \uC774\uC6A9\uD574\uC11C \uC77C\uC2DC\uC801\uC73C\uB85C
-    \uC758\uC2DD, \uAC10\uAC01, \uC6B4\uB3D9 \uBC0F \uBC18\uC0AC\uC791\uC6A9\uC744
-    \uCC28\uB2E8\uD558\uB294 \uD589\uC704, \uB610\uB294 \uADF8\uB807\uAC8C \uB41C
-    \uC0C1\uD0DC\uB85C \uB9CC\uB4DC\uB294 \uD589\uB3D9"
+  m_Text: "\uB4DC\uB9B4"
 --- !u!222 &1980381041
 CanvasRenderer:
   m_ObjectHideFlags: 0
