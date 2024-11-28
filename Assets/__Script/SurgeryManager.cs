@@ -16,7 +16,7 @@ public class SurgeryManager : MonoBehaviour
     public XRController controller;
     public Player player;
 
-    //[Header("Starter")]
+    //[Header("Start")]
 
     [Header("Anesthesia")]
     public GameObject donutAnesthesia1; // 도넛은 모두 씬에 있는 오브젝트를 넣음
@@ -76,7 +76,25 @@ public class SurgeryManager : MonoBehaviour
     public GameObject donutCrownPlace1;
     public GameObject donutCrownPlace2;
     public GameObject crown1;
-    
+
+    private void Awake()
+    {
+        if (triggerRef != null)
+        {
+            //triggerRef.action.started += Anesthesia;
+            //triggerRef.action.performed += Anesthesia;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(triggerRef != null)
+        {
+            //triggerRef.action.started -= Anesthesia;
+            //triggerRef.action.performed -= Anesthesia;
+        }
+    }
+
 
     public void Anesthesia(InputAction.CallbackContext obj)
     {
