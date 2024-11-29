@@ -5588,8 +5588,8 @@ MonoBehaviour:
   driverM: {fileID: 8948733170719291867, guid: ada3f7b8f73fa214d99b39bb4e77804b, type: 3}
   driver2M: {fileID: 8948733170719291867, guid: 63a3ccf504c7e724b913b4ef747fee8b, type: 3}
   driver3M: {fileID: 8948733170719291867, guid: f46118dfd9ed7a5489b09f03eed08c4c, type: 3}
-  driverWithAbutmentM: {fileID: 2509821439428134424, guid: d9328cd6fcf0a1b408d527fb9dcae283, type: 3}
-  driverWithHealingAbutmentM: {fileID: 1497758726099333340, guid: dc82df7aff0352347bba41ceefbe085d, type: 3}
+  driverWithAbutmentM: {fileID: 0}
+  driverWithHealingAbutmentM: {fileID: 0}
   elevatorM: {fileID: 7783145988949435764, guid: f7b19f73e8c46164cbc8242714f85c36, type: 3}
   fixtureM: {fileID: 8830270117335123122, guid: 7fb3d4efc641aa240824ed45be15aad6, type: 3}
   handpieceM: {fileID: 7760502524500966519, guid: 7f8118d9156d20b4281e295c841e99e1, type: 3}
@@ -5597,7 +5597,7 @@ MonoBehaviour:
   handpieceWithDrill2M: {fileID: 6348643349648381547, guid: 95f6b0553b4cbf649a07f1ff64190760, type: 3}
   handpieceWithDrill3M: {fileID: 4180491854749848477, guid: a2df1ebeeab93844191d77ab839064dc, type: 3}
   handpieceWithDrill4M: {fileID: 5028100727430586970, guid: 8b7f3980bceb2a3448f002a53a570626, type: 3}
-  handpieceWithFixtureM: {fileID: 8714340318719761357, guid: fee8011438a712144b5e038c3a3d6f5f, type: 3}
+  handpieceWithFixtureM: {fileID: 0}
   healingAbutmentM: {fileID: 6156287148515907906, guid: 2038043e89d0f7b4b979e69dbc215b48, type: 3}
   scalpelM: {fileID: 395534767204314183, guid: bf3cd7215ccade84c8acdcc22e084fd0, type: 3}
   syringeM: {fileID: 6247463966277768396, guid: a1f8de5e6e3b4964a981410f99c62b44, type: 3}
@@ -12239,8 +12239,8 @@ MonoBehaviour:
   driverM: {fileID: 8948733170719291867, guid: ada3f7b8f73fa214d99b39bb4e77804b, type: 3}
   driver2M: {fileID: 8948733170719291867, guid: 63a3ccf504c7e724b913b4ef747fee8b, type: 3}
   driver3M: {fileID: 8948733170719291867, guid: f46118dfd9ed7a5489b09f03eed08c4c, type: 3}
-  driverWithAbutmentM: {fileID: 2509821439428134424, guid: d9328cd6fcf0a1b408d527fb9dcae283, type: 3}
-  driverWithHealingAbutmentM: {fileID: 1497758726099333340, guid: dc82df7aff0352347bba41ceefbe085d, type: 3}
+  driverWithAbutmentM: {fileID: 0}
+  driverWithHealingAbutmentM: {fileID: 0}
   elevatorM: {fileID: 7783145988949435764, guid: f7b19f73e8c46164cbc8242714f85c36, type: 3}
   fixtureM: {fileID: 8830270117335123122, guid: 7fb3d4efc641aa240824ed45be15aad6, type: 3}
   handpieceM: {fileID: 7760502524500966519, guid: 7f8118d9156d20b4281e295c841e99e1, type: 3}
@@ -12248,7 +12248,7 @@ MonoBehaviour:
   handpieceWithDrill2M: {fileID: 6348643349648381547, guid: 95f6b0553b4cbf649a07f1ff64190760, type: 3}
   handpieceWithDrill3M: {fileID: 4180491854749848477, guid: a2df1ebeeab93844191d77ab839064dc, type: 3}
   handpieceWithDrill4M: {fileID: 5028100727430586970, guid: 8b7f3980bceb2a3448f002a53a570626, type: 3}
-  handpieceWithFixtureM: {fileID: 8714340318719761357, guid: fee8011438a712144b5e038c3a3d6f5f, type: 3}
+  handpieceWithFixtureM: {fileID: 0}
   healingAbutmentM: {fileID: 6156287148515907906, guid: 2038043e89d0f7b4b979e69dbc215b48, type: 3}
   scalpelM: {fileID: 395534767204314183, guid: bf3cd7215ccade84c8acdcc22e084fd0, type: 3}
   syringeM: {fileID: 6247463966277768396, guid: a1f8de5e6e3b4964a981410f99c62b44, type: 3}
