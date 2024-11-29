@@ -24,6 +24,7 @@ TagManager:
   - Handpiece2
   - Driver2
   - Driver3
+  - Donut
   layers:
   - Default
   - TransparentFX
