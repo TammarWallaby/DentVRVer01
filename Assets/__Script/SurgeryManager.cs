@@ -3,9 +3,9 @@
  */
 
 
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +15,10 @@ public class SurgeryManager : MonoBehaviour
     public InputActionReference triggerRef;
     public XRController controller;
     public Player player;
+
+    public RaycastHit hit;
+    public string donutName;
+
 
     //[Header("Start")]
 
@@ -77,12 +81,18 @@ public class SurgeryManager : MonoBehaviour
     public GameObject donutCrownPlace2;
     public GameObject crown1;
 
+
+    private Sequence gaugeSequence;
+    private Sequence moveSequence;
+    private bool isSequenceRunning = false;
+
     private void Awake()
     {
         if (triggerRef != null)
         {
-            //triggerRef.action.started += Anesthesia;
-            //triggerRef.action.performed += Anesthesia;
+            triggerRef.action.started += HandleActionStarted;
+            triggerRef.action.performed += HandleActionPerformed;
+            triggerRef.action.canceled += HandleActionCanceled;
         }
     }
 
@@ -90,14 +100,128 @@ public class SurgeryManager : MonoBehaviour
     {
         if(triggerRef != null)
         {
-            //triggerRef.action.started -= Anesthesia;
-            //triggerRef.action.performed -= Anesthesia;
+            triggerRef.action.started -= HandleActionStarted;
+            triggerRef.action.performed -= HandleActionPerformed;
+            triggerRef.action.canceled -= HandleActionCanceled;
         }
     }
 
-
-    public void Anesthesia(InputAction.CallbackContext obj)
+    void HandleActionStarted(InputAction.CallbackContext context)
     {
-        
+        if(controller.interactor.TryGetCurrent3DRaycastHit(out hit))
+        {
+            donutName = hit.collider.gameObject.name;
+
+            if (controller.currentModel.CompareTag("Scalpel"))
+            {
+                if (donutName == "DonutIncision1")
+                {
+                    if (isSequenceRunning == false)
+                    {
+                        float gaugeInterval= 4f/12f;
+                        moveSequence = DOTween.Sequence()
+                            .Append(donutIncision1.transform.DOMove(donutIncision1.GetComponent<Donut>().targetPos, 4f).SetEase(Ease.Linear));
+
+                        gaugeSequence = DOTween.Sequence()
+                            .AppendInterval(gaugeInterval/2f)                          
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[0].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[1].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[2].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[3].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[4].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[5].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[6].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[7].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[8].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[9].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[10].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval)
+                            .AppendCallback(() =>
+                            {
+                                donutIncision1.GetComponent<Donut>().gauge[11].SetActive(true);
+                            })
+                            .AppendInterval(gaugeInterval/2f)
+                            .OnComplete(() =>
+                            {
+                                donutIncision1.SetActive(false);
+                                donutIncision2.SetActive(true);
+                                isSequenceRunning = false;
+                            });
+
+                        isSequenceRunning = true;
+                    }
+                    else
+                    {
+                        moveSequence.Play();
+                        gaugeSequence.Play();
+                    }
+                }
+                else if (donutName == "DonutIncision2")
+                {
+
+                }
+                else if (donutName == "DonutIncision3")
+                {
+
+                }
+            }
+        }
+    }
+
+    void HandleActionPerformed(InputAction.CallbackContext context)
+    {
+
+    }
+
+    void HandleActionCanceled(InputAction.CallbackContext context)
+    {
+        if (isSequenceRunning == true)
+        {
+            moveSequence.Pause();
+            gaugeSequence.Pause();
+        }
     }
 }

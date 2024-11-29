@@ -23,7 +23,7 @@ public class XRController : MonoBehaviour
 
     [Header("Interaction LayerMask")]
     public InteractionLayerMask defaultMask; // 기본 레이어마스크
-    public InteractionLayerMask maskWithoutTool; // 도구 사용 중인 경우 상호작용 레이어마스크
+    public InteractionLayerMask maskWithTool; // 도구 사용 중인 경우 상호작용 레이어마스크
 
     [Header("Tools in Scene")] // Scene에 배치할 관상용 도구들, Tag와 Layer 모두 Tool로 설정
     public GameObject abutment;
@@ -63,7 +63,7 @@ public class XRController : MonoBehaviour
     public GameObject torqueRatchetM;
 
 
-    public RaycastHit raycastHit;
+    public RaycastHit hit;
 
     private void Awake()
     {
@@ -94,9 +94,9 @@ public class XRController : MonoBehaviour
         }
         else
         {
-            if (interactor.interactionLayers != maskWithoutTool)
+            if (interactor.interactionLayers != maskWithTool)
             {
-                interactor.interactionLayers = maskWithoutTool;
+                interactor.interactionLayers = maskWithTool;
             }
         }
     }
@@ -117,10 +117,10 @@ public class XRController : MonoBehaviour
     {
         if (currentModel.tag == "Controller")
         {
-            if (interactor.TryGetCurrent3DRaycastHit(out raycastHit))
+            if (interactor.TryGetCurrent3DRaycastHit(out hit))
             {
-                string goName = raycastHit.collider.gameObject.name;
-                if (raycastHit.collider.CompareTag("Tool"))
+                string goName = hit.collider.gameObject.name;
+                if (hit.collider.CompareTag("Tool"))
                 {
                     if (goName == "Abutment")
                     {

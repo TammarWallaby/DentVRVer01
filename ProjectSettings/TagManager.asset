@@ -10,15 +10,12 @@ TagManager:
   - Drill3
   - Drill4
   - Driver
-  - DriverWithAbutment
-  - DriverWithHealingAbutment
   - Elevator
   - Fixture
   - Handpiece
   - HandpieceWithDrill2
   - HandpieceWithDrill3
   - HandpieceWithDrill4
-  - HandpieceWithFixture
   - HealingAbutment
   - Scalpel
   - Syringe
@@ -35,7 +32,7 @@ TagManager:
   - Water
   - UI
   - Tool
-  - 
+  - Donut
   - 
   - 
   - 

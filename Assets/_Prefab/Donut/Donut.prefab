@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3527700206802912190}
   - component: {fileID: 2914121444329171308}
   m_Layer: 0
-  m_Name: Gauge6
+  m_Name: Gauge5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4324912432428942202}
   - component: {fileID: 1516923850824187561}
   m_Layer: 0
-  m_Name: Gauge7
+  m_Name: Gauge6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 7381090296744933761}
   - component: {fileID: 1924896386706206064}
   m_Layer: 0
-  m_Name: Gauge8
+  m_Name: Gauge7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 2980113374500796182}
   - component: {fileID: 206437076097044086}
   m_Layer: 0
-  m_Name: Gauge2
+  m_Name: Gauge1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 1972340705516556929}
   - component: {fileID: 7004235445145671211}
   m_Layer: 0
-  m_Name: Gauge1
+  m_Name: Gauge0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 9166944482940455889}
   - component: {fileID: 1277712899373567584}
   m_Layer: 0
-  m_Name: Gauge12
+  m_Name: Gauge11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 8555068955708848345}
   - component: {fileID: 6587015460366662783}
   m_Layer: 0
-  m_Name: Gauge9
+  m_Name: Gauge8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 1029517145619598722}
   - component: {fileID: 1952114605411283974}
   m_Layer: 0
-  m_Name: Gauge3
+  m_Name: Gauge2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 5576537219953642151}
   - component: {fileID: 6641425477031618183}
   - component: {fileID: 5456824774893581082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +820,7 @@ GameObject:
   - component: {fileID: 8947830044007689157}
   - component: {fileID: 1580062384183185621}
   m_Layer: 0
-  m_Name: Gauge4
+  m_Name: Gauge3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 1420516888005617983}
   - component: {fileID: 640972339115117560}
   m_Layer: 0
-  m_Name: Gauge10
+  m_Name: Gauge9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 4119170457387514617}
   - component: {fileID: 494065811340743570}
   m_Layer: 0
-  m_Name: Gauge11
+  m_Name: Gauge10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 30177184863494547}
   - component: {fileID: 5596030350281322766}
   m_Layer: 0
-  m_Name: Gauge5
+  m_Name: Gauge4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
