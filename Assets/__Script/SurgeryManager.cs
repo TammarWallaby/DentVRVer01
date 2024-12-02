@@ -84,6 +84,7 @@ public class SurgeryManager : MonoBehaviour
     private Sequence gaugeSequence;
     private Sequence moveSequence;
     private bool isSequenceRunning = false;
+    private bool isSequenceAssigned = false;
     private RaycastHit hit;
     private string donutName;
 
@@ -92,8 +93,22 @@ public class SurgeryManager : MonoBehaviour
         if (triggerRef != null)
         {
             triggerRef.action.started += HandleActionStarted;
-            triggerRef.action.performed += HandleActionPerformed;
             triggerRef.action.canceled += HandleActionCanceled;
+        }
+    }
+
+    private void Update()
+    {
+        if (controller.interactor.TryGetCurrent3DRaycastHit(out hit))
+        {
+            if (!hit.collider.CompareTag("Donut"))
+            {
+                PauseSequence();
+            }
+        }
+        else
+        {
+            PauseSequence();
         }
     }
 
@@ -102,17 +117,11 @@ public class SurgeryManager : MonoBehaviour
         if(triggerRef != null)
         {
             triggerRef.action.started -= HandleActionStarted;
-            triggerRef.action.performed -= HandleActionPerformed;
             triggerRef.action.canceled -= HandleActionCanceled;
         }
     }
 
     void HandleActionStarted(InputAction.CallbackContext context)
-    {
-
-    }
-
-    void HandleActionPerformed(InputAction.CallbackContext context)
     {
         if (controller.interactor.TryGetCurrent3DRaycastHit(out hit))
         {
@@ -122,7 +131,7 @@ public class SurgeryManager : MonoBehaviour
             {
                 if (donutName == "DonutIncision1")
                 {
-                    if (isSequenceRunning == false)
+                    if (isSequenceAssigned == false)
                     {
                         float gaugeInterval = 12f / 12f;
 
@@ -151,15 +160,15 @@ public class SurgeryManager : MonoBehaviour
                             {
                                 donutIncision1.SetActive(false);
                                 donutIncision2.SetActive(true);
-                                isSequenceRunning = false;
+                                isSequenceAssigned = false;
                             });
 
+                        isSequenceAssigned = true;
                         isSequenceRunning = true;
                     }
                     else
                     {
-                        moveSequence?.Play();
-                        gaugeSequence?.Play();
+                        PlaySequence();
                     }
                 }
                 else if (donutName == "DonutIncision2")
@@ -176,10 +185,33 @@ public class SurgeryManager : MonoBehaviour
 
     void HandleActionCanceled(InputAction.CallbackContext context)
     {
-        if (isSequenceRunning == true)
+        PauseSequence();
+    }
+
+
+    private void PlaySequence()
+    {
+        if (isSequenceAssigned==true)
         {
-            moveSequence?.Pause();
-            gaugeSequence?.Pause();
+            if (isSequenceRunning == false)
+            {
+                moveSequence?.Play();
+                gaugeSequence?.Play();
+                isSequenceRunning = true;
+            }
+        }
+    }
+
+    private void PauseSequence()
+    {
+        if (isSequenceAssigned == true)
+        {
+            if (isSequenceRunning == true)
+            {
+                moveSequence?.Pause();
+                gaugeSequence?.Pause();
+                isSequenceRunning = false;
+            }
         }
     }
 }
