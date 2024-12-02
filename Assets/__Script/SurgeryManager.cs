@@ -590,7 +590,7 @@ public class SurgeryManager : MonoBehaviour
                 {
                     if (donutName == "DonutFixturePlace1")
                     {
-                        controller.currentModel = controller.controllerM;
+                        controller.UpdateControllerModel(controller.controllerM);
                         donutFixturePlace1.SetActive(false);
                         donutFixturePlace2.SetActive(true);
                         fixture1.SetActive(true);
@@ -652,7 +652,7 @@ public class SurgeryManager : MonoBehaviour
                 {
                     if (donutName == "DonutHAPlace1")
                     {
-                        controller.currentModel = controller.controllerM;
+                        controller.UpdateControllerModel(controller.controllerM);
                         donutHAPlace1.SetActive(false);
                         donutHAPlace2.SetActive(true);
                         healingAbutment1.SetActive(true);
@@ -1031,6 +1031,7 @@ public class SurgeryManager : MonoBehaviour
                                 .OnComplete(() =>
                                 {
                                     donutHARemove1.SetActive(false);
+                                    healingAbutment2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.HARemoveComplete);
 
                                     isSequenceAssigned = false;

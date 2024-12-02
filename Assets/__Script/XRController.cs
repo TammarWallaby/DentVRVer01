@@ -318,7 +318,7 @@ public class XRController : MonoBehaviour
         }
     }
 
-    private void UpdateControllerModel(GameObject newModelPrefab)
+    public void UpdateControllerModel(GameObject newModelPrefab)
     {
         // 기존 모델이 있다면 제거
         if (currentModel != null)
