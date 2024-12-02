@@ -998,7 +998,53 @@ public class SurgeryManager : MonoBehaviour
             //RoomHARemove
             if (Player.Instance.CurrentState == Player.PlayerState.HARemove)
             {
+                if (controller.currentModel.CompareTag("Driver2"))
+                {
+                    if (donutName == "DonutHARemove1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 6f / 12f;
 
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutHARemove1.transform.DOMove(donutHARemove1.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
+                                .Join(healingAbutment2.transform.DOMove(new Vector3(253.0307f, 1.0961f, -6.5761f), 6f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutHARemove1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutHARemove1.SetActive(false);
+                                    Player.Instance.ChangeState(Player.PlayerState.HARemoveComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
             }
 
             //RoomAbutmentPlace
