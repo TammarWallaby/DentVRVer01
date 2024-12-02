@@ -25,6 +25,8 @@ TagManager:
   - Driver2
   - Driver3
   - Donut
+  - Needle
+  - Crown
   layers:
   - Default
   - TransparentFX

@@ -9,16 +9,17 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class SurgeryManager : MonoBehaviour
 {
     [Header("Main Setting")]
     public InputActionReference triggerRef;
     public XRController controller;
-    public Player player;
 
 
-    //[Header("Start")]
+    [Header("Start")]
+    public GameObject donutStart1;
 
     [Header("Anesthesia")]
     public GameObject donutAnesthesia1; // 도넛은 모두 씬에 있는 오브젝트를 넣음
@@ -29,6 +30,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject donutIncision1;
     public GameObject donutIncision2;
     public GameObject donutIncision3;
+    public GameObject gumIncisionOrigin;
     public GameObject gumIncision1;
     public GameObject gumIncision2;
     public GameObject gumIncision3;
@@ -36,8 +38,9 @@ public class SurgeryManager : MonoBehaviour
     [Header("Elevation")]
     public GameObject donutElevation1;
     public GameObject donutElevation2;
+    public GameObject gumElevationOrigin;
     public GameObject gumElevation1;
-    public GameObject gunElevation2;
+    public GameObject gumElevation2;
 
     [Header("Drill")]
     public GameObject donutDrill1;
@@ -46,6 +49,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject drill2; // 프리팹 모델
     public GameObject drill3; // 프리팹
     public GameObject drill4; // 프
+    public GameObject gumDrillOrigin;
     public GameObject gumDrill1;
     public GameObject gumDrill2;
     public GameObject gumDrill3;
@@ -54,16 +58,29 @@ public class SurgeryManager : MonoBehaviour
     public GameObject donutFixturePlace1;
     public GameObject donutFixturePlace2;
     public GameObject fixture1; // 씬에 미리 배치해 둘 것
-    public GameObject gumFixture1;
 
     [Header("HAPlace")]
     public GameObject donutHAPlace1;
     public GameObject donutHAPlace2;
     public GameObject healingAbutment1; //씬에 미리 배치
 
-    //[Header("Suture")] 모델링 실 개수 정해지면
+    [Header("Suture")] //모델링 실 개수 정해지면
+    public GameObject donutSuture1;
+    public GameObject donutSuture2;
+    public GameObject donutSuture3;
+    public GameObject donutSuture4;
+    public GameObject donutSuture5;
+    public GameObject donutSuture6;
+    public GameObject gumSutureOrigin;
+    public GameObject gumSuture1;
+    public GameObject gumSuture2;
+    public GameObject gumSuture3;
+    public GameObject gumSuture4;
+    public GameObject gumSuture5;
+    public GameObject gumSuture6;
 
-    //[Header("Wait")] Wait방 조건 정해지면
+    [Header("Wait")] //Wait방 조건 정해지면
+    public GameObject donutWait1;
 
     [Header("HARemove")]
     public GameObject donutHARemove1;
@@ -127,59 +144,875 @@ public class SurgeryManager : MonoBehaviour
         {
             donutName = hit.collider.gameObject.name;
 
-            if (controller.currentModel.CompareTag("Scalpel"))
+            //RoomStart
+            if (Player.Instance.CurrentState == Player.PlayerState.Start)
             {
-                if (donutName == "DonutIncision1")
+                if (donutName == "DonutStart1")
                 {
-                    if (isSequenceAssigned == false)
-                    {
-                        float gaugeInterval = 12f / 12f;
-
-                        moveSequence = DOTween.Sequence()
-                            .Append(donutIncision1.transform.DOMove(donutIncision1.GetComponent<Donut>().targetPos, 12f).SetEase(Ease.Linear));
-
-                        gaugeSequence = DOTween.Sequence()
-                            .AppendInterval(gaugeInterval / 2f);
-                        for (int i = 0; i < 12; i++)
-                        {
-                            int index = i;
-                            gaugeSequence
-                                .AppendCallback(() =>
-                                {
-                                    donutIncision1.GetComponent<Donut>().gauge[index].SetActive(true);
-                                });
-                            if (index < 11)
-                            {
-                                gaugeSequence
-                                    .AppendInterval(gaugeInterval);
-                            }
-                        }
-                        gaugeSequence
-                            .AppendInterval(gaugeInterval / 2f)
-                            .OnComplete(() =>
-                            {
-                                donutIncision1.SetActive(false);
-                                donutIncision2.SetActive(true);
-                                isSequenceAssigned = false;
-                            });
-
-                        isSequenceAssigned = true;
-                        isSequenceRunning = true;
-                    }
-                    else
-                    {
-                        PlaySequence();
-                    }
-                }
-                else if (donutName == "DonutIncision2")
-                {
-
-                }
-                else if (donutName == "DonutIncision3")
-                {
-
+                    donutStart1.SetActive(false);
+                    Player.Instance.ChangeState(Player.PlayerState.StartComplete);
                 }
             }
+
+            //RoomAnesthesia
+            if (Player.Instance.CurrentState == Player.PlayerState.Anesthesia)
+            {
+                if (controller.currentModel.CompareTag("Syringe"))
+                {
+                    if (donutName == "DonutAnesthesia1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutAnesthesia1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutAnesthesia1.SetActive(false);
+                                    Player.Instance.ChangeState(Player.PlayerState.AnesthesiaComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomIncision
+            if (Player.Instance.CurrentState == Player.PlayerState.Incision)
+            {
+                if (controller.currentModel.CompareTag("Scalpel"))
+                {
+                    if (donutName == "DonutIncision1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 4f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutIncision1.transform.DOMove(donutIncision1.GetComponent<Donut>().targetPos, 4f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutIncision1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutIncision1.SetActive(false);
+                                    donutIncision2.SetActive(true);
+                                    gumIncisionOrigin.SetActive(false);
+                                    gumIncision1.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutIncision2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 4f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutIncision2.transform.DOMove(donutIncision2.GetComponent<Donut>().targetPos, 4f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutIncision2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutIncision2.SetActive(false);
+                                    donutIncision3.SetActive(true);
+                                    gumIncision1.SetActive(false);
+                                    gumIncision2.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutIncision3")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 4f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutIncision3.transform.DOMove(donutIncision3.GetComponent<Donut>().targetPos, 4f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutIncision3.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutIncision3.SetActive(false);
+                                    gumIncision2.SetActive(false);
+                                    gumIncision3.SetActive(true);
+                                    Player.Instance.ChangeState(Player.PlayerState.IncisionComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomElevation
+            if(Player.Instance.CurrentState==Player.PlayerState.Elevation)
+            {
+                if (controller.currentModel.CompareTag("Elevator"))
+                {
+                    if (donutName == "DonutElevation1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutElevation1.transform.DOMove(donutElevation1.GetComponent<Donut>().targetPos, 5f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutElevation1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutElevation1.SetActive(false);
+                                    donutElevation2.SetActive(true);
+                                    gumElevationOrigin.SetActive(false);
+                                    gumElevation1.SetActive(true);                                   
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutElevation2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutElevation2.transform.DOMove(donutElevation2.GetComponent<Donut>().targetPos, 5f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutElevation2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutElevation2.SetActive(false);
+                                    gumElevation1.SetActive(false);
+                                    gumElevation2.SetActive(true);
+                                    Player.Instance.ChangeState(Player.PlayerState.ElevationComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomDrill
+            if(Player.Instance.CurrentState == Player.PlayerState.Drill)
+            {
+                if (controller.currentModel.CompareTag("HandpieceWithDrill2"))
+                {
+                    if(donutName=="DonutDrill1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutDrill1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutDrill1.SetActive(false);
+                                    donutDrill2.SetActive(true);
+                                    gumDrillOrigin.SetActive(false);
+                                    gumDrill1.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+                else if (controller.currentModel.CompareTag("HandpieceWithDrill3"))
+                {
+                    if (donutName == "DonutDrill2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutDrill2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutDrill2.SetActive(false);
+                                    donutDrill3.SetActive(true);
+                                    gumDrill1.SetActive(false);
+                                    gumDrill2.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+                else if (controller.currentModel.CompareTag("HandpieceWithDrill4"))
+                {
+                    if (donutName == "DonutDrill3")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutDrill3.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutDrill3.SetActive(false);                      
+                                    gumDrill2.SetActive(false);
+                                    gumDrill3.SetActive(true);
+                                    Player.Instance.ChangeState(Player.PlayerState.DrillComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomFixturePlace
+            if (Player.Instance.CurrentState == Player.PlayerState.FixturePlace)
+            {
+                if (controller.currentModel.CompareTag("Fixture"))
+                {
+                    if (donutName == "DonutFixturePlace1")
+                    {
+                        controller.currentModel = controller.controllerM;
+                        donutFixturePlace1.SetActive(false);
+                        donutFixturePlace2.SetActive(true);
+                        fixture1.SetActive(true);
+                    }
+                }
+                else if (controller.currentModel.CompareTag("Handpiece2"))
+                {
+                    if (donutName == "DonutFixturePlace2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 6f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutFixturePlace2.transform.DOMove(donutFixturePlace2.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
+                                .Join(fixture1.transform.DOMove(new Vector3(140.5287f, 0.953271f, -6.829498f), 6f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutFixturePlace2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutFixturePlace2.SetActive(false);
+                                    Player.Instance.ChangeState(Player.PlayerState.FixturePlaceComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomHAPlace
+            if (Player.Instance.CurrentState == Player.PlayerState.HAPlace)
+            {
+                if (controller.currentModel.CompareTag("HealingAbutment"))
+                {
+                    if (donutName == "DonutHAPlace1")
+                    {
+                        controller.currentModel = controller.controllerM;
+                        donutHAPlace1.SetActive(false);
+                        donutHAPlace2.SetActive(true);
+                        healingAbutment1.SetActive(true);
+                    }
+                }
+                else if (controller.currentModel.CompareTag("Driver"))
+                {
+                    if (donutName == "DonutHAPlace2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 6f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutHAPlace2.transform.DOMove(donutHAPlace2.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
+                                .Join(healingAbutment1.transform.DOMove(new Vector3(168.6542f, 0.9977663f, -6.752431f), 6f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutHAPlace2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutHAPlace2.SetActive(false);
+                                    Player.Instance.ChangeState(Player.PlayerState.HAPlaceComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomSuture
+            if (Player.Instance.CurrentState == Player.PlayerState.Suture)
+            {
+                if (controller.currentModel.CompareTag("Needle"))
+                {
+                    if (donutName == "DonutSuture1")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture1.transform.DOMove(donutSuture1.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture1.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture1.SetActive(false);
+                                    donutSuture2.SetActive(true);
+                                    gumSutureOrigin.SetActive(false);
+                                    gumSuture1.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutSuture2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture2.transform.DOMove(donutSuture2.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture2.SetActive(false);
+                                    donutSuture3.SetActive(true);
+                                    gumSuture1.SetActive(false);
+                                    gumSuture2.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutSuture3")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture3.transform.DOMove(donutSuture3.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture3.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture3.SetActive(false);
+                                    donutSuture4.SetActive(true);
+                                    gumSuture2.SetActive(false);
+                                    gumSuture3.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutSuture4")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture4.transform.DOMove(donutSuture4.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture4.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture4.SetActive(false);
+                                    donutSuture5.SetActive(true);
+                                    gumSuture3.SetActive(false);
+                                    gumSuture4.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutSuture5")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture5.transform.DOMove(donutSuture5.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture5.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture5.SetActive(false);
+                                    donutSuture6.SetActive(true);
+                                    gumSuture4.SetActive(false);
+                                    gumSuture5.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutSuture6")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 2f / 12f;
+
+                            moveSequence = DOTween.Sequence()
+                                .Append(donutSuture6.transform.DOMove(donutSuture6.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutSuture6.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutSuture6.SetActive(false);
+                                    gumSuture5.SetActive(false);
+                                    gumSuture6.SetActive(true);
+                                    Player.Instance.ChangeState(Player.PlayerState.SutureComplete);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                }
+            }
+
+            //RoomWait
+            if (Player.Instance.CurrentState == Player.PlayerState.Wait)
+            {
+                if (donutName == "DonutWait1")
+                {
+                    donutWait1.SetActive(false);
+                    Player.Instance.ChangeState(Player.PlayerState.WaitComplete);
+                }
+            }
+
+            //RoomHARemove
+            if (Player.Instance.CurrentState == Player.PlayerState.HARemove)
+            {
+
+            }
+
+            //RoomAbutmentPlace
+            if (Player.Instance.CurrentState == Player.PlayerState.AbutmentPlace)
+            {
+
+            }
+
+            //RoomCrownPlace
+            if (Player.Instance.CurrentState == Player.PlayerState.CrownPlace)
+            {
+
+            }
+            
         }
     }
 

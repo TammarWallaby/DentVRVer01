@@ -41,6 +41,7 @@ public class XRController : MonoBehaviour
     public GameObject scalpel;
     public GameObject syringe;
     public GameObject torqueRatchet;
+    public GameObject needleWrapping;
 
     [Header("Tools Model")] // Prefab 폴더에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
     public GameObject abutmentM;
@@ -61,6 +62,7 @@ public class XRController : MonoBehaviour
     public GameObject scalpelM;
     public GameObject syringeM;
     public GameObject torqueRatchetM;
+    public GameObject needleM;
 
 
     public RaycastHit hit;
@@ -197,6 +199,11 @@ public class XRController : MonoBehaviour
                         torqueRatchet.SetActive(false);
                         UpdateControllerModel(torqueRatchetM);
                     }
+                    else if (goName == "NeedleWrapping")
+                    {
+                        needleWrapping.SetActive(false);
+                        UpdateControllerModel(needleM);
+                    }
                 }
             }
         }
@@ -279,6 +286,10 @@ public class XRController : MonoBehaviour
                 else if (currentModel.CompareTag("TorqueRatchet"))
                 {
                     torqueRatchet.SetActive(true);
+                }
+                else if (currentModel.CompareTag("Needle"))
+                {
+                    needleWrapping.SetActive(true);
                 }
                 UpdateControllerModel(controllerM);
             }

@@ -31,8 +31,8 @@ public class Player : MonoBehaviour
         HAPlaceComplete,
         Suture,
         SutureComplete,
-        Waiting,
-        WaitingComplete,
+        Wait,
+        WaitComplete,
         HARemove,
         HARemoveComplete,
         AbutmentPlace,
@@ -63,8 +63,6 @@ public class Player : MonoBehaviour
         Instance = this;
 
         currentState = PlayerState.Start;
-
-        ChangeState(PlayerState.StartComplete); // 나중에 지우기 (시작 방 완성 되면 조건 추가)
     }
 
     // 상태 변경 메서드

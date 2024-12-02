@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     public bool doorClosed;
 
     public Player.PlayerState doorOpenState; // 문이 열릴 조건, 설정 필수
+    public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
 
     public GameObject door1Arrow;
     public GameObject door1LeftDoor;
@@ -72,6 +73,7 @@ public class Door : MonoBehaviour
                     .AppendCallback(() =>
                     {
                         doorClosed = true;
+                        Player.Instance.ChangeState(doorCloseWithStateChange);
                     })
                     .Append(door1Arrow.transform.DOLocalMoveX(-0.08f, 1f)).SetRelative()
                     .Join(door2Arrow.transform.DOLocalMoveX(0.08f, 1f)).SetRelative()
