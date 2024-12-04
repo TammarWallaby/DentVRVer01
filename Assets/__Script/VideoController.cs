@@ -1,17 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using System.Collections;
 
 public class VideoController : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;       // Video Player ÂüÁ¶
-    public Image playImage;               // Play ÀÌ¹ÌÁö
-    public Image pauseImage;              // Pause ÀÌ¹ÌÁö
-    public AudioSource audioSource;       // Audio Source ÂüÁ¶
-    public VideoClip[] videoClips;        // ºñµğ¿À Å¬¸³ ¹è¿­
-    private int currentVideoIndex = 0;    // ÇöÀç ºñµğ¿À ÀÎµ¦½º
-    private Coroutine hideCoroutine;      // ÄÚ·çÆ¾ ÂüÁ¶ º¯¼ö
+    public VideoPlayer videoPlayer;       // Video Player ì°¸ì¡°
+    public Image playImage;               // Play ì´ë¯¸ì§€
+    public Image pauseImage;              // Pause ì´ë¯¸ì§€
+    public AudioSource audioSource;       // Audio Source ì°¸ì¡°
+    public VideoClip[] videoClips;        // ë¹„ë””ì˜¤ í´ë¦½ ë°°ì—´
+    private int currentVideoIndex = 0;    // í˜„ì¬ ë¹„ë””ì˜¤ ì¸ë±ìŠ¤
+    private Coroutine hideCoroutine;      // ì½”ë£¨í‹´ ì°¸ì¡° ë³€ìˆ˜
 
     void Start()
     {
@@ -25,16 +25,16 @@ public class VideoController : MonoBehaviour
         PlayCurrentVideo();
     }
 
-    // ÇöÀç ºñµğ¿À Àç»ı
+    // í˜„ì¬ ë¹„ë””ì˜¤ ì¬ìƒ
     private void PlayCurrentVideo()
     {
         if (videoClips.Length > 0)
         {
-            videoPlayer.clip = videoClips[currentVideoIndex];  // ÇöÀç ÀÎµ¦½ºÀÇ ºñµğ¿À ¼³Á¤
-            videoPlayer.time = 0;                              // ºñµğ¿À ½Ã°£ ÃÊ±âÈ­
-            videoPlayer.Play();                                // ºñµğ¿À Àç»ı
-            playImage.gameObject.SetActive(false);             // Play ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
-            pauseImage.gameObject.SetActive(true);             // Pause ÀÌ¹ÌÁö È°¼ºÈ­
+            videoPlayer.clip = videoClips[currentVideoIndex];  // í˜„ì¬ ì¸ë±ìŠ¤ì˜ ë¹„ë””ì˜¤ ì„¤ì •
+            videoPlayer.time = 0;                              // ë¹„ë””ì˜¤ ì‹œê°„ ì´ˆê¸°í™”
+            videoPlayer.Play();                                // ë¹„ë””ì˜¤ ì¬ìƒ
+            playImage.gameObject.SetActive(false);             // Play ì´ë¯¸ì§€ ë¹„í™œì„±í™”
+            pauseImage.gameObject.SetActive(true);             // Pause ì´ë¯¸ì§€ í™œì„±í™”
 
             if (hideCoroutine != null)
             {
@@ -44,20 +44,20 @@ public class VideoController : MonoBehaviour
         }
     }
 
-    // µ¿¿µ»ó Àç»ı / ÀÏ½ÃÁ¤Áö
+    // ë™ì˜ìƒ ì¬ìƒ / ì¼ì‹œì •ì§€
     public void PlayVideo()
     {
         if (videoPlayer.isPlaying)
         {
             videoPlayer.Pause();
-            playImage.gameObject.SetActive(true);              // Play ÀÌ¹ÌÁö È°¼ºÈ­
-            pauseImage.gameObject.SetActive(false);            // Pause ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
+            playImage.gameObject.SetActive(true);              // Play ì´ë¯¸ì§€ í™œì„±í™”
+            pauseImage.gameObject.SetActive(false);            // Pause ì´ë¯¸ì§€ ë¹„í™œì„±í™”
         }
         else
         {
             videoPlayer.Play();
-            playImage.gameObject.SetActive(false);             // Play ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
-            pauseImage.gameObject.SetActive(true);             // Pause ÀÌ¹ÌÁö È°¼ºÈ­
+            playImage.gameObject.SetActive(false);             // Play ì´ë¯¸ì§€ ë¹„í™œì„±í™”
+            pauseImage.gameObject.SetActive(true);             // Pause ì´ë¯¸ì§€ í™œì„±í™”
 
             if (hideCoroutine != null)
             {
@@ -67,35 +67,35 @@ public class VideoController : MonoBehaviour
         }
     }
 
-    // 1ÃÊ ÈÄ playImage ºñÈ°¼ºÈ­
+    // 1ì´ˆ í›„ playImage ë¹„í™œì„±í™”
     private IEnumerator HidePauseImageAfterDelay()
     {
         yield return new WaitForSeconds(1f);
         playImage.gameObject.SetActive(false);
     }
 
-    // ¿µ»ó ³¡³µÀ» ¶§ Ã³¸®
+    // ì˜ìƒ ëë‚¬ì„ ë•Œ ì²˜ë¦¬
     private void HandleVideoEnd(VideoPlayer vp)
     {
-        videoPlayer.time = 0;                                  // ¿µ»ó ³¡³ª¸é ½Ã°£ ÃÊ±âÈ­
-        videoPlayer.Stop();                                    // ¿µ»ó ¸ØÃã
-        playImage.gameObject.SetActive(true);                  // Play ÀÌ¹ÌÁö È°¼ºÈ­
-        pauseImage.gameObject.SetActive(false);                // Pause ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
+        videoPlayer.time = 0;                                  // ì˜ìƒ ëë‚˜ë©´ ì‹œê°„ ì´ˆê¸°í™”
+        videoPlayer.Stop();                                    // ì˜ìƒ ë©ˆì¶¤
+        playImage.gameObject.SetActive(true);                  // Play ì´ë¯¸ì§€ í™œì„±í™”
+        pauseImage.gameObject.SetActive(false);                // Pause ì´ë¯¸ì§€ ë¹„í™œì„±í™”
     }
 
-    // ´ÙÀ½ ºñµğ¿À Àç»ı
+    // ë‹¤ìŒ ë¹„ë””ì˜¤ ì¬ìƒ
     public void NextVideo()
     {
-        videoPlayer.Stop();                                    // ÇöÀç ºñµğ¿À ¸ØÃã
-        currentVideoIndex = (currentVideoIndex + 1) % videoClips.Length;  // ´ÙÀ½ ÀÎµ¦½º·Î ÀÌµ¿
+        videoPlayer.Stop();                                    // í˜„ì¬ ë¹„ë””ì˜¤ ë©ˆì¶¤
+        currentVideoIndex = (currentVideoIndex + 1) % videoClips.Length;  // ë‹¤ìŒ ì¸ë±ìŠ¤ë¡œ ì´ë™
         PlayCurrentVideo();
     }
 
-    // ÀÌÀü ºñµğ¿À Àç»ı
+    // ì´ì „ ë¹„ë””ì˜¤ ì¬ìƒ
     public void PreviousVideo()
     {
-        videoPlayer.Stop();                                    // ÇöÀç ºñµğ¿À ¸ØÃã
-        currentVideoIndex = (currentVideoIndex - 1 + videoClips.Length) % videoClips.Length;  // ÀÌÀü ÀÎµ¦½º·Î ÀÌµ¿ (À½¼ö ¹æÁö)
+        videoPlayer.Stop();                                    // í˜„ì¬ ë¹„ë””ì˜¤ ë©ˆì¶¤
+        currentVideoIndex = (currentVideoIndex - 1 + videoClips.Length) % videoClips.Length;  // ì´ì „ ì¸ë±ìŠ¤ë¡œ ì´ë™ (ìŒìˆ˜ ë°©ì§€)
         PlayCurrentVideo();
     }
 }

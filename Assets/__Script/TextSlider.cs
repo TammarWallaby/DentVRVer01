@@ -1,28 +1,28 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class TextSlider : MonoBehaviour
 {
-    public RectTransform textPanel1;  // Ã¹ ¹øÂ° ÅØ½ºÆ® ÆĞ³Î
-    public RectTransform textPanel2;  // µÎ ¹øÂ° ÅØ½ºÆ® ÆĞ³Î
-    public float slideDuration = 0.5f;  // ½½¶óÀÌµå ½Ã°£
-    public Vector2 slideOffset = new Vector2(1000, 0);  // ½½¶óÀÌµå ¹æÇâ (¿ŞÂÊ)
+    public RectTransform textPanel1;  // ì²« ë²ˆì§¸ í…ìŠ¤íŠ¸ íŒ¨ë„
+    public RectTransform textPanel2;  // ë‘ ë²ˆì§¸ í…ìŠ¤íŠ¸ íŒ¨ë„
+    public float slideDuration = 0.5f;  // ìŠ¬ë¼ì´ë“œ ì‹œê°„
+    public Vector2 slideOffset = new Vector2(1000, 0);  // ìŠ¬ë¼ì´ë“œ ë°©í–¥ (ì™¼ìª½)
 
-    private Vector2 initialPos1;  // Ã¹ ¹øÂ° ÅØ½ºÆ® ÃÊ±â À§Ä¡
-    private Vector2 initialPos2;  // µÎ ¹øÂ° ÅØ½ºÆ® ÃÊ±â À§Ä¡
-    private Vector2 initialPos3;  // µÎ ¹øÂ° ÅØ½ºÆ® ÀÌµ¿ À§Ä¡
-    private bool showingFirstText = true;  // Ã¹ ¹øÂ° ÅØ½ºÆ® Ç¥½Ã ¿©ºÎ
+    private Vector2 initialPos1;  // ì²« ë²ˆì§¸ í…ìŠ¤íŠ¸ ì´ˆê¸° ìœ„ì¹˜
+    private Vector2 initialPos2;  // ë‘ ë²ˆì§¸ í…ìŠ¤íŠ¸ ì´ˆê¸° ìœ„ì¹˜
+    private Vector2 initialPos3;  // ë‘ ë²ˆì§¸ í…ìŠ¤íŠ¸ ì´ë™ ìœ„ì¹˜
+    private bool showingFirstText = true;  // ì²« ë²ˆì§¸ í…ìŠ¤íŠ¸ í‘œì‹œ ì—¬ë¶€
 
     void Start()
     {
-        // ÃÊ±â À§Ä¡ ¼³Á¤
+        // ì´ˆê¸° ìœ„ì¹˜ ì„¤ì •
         initialPos1 = textPanel1.anchoredPosition;
         initialPos2 = initialPos1 - slideOffset;
         initialPos3 = initialPos2 + slideOffset;
 
 
 
-        textPanel2.gameObject.SetActive(false);     // µÎ ¹øÂ° ÅØ½ºÆ® ÃÊ±â ºñÈ°¼ºÈ­
+        textPanel2.gameObject.SetActive(false);     // ë‘ ë²ˆì§¸ í…ìŠ¤íŠ¸ ì´ˆê¸° ë¹„í™œì„±í™”
     }
 
     public void SlideToNextText()
@@ -41,12 +41,12 @@ public class TextSlider : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        // ½½¶óÀÌµå ½ÃÀÛ ½Ã ´ë»ó ÆĞ³Î È°¼ºÈ­
+        // ìŠ¬ë¼ì´ë“œ ì‹œì‘ ì‹œ ëŒ€ìƒ íŒ¨ë„ í™œì„±í™”
         toPanel.gameObject.SetActive(true);
 
         while (elapsedTime < slideDuration)
         {
-            // ½½¶óÀÌµå ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà
+            // ìŠ¬ë¼ì´ë“œ ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰
             fromPanel.anchoredPosition = Vector2.Lerp(fromStart, fromStart + slideOffset, elapsedTime / slideDuration);
             toPanel.anchoredPosition = Vector2.Lerp(toStart - slideOffset, toStart, elapsedTime / slideDuration);
 
@@ -54,14 +54,14 @@ public class TextSlider : MonoBehaviour
             yield return null;
         }
 
-        // ½½¶óÀÌµå Á¾·á ÈÄ À§Ä¡ º¸Á¤
+        // ìŠ¬ë¼ì´ë“œ ì¢…ë£Œ í›„ ìœ„ì¹˜ ë³´ì •
         fromPanel.anchoredPosition = fromStart + slideOffset;
         toPanel.anchoredPosition = toStart;
 
-        // ½½¶óÀÌµå°¡ ³¡³­ ÆĞ³Î ºñÈ°¼ºÈ­
+        // ìŠ¬ë¼ì´ë“œê°€ ëë‚œ íŒ¨ë„ ë¹„í™œì„±í™”
         fromPanel.gameObject.SetActive(false);
 
-        // Ç¥½Ã »óÅÂ ÀüÈ¯
+        // í‘œì‹œ ìƒíƒœ ì „í™˜
         showingFirstText = !showingFirstText;
     }
 }
