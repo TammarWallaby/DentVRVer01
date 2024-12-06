@@ -13,8 +13,7 @@ public class Door : MonoBehaviour
     public bool doorOpened;
     public bool doorClosed;
 
-    public Player.PlayerState doorOpenState1; // 문이 열릴 조건, 설정 필수
-    public Player.PlayerState doorOpenState2; // 문이 열릴 조건2, 설정 필수
+    public Player.PlayerState doorOpenState; // 문이 열릴 조건, 설정 필수
     public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
 
     public GameObject door1LeftDoor;
@@ -40,7 +39,7 @@ public class Door : MonoBehaviour
     {
         if (doorOpened==false)
         {
-            if (currentState == doorOpenState1 || currentState==doorOpenState2)
+            if (currentState == doorOpenState)
             {
                 Sequence DoorOpenSequence = DOTween.Sequence()
                     .AppendCallback(() =>
