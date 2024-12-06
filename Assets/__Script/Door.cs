@@ -13,8 +13,9 @@ public class Door : MonoBehaviour
     public bool doorOpened;
     public bool doorClosed;
 
-    public Player.PlayerState doorOpenState; // 문이 열릴 조건, 설정 필수
-    public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
+    public Player.PlayerState doorOpenState1; // 문이 열릴 조건, 설정 필수
+    public Player.PlayerState doorOpenState2; // 문이 열릴 조건2, 설정 필수
+    //public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
 
     public GameObject door1LeftDoor;
     public GameObject door1RightDoor;
@@ -27,7 +28,7 @@ public class Door : MonoBehaviour
         Player.Instance.OnStateChanged += DoorOpen;
 
         doorOpened = false;
-        doorClosed = false;
+        doorClosed = true;
     }
 
     private void OnDisable()
@@ -39,14 +40,18 @@ public class Door : MonoBehaviour
     {
         if (doorOpened==false)
         {
-            if (currentState == doorOpenState)
+            if (currentState == doorOpenState1 || currentState == doorOpenState2)
             {
                 Sequence DoorOpenSequence = DOTween.Sequence()
                     .AppendCallback(() =>
                     {
                         doorOpened = true;
-                        Player.Instance.OnStateChanged -= DoorOpen;
-                    });
+                        doorClosed = false;
+                    })
+                    .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f))
+                    .Join(door1RightDoor.transform.DOLocalMoveZ(3, 2f))
+                    .Join(door2LeftDoor.transform.DOLocalMoveZ(-3, 2f))
+                    .Join(door2RightDoor.transform.DOLocalMoveZ(3, 2f));
             }
         }
     }
@@ -61,8 +66,12 @@ public class Door : MonoBehaviour
                     .AppendCallback(() =>
                     {
                         doorClosed = true;
-                        Player.Instance.ChangeState(doorCloseWithStateChange);
-                    });
+                        doorOpened = false;
+                    })
+                    .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f))
+                    .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f))
+                    .Join(door2LeftDoor.transform.DOLocalMoveZ(3, 2f))
+                    .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f));
             }
         }
     }
