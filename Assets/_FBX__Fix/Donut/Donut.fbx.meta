@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 349ea830949735b4186ab7b4f805066c
+guid: 82c46c7bdf80fba4c86f576e1f976e23
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,68 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Door
-    second: {fileID: 2100000, guid: 3ec732e54dc8d3045818bd08b429b1fb, type: 2}
+      name: Donut
+    second: {fileID: 2100000, guid: 8f69a9cbc182a2f4ca1b83a968b2ecc0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DoorOutline
-    second: {fileID: 2100000, guid: 643640423c9086245a5133674064fea2, type: 2}
+      name: GaugeColor1
+    second: {fileID: 2100000, guid: 72ed8fb46ca301949b27712a8884a797, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor10
+    second: {fileID: 2100000, guid: 248bbbac297a6b74a82837901fb67b86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor11
+    second: {fileID: 2100000, guid: 212995f83c5e01841ada48fd97ea1423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor12
+    second: {fileID: 2100000, guid: 3ac669e0a2df4e04f8acbdda3c292d8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor2
+    second: {fileID: 2100000, guid: 018b12504d0f4d94b994d65179d4bffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor3
+    second: {fileID: 2100000, guid: 3e1b8dc16f12a034caf8a4c1b6871cc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor4
+    second: {fileID: 2100000, guid: 6ecb01931f78c4b4b89be25e9a3e0690, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor5
+    second: {fileID: 2100000, guid: a29117ceb8b74b74599680ff52b394cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor6
+    second: {fileID: 2100000, guid: b17eddfd282c13543b822d92c8dc2ae2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor7
+    second: {fileID: 2100000, guid: 86b360b91f5049c4a96417481de46321, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor8
+    second: {fileID: 2100000, guid: 327826f3ded3d8f4cb4a45e85656ad36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GaugeColor9
+    second: {fileID: 2100000, guid: ae8fbf14baebd8448b4304e950116bc1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

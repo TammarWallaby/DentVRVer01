@@ -16,11 +16,9 @@ public class Door : MonoBehaviour
     public Player.PlayerState doorOpenState; // 문이 열릴 조건, 설정 필수
     public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
 
-    public GameObject door1Arrow;
     public GameObject door1LeftDoor;
     public GameObject door1RightDoor;
 
-    public GameObject door2Arrow;
     public GameObject door2LeftDoor;
     public GameObject door2RightDoor;
 
@@ -48,17 +46,7 @@ public class Door : MonoBehaviour
                     {
                         doorOpened = true;
                         Player.Instance.OnStateChanged -= DoorOpen;
-                    })
-                    .Append(door1Arrow.transform.DOLocalMoveX(-0.17f, 1f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveX(0.17f, 1f)).SetRelative()
-                    .Append(door1Arrow.transform.DOLocalMoveY(1f, 2f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveY(1f, 2f)).SetRelative()
-                    .Join(door1LeftDoor.transform.DOLocalMoveZ(2.4f, 2f)).SetRelative()
-                    .Join(door1RightDoor.transform.DOLocalMoveZ(-2.4f, 2f)).SetRelative()
-                    .Join(door2LeftDoor.transform.DOLocalMoveZ(2.4f, 2f)).SetRelative()
-                    .Join(door2RightDoor.transform.DOLocalMoveZ(-2.4f, 2f)).SetRelative()
-                    .Append(door1Arrow.transform.DOLocalMoveX(0.08f, 1f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveX(-0.08f, 1f)).SetRelative();
+                    });
             }
         }
     }
@@ -74,17 +62,7 @@ public class Door : MonoBehaviour
                     {
                         doorClosed = true;
                         Player.Instance.ChangeState(doorCloseWithStateChange);
-                    })
-                    .Append(door1Arrow.transform.DOLocalMoveX(-0.08f, 1f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveX(0.08f, 1f)).SetRelative()
-                    .Append(door1Arrow.transform.DOLocalMoveY(-1f, 2f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveY(-1f, 2f)).SetRelative()
-                    .Join(door1LeftDoor.transform.DOLocalMoveZ(-2.4f, 2f)).SetRelative()
-                    .Join(door1RightDoor.transform.DOLocalMoveZ(2.4f, 2f)).SetRelative()
-                    .Join(door2LeftDoor.transform.DOLocalMoveZ(-2.4f, 2f)).SetRelative()
-                    .Join(door2RightDoor.transform.DOLocalMoveZ(2.4f, 2f)).SetRelative()
-                    .Append(door1Arrow.transform.DOLocalMoveX(0.17f, 1f)).SetRelative()
-                    .Join(door2Arrow.transform.DOLocalMoveX(-0.17f, 1f)).SetRelative();
+                    });
             }
         }
     }
