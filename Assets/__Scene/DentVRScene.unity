@@ -6945,6 +6945,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555563962}
   m_Mesh: {fileID: -4651992842040007594, guid: c0c0643cf70b67840b9a8c05a3f99aaa, type: 3}
+--- !u!1 &557645756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557645760}
+  - component: {fileID: 557645759}
+  - component: {fileID: 557645758}
+  - component: {fileID: 557645757}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &557645757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557645756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &557645758
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557645756}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &557645759
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557645756}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &557645760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557645756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592223844
 GameObject:
   m_ObjectHideFlags: 0
@@ -29556,10 +29661,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 3
   doorCloseWithStateChange: 4
-  door1Arrow: {fileID: 7878602370473125721}
   door1LeftDoor: {fileID: 6758489719104495293}
   door1RightDoor: {fileID: 960263485317631068}
-  door2Arrow: {fileID: 8749000505451529599}
   door2LeftDoor: {fileID: 530302435754220490}
   door2RightDoor: {fileID: 6814027522774248094}
 --- !u!33 &7552994386887718
@@ -29884,10 +29987,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 5
   doorCloseWithStateChange: 6
-  door1Arrow: {fileID: 1149037981444370704}
   door1LeftDoor: {fileID: 8613797864744174383}
   door1RightDoor: {fileID: 7929096677956185323}
-  door2Arrow: {fileID: 7014672998516020494}
   door2LeftDoor: {fileID: 708560516105535523}
   door2RightDoor: {fileID: 511956176695022502}
 --- !u!4 &93937805609754150
@@ -32130,10 +32231,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 7
   doorCloseWithStateChange: 8
-  door1Arrow: {fileID: 463182466891291658}
   door1LeftDoor: {fileID: 9085420221594512949}
   door1RightDoor: {fileID: 7464278090468557297}
-  door2Arrow: {fileID: 7549899836363946004}
   door2LeftDoor: {fileID: 21090841171094841}
   door2RightDoor: {fileID: 1046360570173570748}
 --- !u!33 &626110626406909862
@@ -36950,10 +37049,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 13
   doorCloseWithStateChange: 14
-  door1Arrow: {fileID: 1767107847117987372}
   door1LeftDoor: {fileID: 6989146029324102675}
   door1RightDoor: {fileID: 8754429943769154519}
-  door2Arrow: {fileID: 8515509891064658482}
   door2LeftDoor: {fileID: 2207156088426409759}
   door2RightDoor: {fileID: 1184131844829936794}
 --- !u!23 &1607034154201271905
@@ -39332,10 +39429,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 23
   doorCloseWithStateChange: 24
-  door1Arrow: {fileID: 1324913649539398434}
   door1LeftDoor: {fileID: 7645811995390282013}
   door1RightDoor: {fileID: 8329677364103358169}
-  door2Arrow: {fileID: 8991478335609675580}
   door2LeftDoor: {fileID: 1460408779146676753}
   door2RightDoor: {fileID: 1912885710256970132}
 --- !u!4 &2072772665189743348
@@ -43322,10 +43417,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 17
   doorCloseWithStateChange: 18
-  door1Arrow: {fileID: 3114698226045625156}
   door1LeftDoor: {fileID: 5999298250648654203}
   door1RightDoor: {fileID: 5386970457987595967}
-  door2Arrow: {fileID: 5013224990343104346}
   door2LeftDoor: {fileID: 3251249788855243383}
   door2RightDoor: {fileID: 2580922204781281778}
 --- !u!1 &2735791103054951043
@@ -58603,10 +58696,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 1
   doorCloseWithStateChange: 2
-  door1Arrow: {fileID: 7744634623663100732}
   door1LeftDoor: {fileID: 7292105850370639722}
   door1RightDoor: {fileID: 8272082093260480680}
-  door2Arrow: {fileID: 7602894245129771000}
   door2LeftDoor: {fileID: 7081641711556315448}
   door2RightDoor: {fileID: 2960870194520641485}
 --- !u!65 &5978189826916525237
@@ -62240,10 +62331,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 9
   doorCloseWithStateChange: 10
-  door1Arrow: {fileID: 5827473068431202943}
   door1LeftDoor: {fileID: 2929379972743915584}
   door1RightDoor: {fileID: 3541143767759046532}
-  door2Arrow: {fileID: 4500358236699983457}
   door2LeftDoor: {fileID: 6266816179047082828}
   door2RightDoor: {fileID: 6356744543260014793}
 --- !u!33 &6778557801109568906
@@ -64646,10 +64735,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 15
   doorCloseWithStateChange: 16
-  door1Arrow: {fileID: 7654726148450050522}
   door1LeftDoor: {fileID: 1316006093431133157}
   door1RightDoor: {fileID: 846941162246831137}
-  door2Arrow: {fileID: 328799029473068484}
   door2LeftDoor: {fileID: 7790223629655511273}
   door2RightDoor: {fileID: 7121293248904512364}
 --- !u!23 &7276692403432357811
@@ -67139,10 +67226,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 11
   doorCloseWithStateChange: 12
-  door1Arrow: {fileID: 7118939817458438202}
   door1LeftDoor: {fileID: 1924134878527005189}
   door1RightDoor: {fileID: 229809561091706305}
-  door2Arrow: {fileID: 891890925981185060}
   door2LeftDoor: {fileID: 7272449139412328713}
   door2RightDoor: {fileID: 7648071565223637644}
 --- !u!4 &7784165597892887782
@@ -68711,10 +68796,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 19
   doorCloseWithStateChange: 20
-  door1Arrow: {fileID: 8994074243057828238}
   door1LeftDoor: {fileID: 335859772438344625}
   door1RightDoor: {fileID: 2101670575218973813}
-  door2Arrow: {fileID: 1331502837213816208}
   door2LeftDoor: {fileID: 8860336536655835325}
   door2RightDoor: {fileID: 8374927592824169272}
 --- !u!23 &8222592382656386030
@@ -70928,10 +71011,8 @@ MonoBehaviour:
   doorClosed: 0
   doorOpenState: 21
   doorCloseWithStateChange: 22
-  door1Arrow: {fileID: 8728929980079165489}
   door1LeftDoor: {fileID: 97684874719420942}
   door1RightDoor: {fileID: 1790355736400940490}
-  door2Arrow: {fileID: 1695692705819948079}
   door2LeftDoor: {fileID: 9152440808439980290}
   door2RightDoor: {fileID: 8199793829972636295}
 --- !u!4 &8649234075823675332
@@ -74401,3 +74482,4 @@ SceneRoots:
   - {fileID: 1685256673}
   - {fileID: 543450652353516657}
   - {fileID: 1281824792}
+  - {fileID: 557645760}
