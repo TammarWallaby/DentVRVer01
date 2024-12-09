@@ -874,6 +874,8 @@ MonoBehaviour:
   door2RightDoor: {fileID: 383916865}
   colliderA: {fileID: 272635300}
   colliderBC: {fileID: 272635299}
+  materialDoorLightAtoBC: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
+  materialDoorLightBCtoA: {fileID: 2100000, guid: 007d1645fc78d1c4388ffe95dd2f8f4e, type: 2}
 --- !u!1 &302678270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeController: {fileID: 1783443569}
-  controllerM: {fileID: 4283425761326543017, guid: 0379d9a33817fd34296b9188592c732b, type: 3}
+  controllerM: {fileID: 4283425761326543017, guid: 96eb4fe329d66a242b57fbe340c4e46f, type: 3}
   controller: {fileID: 832181706}
   interactor: {fileID: 832181705}
   combineDistance: 10
@@ -4259,6 +4261,8 @@ MonoBehaviour:
   door2RightDoor: {fileID: 421355051}
   colliderA: {fileID: 1144921661}
   colliderBC: {fileID: 1144921660}
+  materialDoorLightAtoBC: {fileID: 2100000, guid: 8b9f3ab1a4b5d7549a04d711846c0503, type: 2}
+  materialDoorLightBCtoA: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
 --- !u!1 &1152338078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6976,7 +6980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oppositeController: {fileID: 832181707}
-  controllerM: {fileID: 8758423527188247893, guid: b98908cc038a5af4baba547178649f52, type: 3}
+  controllerM: {fileID: 8758423527188247893, guid: 00e0420bbe0dcff4c96272c1f69980e4, type: 3}
   controller: {fileID: 1783443568}
   interactor: {fileID: 1783443567}
   combineDistance: 10
@@ -8926,7 +8930,7 @@ GameObject:
   - component: {fileID: 5229243677252352744}
   - component: {fileID: 2139258955957801219}
   m_Layer: 0
-  m_Name: Scalpel.001
+  m_Name: Scalpel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9934,7 +9938,7 @@ GameObject:
   - component: {fileID: 4395533032065866438}
   - component: {fileID: 1899566360357166582}
   m_Layer: 0
-  m_Name: Elevator.001
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10114,7 +10118,7 @@ GameObject:
   - component: {fileID: 2941971875121049587}
   - component: {fileID: 4560275031546376628}
   m_Layer: 0
-  m_Name: Syringe.001
+  m_Name: Syringe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -25,6 +25,9 @@ public class Door : MonoBehaviour
     public BoxCollider colliderA;
     public BoxCollider colliderBC;
 
+    public Material materialDoorLightAtoBC;
+    public Material materialDoorLightBCtoA;
+
     private void Start()
     {
         Player.Instance.OnStateChanged += DoorOpen;
@@ -51,7 +54,11 @@ public class Door : MonoBehaviour
                     {
                         doorOpened = true;
                         doorClosed = false;
+                        //문 소리
+                        materialDoorLightAtoBC.color = Color.green;
+                        materialDoorLightBCtoA.color = Color.green;
                     })
+                    .AppendInterval(1f)
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f))
                     .Join(door1RightDoor.transform.DOLocalMoveZ(3, 2f))
                     .Join(door2LeftDoor.transform.DOLocalMoveZ(-3, 2f))
@@ -71,13 +78,19 @@ public class Door : MonoBehaviour
                     {
                         doorClosed = true;
                         doorOpened = false;
-                        colliderA.enabled=!colliderA.enabled;
-                        colliderBC.enabled=!colliderBC.enabled;
+                        colliderA.enabled = !colliderA.enabled;
+                        colliderBC.enabled = !colliderBC.enabled;
+                        //문 소리
                     })
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f))
                     .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f))
                     .Join(door2LeftDoor.transform.DOLocalMoveZ(3, 2f))
-                    .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f));
+                    .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f))
+                    .AppendCallback(() =>
+                    {
+                        materialDoorLightAtoBC.color = Color.red;
+                        materialDoorLightBCtoA.color = Color.red;
+                    });
             }
         }
     }

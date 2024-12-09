@@ -204,6 +204,7 @@ public class XRController : MonoBehaviour
                         needleWrapping.SetActive(false);
                         UpdateControllerModel(needleM);
                     }
+                    
                 }
             }
         }
@@ -330,6 +331,11 @@ public class XRController : MonoBehaviour
         if (newModelPrefab != null)
         {
             currentModel = Instantiate(newModelPrefab.gameObject, controller.transform);
+        }
+
+        if (controller != null)
+        {
+            controller.SendHapticImpulse(1f, 10f);
         }
     }
 }
