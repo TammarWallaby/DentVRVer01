@@ -15,7 +15,6 @@ public class Door : MonoBehaviour
 
     public Player.PlayerState doorOpenState1; // 문이 열릴 조건, 설정 필수
     public Player.PlayerState doorOpenState2; // 문이 열릴 조건2, 설정 필수
-    //public Player.PlayerState doorCloseWithStateChange; // 문이 닫히면 플레이어 State 변경, 설정 필수
 
     public GameObject door1LeftDoor;
     public GameObject door1RightDoor;
@@ -23,12 +22,17 @@ public class Door : MonoBehaviour
     public GameObject door2LeftDoor;
     public GameObject door2RightDoor;
 
+    public BoxCollider colliderA;
+    public BoxCollider colliderBC;
+
     private void Start()
     {
         Player.Instance.OnStateChanged += DoorOpen;
 
         doorOpened = false;
         doorClosed = true;
+        colliderA.enabled = false;
+        colliderBC.enabled = true;
     }
 
     private void OnDisable()
@@ -67,6 +71,8 @@ public class Door : MonoBehaviour
                     {
                         doorClosed = true;
                         doorOpened = false;
+                        colliderA.enabled=!colliderA.enabled;
+                        colliderBC.enabled=!colliderBC.enabled;
                     })
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f))
                     .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f))

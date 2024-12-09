@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ecddf93090c6c940b2a5857877a2991
+guid: 8ed7bc13bf0798b4eb55bfb3e12511d4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,6 +19,26 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CeilingSide
     second: {fileID: 2100000, guid: 3c64ed85e4b708149b1345365c512570, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorLightAtoB
+    second: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorLightAtoC
+    second: {fileID: 2100000, guid: 8b9f3ab1a4b5d7549a04d711846c0503, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorLightBtoA
+    second: {fileID: 2100000, guid: 007d1645fc78d1c4388ffe95dd2f8f4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorLightCtoA
+    second: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -54,11 +74,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Neon
     second: {fileID: 2100000, guid: 5d9d567bab0001b43a91757b965d589b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Open
-    second: {fileID: 2100000, guid: 85aadd4da493dff468cddb2540e0afde, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
