@@ -59,10 +59,10 @@ public class Door : MonoBehaviour
                         materialDoorLightBCtoA.color = Color.green;
                     })
                     .AppendInterval(1f)
-                    .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f))
-                    .Join(door1RightDoor.transform.DOLocalMoveZ(3, 2f))
-                    .Join(door2LeftDoor.transform.DOLocalMoveZ(-3, 2f))
-                    .Join(door2RightDoor.transform.DOLocalMoveZ(3, 2f));
+                    .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
+                    .Join(door1RightDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
+                    .Join(door2LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
+                    .Join(door2RightDoor.transform.DOLocalMoveZ(3, 2f).SetRelative());
             }
         }
     }
@@ -82,10 +82,10 @@ public class Door : MonoBehaviour
                         colliderBC.enabled = !colliderBC.enabled;
                         //문 소리
                     })
-                    .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f))
-                    .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f))
-                    .Join(door2LeftDoor.transform.DOLocalMoveZ(3, 2f))
-                    .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f))
+                    .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
+                    .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
+                    .Join(door2LeftDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
+                    .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
                     .AppendCallback(() =>
                     {
                         materialDoorLightAtoBC.color = Color.red;
