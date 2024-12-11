@@ -91,6 +91,23 @@ public class Door : MonoBehaviour
                         materialDoorLightAtoBC.color = Color.red;
                         materialDoorLightBCtoA.color = Color.red;
                     });
+
+                if (Player.Instance.CurrentState == Player.PlayerState.StartComplete)
+                {
+                    Player.Instance.ChangeState(Player.PlayerState.Anesthesia);
+                }
+                else if (Player.Instance.CurrentState == Player.PlayerState.SutureComplete)
+                {
+                    Player.Instance.ChangeState(Player.PlayerState.Wait);
+                }
+                else if (Player.Instance.CurrentState == Player.PlayerState.WaitComplete)
+                {
+                    Player.Instance.ChangeState(Player.PlayerState.HARemove);
+                }
+                else if (Player.Instance.CurrentState == Player.PlayerState.CrownPlaceComplete)
+                {
+                    Player.Instance.ChangeState(Player.PlayerState.Finish);
+                }
             }
         }
     }
