@@ -32,16 +32,15 @@ public class XRController : MonoBehaviour
     public GameObject drill4;
     public GameObject driver;
     public GameObject driver2;
-    public GameObject driver3;
     public GameObject elevator;
     public GameObject fixture;
     public GameObject handpiece;
-    public GameObject handpiece2;
     public GameObject healingAbutment;
     public GameObject scalpel;
     public GameObject syringe;
     public GameObject torqueRatchet;
     public GameObject needleWrapping;
+    public GameObject crown;
 
     [Header("Tools Model")] // Prefab 폴더에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
     public GameObject abutmentM;
@@ -50,11 +49,9 @@ public class XRController : MonoBehaviour
     public GameObject drill4M;
     public GameObject driverM;
     public GameObject driver2M;
-    public GameObject driver3M;
     public GameObject elevatorM;
     public GameObject fixtureM;
     public GameObject handpieceM;
-    public GameObject handpiece2M;
     public GameObject handpieceWithDrill2M;
     public GameObject handpieceWithDrill3M;
     public GameObject handpieceWithDrill4M;
@@ -63,6 +60,7 @@ public class XRController : MonoBehaviour
     public GameObject syringeM;
     public GameObject torqueRatchetM;
     public GameObject needleM;
+    public GameObject crownM;
 
 
     public RaycastHit hit;
@@ -154,11 +152,6 @@ public class XRController : MonoBehaviour
                         driver2.SetActive(false);
                         UpdateControllerModel(driver2M);
                     }
-                    else if (goName == "Driver3")
-                    {
-                        driver3.SetActive(false);
-                        UpdateControllerModel(driver3M);
-                    }
                     else if (goName == "Elevator")
                     {
                         elevator.SetActive(false);
@@ -173,11 +166,6 @@ public class XRController : MonoBehaviour
                     {
                         handpiece.SetActive(false);
                         UpdateControllerModel(handpieceM);
-                    }
-                    else if (goName == "Handpiece2")
-                    {
-                        handpiece2.SetActive(false);
-                        UpdateControllerModel(handpiece2M);
                     }
                     else if (goName == "HealingAbutment")
                     {
@@ -203,6 +191,11 @@ public class XRController : MonoBehaviour
                     {
                         needleWrapping.SetActive(false);
                         UpdateControllerModel(needleM);
+                    }
+                    else if (goName == "Crown")
+                    {
+                        crown.SetActive(false);
+                        UpdateControllerModel(crownM);
                     }
                     
                 }
@@ -252,10 +245,6 @@ public class XRController : MonoBehaviour
                 {
                     driver2.SetActive(true);
                 }
-                else if (currentModel.CompareTag("Driver3"))
-                {
-                    driver3.SetActive(true);
-                }
                 else if (currentModel.CompareTag("Elevator"))
                 {
                     elevator.SetActive(true);
@@ -267,10 +256,6 @@ public class XRController : MonoBehaviour
                 else if (currentModel.CompareTag("Handpiece"))
                 {
                     handpiece.SetActive(true);
-                }
-                else if (currentModel.CompareTag("Handpiece2"))
-                {
-                    handpiece2.SetActive(true);
                 }
                 else if (currentModel.CompareTag("HealingAbutment"))
                 {
@@ -291,6 +276,10 @@ public class XRController : MonoBehaviour
                 else if (currentModel.CompareTag("Needle"))
                 {
                     needleWrapping.SetActive(true);
+                }
+                else if (currentModel.CompareTag("Crown"))
+                {
+                    crown.SetActive(true);
                 }
                 UpdateControllerModel(controllerM);
             }
@@ -335,7 +324,7 @@ public class XRController : MonoBehaviour
 
         if (controller != null)
         {
-            controller.SendHapticImpulse(1f, 10f);
+            controller.SendHapticImpulse(0.2f, 0.1f);
         }
     }
 }

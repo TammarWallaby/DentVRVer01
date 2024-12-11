@@ -116,16 +116,19 @@ public class SurgeryManager : MonoBehaviour
 
     private void Update()
     {
-        if (controller.interactor.TryGetCurrent3DRaycastHit(out hit))
+        if (isSequenceRunning)
         {
-            if (!hit.collider.CompareTag("Donut"))
+            if (controller.interactor.TryGetCurrent3DRaycastHit(out hit))
+            {
+                if (!hit.collider.CompareTag("Donut"))
+                {
+                    PauseSequence();
+                }
+            }
+            else
             {
                 PauseSequence();
             }
-        }
-        else
-        {
-            PauseSequence();
         }
     }
 
@@ -140,6 +143,7 @@ public class SurgeryManager : MonoBehaviour
 
     void HandleActionStarted(InputAction.CallbackContext context)
     {
+
         if (controller.interactor.TryGetCurrent3DRaycastHit(out hit))
         {
             donutName = hit.collider.gameObject.name;
@@ -970,6 +974,7 @@ public class SurgeryManager : MonoBehaviour
                                     gumSuture5.SetActive(false);
                                     gumSuture6.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.SutureComplete);
+                                    donutWait1.SetActive(true); // 임시
 
                                     isSequenceAssigned = false;
                                 });

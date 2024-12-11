@@ -21,12 +21,10 @@ TagManager:
   - Syringe
   - TorqueRatchet
   - Controller
-  - Handpiece2
-  - Driver2
-  - Driver3
   - Donut
   - Needle
   - Crown
+  - Driver2
   layers:
   - Default
   - TransparentFX
