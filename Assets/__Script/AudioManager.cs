@@ -32,14 +32,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     public void PlayAudio(int index)
     {
-        if(index == 0)
-        {
-            myAudio[0].Play();
-        }
-        else
-        {
-            myAudio[index].Play();
-        }
-                   
+       myAudio[0].Play();
+                  
     }
 }
