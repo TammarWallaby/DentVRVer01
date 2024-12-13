@@ -1,22 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance { get; private set; }  
     AudioSource[] myAudio;
     public Text UI;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);    
+        }
+        
+    }
     void Start()
     {
-        myAudio = GetComponents<AudioSource>();
-   
+        myAudio = GetComponents<AudioSource>();   
     }
 
     // Update is called once per frame
-    void Update()
+    public void PlayAudio(int index)
     {
-        myAudio[0].Play(); 
+        if(index == 0)
+        {
+            myAudio[0].Play();
+        }
+        else
+        {
+            myAudio[index].Play();
+        }
+                   
     }
 }
