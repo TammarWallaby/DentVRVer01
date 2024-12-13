@@ -10,23 +10,21 @@ TagManager:
   - Drill3
   - Drill4
   - Driver
-  - DriverWithAbutment
-  - DriverWithHealingAbutment
   - Elevator
   - Fixture
   - Handpiece
   - HandpieceWithDrill2
   - HandpieceWithDrill3
   - HandpieceWithDrill4
-  - HandpieceWithFixture
   - HealingAbutment
   - Scalpel
   - Syringe
   - TorqueRatchet
   - Controller
-  - Handpiece2
+  - Donut
+  - Needle
+  - Crown
   - Driver2
-  - Driver3
   layers:
   - Default
   - TransparentFX
@@ -35,7 +33,7 @@ TagManager:
   - Water
   - UI
   - Tool
-  - 
+  - Donut
   - 
   - 
   - 
