@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance { get; private set; }  
+    public static AudioManager instance { get;  set; }  
     AudioSource[] myAudio;
     public Text UI;
     // Start is called before the first frame update
 
-    private void Awake()
+    void Awake()
     {
         if(instance == null)
         {
