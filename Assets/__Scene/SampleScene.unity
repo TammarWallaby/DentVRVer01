@@ -3644,11 +3644,11 @@ MonoBehaviour:
   drill4: {fileID: 7192332813898147047}
   driver: {fileID: 6023031695501751668}
   driver2: {fileID: 1838744954}
-  driver3: {fileID: 335374128}
+  driver3: {fileID: 0}
   elevator: {fileID: 1412606649531175777}
   fixture: {fileID: 1043541320395785226}
   handpiece: {fileID: 6492494119835380269}
-  handpiece2: {fileID: 1642708053}
+  handpiece2: {fileID: 0}
   healingAbutment: {fileID: 5018967508322512527}
   scalpel: {fileID: 8347791833709148696}
   syringe: {fileID: 6486049103929829308}
@@ -3659,13 +3659,13 @@ MonoBehaviour:
   drill4M: {fileID: 8958458118434867454, guid: e1e2917b20d75fb42adc830886dad1c0, type: 3}
   driverM: {fileID: 8948733170719291867, guid: ada3f7b8f73fa214d99b39bb4e77804b, type: 3}
   driver2M: {fileID: 8948733170719291867, guid: 63a3ccf504c7e724b913b4ef747fee8b, type: 3}
-  driver3M: {fileID: 8948733170719291867, guid: f46118dfd9ed7a5489b09f03eed08c4c, type: 3}
+  driver3M: {fileID: 0}
   driverWithAbutmentM: {fileID: 0}
   driverWithHealingAbutmentM: {fileID: 0}
   elevatorM: {fileID: 7783145988949435764, guid: f7b19f73e8c46164cbc8242714f85c36, type: 3}
   fixtureM: {fileID: 8830270117335123122, guid: 7fb3d4efc641aa240824ed45be15aad6, type: 3}
   handpieceM: {fileID: 7760502524500966519, guid: 7f8118d9156d20b4281e295c841e99e1, type: 3}
-  handpiece2M: {fileID: 7760502524500966519, guid: 0b676f350bc4b4c47ba1fc7499b74bbd, type: 3}
+  handpiece2M: {fileID: 0}
   handpieceWithDrill2M: {fileID: 6348643349648381547, guid: 95f6b0553b4cbf649a07f1ff64190760, type: 3}
   handpieceWithDrill3M: {fileID: 4180491854749848477, guid: a2df1ebeeab93844191d77ab839064dc, type: 3}
   handpieceWithDrill4M: {fileID: 5028100727430586970, guid: 8b7f3980bceb2a3448f002a53a570626, type: 3}
@@ -4323,6 +4323,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948390627}
   m_CullTransparentMesh: 1
+--- !u!1 &976313452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976313454}
+  - component: {fileID: 976313453}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &976313453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976313452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c7e451aa896134580ee784ffb13ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudio: {fileID: 0}
+  effectAudios: []
+  backgroundVolumeSlider: {fileID: 0}
+  effectVolumeSlider: {fileID: 0}
+  sliderHeight: 0.2
+  minVolume: 0
+  maxVolume: 1
+--- !u!4 &976313454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976313452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982028895
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,11 +7716,11 @@ MonoBehaviour:
   drill4: {fileID: 7192332813898147047}
   driver: {fileID: 6023031695501751668}
   driver2: {fileID: 1838744954}
-  driver3: {fileID: 335374128}
+  driver3: {fileID: 0}
   elevator: {fileID: 1412606649531175777}
   fixture: {fileID: 1043541320395785226}
   handpiece: {fileID: 6492494119835380269}
-  handpiece2: {fileID: 1642708053}
+  handpiece2: {fileID: 0}
   healingAbutment: {fileID: 5018967508322512527}
   scalpel: {fileID: 8347791833709148696}
   syringe: {fileID: 6486049103929829308}
@@ -7680,13 +7731,13 @@ MonoBehaviour:
   drill4M: {fileID: 8958458118434867454, guid: e1e2917b20d75fb42adc830886dad1c0, type: 3}
   driverM: {fileID: 8948733170719291867, guid: ada3f7b8f73fa214d99b39bb4e77804b, type: 3}
   driver2M: {fileID: 8948733170719291867, guid: 63a3ccf504c7e724b913b4ef747fee8b, type: 3}
-  driver3M: {fileID: 8948733170719291867, guid: f46118dfd9ed7a5489b09f03eed08c4c, type: 3}
+  driver3M: {fileID: 0}
   driverWithAbutmentM: {fileID: 0}
   driverWithHealingAbutmentM: {fileID: 0}
   elevatorM: {fileID: 7783145988949435764, guid: f7b19f73e8c46164cbc8242714f85c36, type: 3}
   fixtureM: {fileID: 8830270117335123122, guid: 7fb3d4efc641aa240824ed45be15aad6, type: 3}
   handpieceM: {fileID: 7760502524500966519, guid: 7f8118d9156d20b4281e295c841e99e1, type: 3}
-  handpiece2M: {fileID: 7760502524500966519, guid: 0b676f350bc4b4c47ba1fc7499b74bbd, type: 3}
+  handpiece2M: {fileID: 0}
   handpieceWithDrill2M: {fileID: 6348643349648381547, guid: 95f6b0553b4cbf649a07f1ff64190760, type: 3}
   handpieceWithDrill3M: {fileID: 4180491854749848477, guid: a2df1ebeeab93844191d77ab839064dc, type: 3}
   handpieceWithDrill4M: {fileID: 5028100727430586970, guid: 8b7f3980bceb2a3448f002a53a570626, type: 3}
@@ -10261,3 +10312,4 @@ SceneRoots:
   - {fileID: 1386602202}
   - {fileID: 915177263}
   - {fileID: 1414638584}
+  - {fileID: 976313454}
