@@ -4,6 +4,7 @@
  * 환경설정 패널 + 시간정지 , 끝내기 '게임 종료'
  */
 
+/*
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -162,3 +163,4 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 }
+*/
