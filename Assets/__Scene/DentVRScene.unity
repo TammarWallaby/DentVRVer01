@@ -1113,9 +1113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundAudio: {fileID: 1568968526}
   effectAudios: []
-  backgroundVolumeSlider: {fileID: 1995447259}
-  effectVolumeSlider: {fileID: 1052310710}
-  sliderHeight: 0.2
+  backgroundVolumeSlider: {fileID: 1995447260}
+  effectVolumeSlider: {fileID: 1052310711}
   minVolume: 0
   maxVolume: 1
 --- !u!4 &226728955
@@ -8650,6 +8649,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8969571752666551114, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
   m_PrefabInstance: {fileID: 1052310709}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1052310711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8969571752666551115, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
+  m_PrefabInstance: {fileID: 1052310709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058331577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16231,6 +16241,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8969571752666551114, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
   m_PrefabInstance: {fileID: 1995447258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1995447260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8969571752666551115, guid: 657321a07c3561043af55547ec4b0ed7, type: 3}
+  m_PrefabInstance: {fileID: 1995447258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2008966550
 GameObject:
   m_ObjectHideFlags: 0
