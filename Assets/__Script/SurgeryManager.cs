@@ -1233,6 +1233,7 @@ public class SurgeryManager : MonoBehaviour
                         controller.UpdateControllerModel(controller.controllerM);
                         donutCrownPlace1.SetActive(false);
                         crown1.SetActive(true);
+                        Player.Instance.ChangeState(Player.PlayerState.CrownPlaceComplete);
                     }
                 }
             }
