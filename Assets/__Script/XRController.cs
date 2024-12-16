@@ -305,6 +305,21 @@ public class XRController : MonoBehaviour
                 UpdateControllerModel(controllerM);
                 oppositeController.UpdateControllerModel(handpieceWithDrill4M);
             }
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill2"))
+            {
+                UpdateControllerModel(handpieceWithDrill2M);
+                oppositeController.UpdateControllerModel(controllerM);
+            }
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill3"))
+            {
+                UpdateControllerModel(handpieceWithDrill3M);
+                oppositeController.UpdateControllerModel(controllerM);
+            }
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill4"))
+            {
+                UpdateControllerModel(handpieceWithDrill4M);
+                oppositeController.UpdateControllerModel(controllerM);
+            }
         }
     }
 
