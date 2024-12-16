@@ -2140,6 +2140,89 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
   m_PrefabInstance: {fileID: 494465036}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &515550680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515550681}
+  - component: {fileID: 515550683}
+  - component: {fileID: 515550682}
+  m_Layer: 0
+  m_Name: DientesDrill3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515550681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515550680}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.29467, y: -0.41081524, z: -7.0873294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1932468927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &515550682
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515550680}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d2c9b196423bbc14a923782ea4509855, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &515550683
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515550680}
+  m_Mesh: {fileID: -7321665145358934110, guid: a3460fbeade2f7040b88dfd09ac10c39, type: 3}
 --- !u!1 &517263103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2251,7 @@ Transform:
   m_GameObject: {fileID: 517263103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.294668, y: -0.41081524, z: -7.0873294}
+  m_LocalPosition: {x: 28.29467, y: -0.41081524, z: -7.0873294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3925,6 +4008,7 @@ MonoBehaviour:
   drill2: {fileID: 6322499694954879167, guid: a0425733e2234d74bafa3de7033bd223, type: 3}
   drill3: {fileID: 7627357708533483728, guid: b15a615fc5a15bc47ac81e375c86f620, type: 3}
   drill4: {fileID: 2367862155188679555, guid: 26ad735c829e8214fae3e68768d88e55, type: 3}
+  gumDientesOrigin: {fileID: 0}
   gumDrill1: {fileID: 1563425497}
   gumDrill2: {fileID: 1950812902}
   gumDrill3: {fileID: 1417080687}
@@ -4257,7 +4341,7 @@ Transform:
   m_GameObject: {fileID: 1058331577}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.39375, y: 1.0371, z: -6.561}
+  m_LocalPosition: {x: 28.19559, y: 1.0371, z: -6.561}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4785,7 +4869,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186622031}
-  - component: {fileID: 1186622030}
   - component: {fileID: 1186622029}
   m_Layer: 0
   m_Name: AudioManager
@@ -4890,18 +4973,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1186622030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186622028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bafc6ed6d24ebc24abb4c3836b152b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1186622031
 Transform:
   m_ObjectHideFlags: 0
@@ -5340,89 +5411,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
   m_PrefabInstance: {fileID: 1262779252}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354521104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1354521105}
-  - component: {fileID: 1354521107}
-  - component: {fileID: 1354521106}
-  m_Layer: 0
-  m_Name: Dientes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1354521105
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354521104}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.294668, y: -0.41081524, z: -7.0873294}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1932468927}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1354521106
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354521104}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d2c9b196423bbc14a923782ea4509855, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1354521107
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1354521104}
-  m_Mesh: {fileID: -5089559229566471486, guid: a3460fbeade2f7040b88dfd09ac10c39, type: 3}
 --- !u!1 &1370521801
 GameObject:
   m_ObjectHideFlags: 0
@@ -5558,7 +5546,7 @@ Transform:
   m_GameObject: {fileID: 1403347673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.39375, y: 1.0128922, z: -6.606135}
+  m_LocalPosition: {x: 28.19559, y: 1.0128922, z: -6.606135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7388,7 +7376,7 @@ Transform:
   m_GameObject: {fileID: 1721752415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.39375, y: 1.0128922, z: -6.606135}
+  m_LocalPosition: {x: 28.19559, y: 1.0128922, z: -6.606135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8398,6 +8386,7 @@ MonoBehaviour:
   drill2: {fileID: 6322499694954879167, guid: a0425733e2234d74bafa3de7033bd223, type: 3}
   drill3: {fileID: 7627357708533483728, guid: b15a615fc5a15bc47ac81e375c86f620, type: 3}
   drill4: {fileID: 2367862155188679555, guid: 26ad735c829e8214fae3e68768d88e55, type: 3}
+  gumDientesOrigin: {fileID: 0}
   gumDrill1: {fileID: 1563425497}
   gumDrill2: {fileID: 1950812902}
   gumDrill3: {fileID: 1417080687}
@@ -8977,11 +8966,11 @@ Transform:
   m_GameObject: {fileID: 1932468926}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.58932, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1354521105}
+  - {fileID: 515550681}
   - {fileID: 517263104}
   - {fileID: 1721752416}
   - {fileID: 2121164314}
@@ -9364,7 +9353,7 @@ Transform:
   m_GameObject: {fileID: 2121164313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.39375, y: 1.012892, z: -6.606135}
+  m_LocalPosition: {x: 28.19559, y: 1.012892, z: -6.606135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
