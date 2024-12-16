@@ -190,7 +190,9 @@ public class SurgeryManager : MonoBehaviour
                                 .OnComplete(() =>
                                 {
                                     donutAnesthesia1.SetActive(false);
-                                    Player.Instance.ChangeState(Player.PlayerState.AnesthesiaComplete);
+                                    Player.Instance.ChangeState(Player.PlayerState.Incision);
+
+                                    donutIncision1.SetActive(true);
 
                                     isSequenceAssigned = false;
                                 });
@@ -333,7 +335,9 @@ public class SurgeryManager : MonoBehaviour
                                     donutIncision3.SetActive(false);
                                     gumIncision2.SetActive(false);
                                     gumIncision3.SetActive(true);
-                                    Player.Instance.ChangeState(Player.PlayerState.IncisionComplete);
+                                    Player.Instance.ChangeState(Player.PlayerState.Elevation);
+
+                                    donutElevation1.SetActive(true);
 
                                     isSequenceAssigned = false;
                                 });
@@ -431,7 +435,9 @@ public class SurgeryManager : MonoBehaviour
                                     donutElevation2.SetActive(false);
                                     gumElevation1.SetActive(false);
                                     gumElevation2.SetActive(true);
-                                    Player.Instance.ChangeState(Player.PlayerState.ElevationComplete);
+                                    Player.Instance.ChangeState(Player.PlayerState.Drill);
+
+                                    donutDrill1.SetActive(true);
 
                                     isSequenceAssigned = false;
                                 });
@@ -571,7 +577,9 @@ public class SurgeryManager : MonoBehaviour
                                     donutDrill3.SetActive(false);                      
                                     gumDrill2.SetActive(false);
                                     gumDrill3.SetActive(true);
-                                    Player.Instance.ChangeState(Player.PlayerState.DrillComplete);
+                                    Player.Instance.ChangeState(Player.PlayerState.FixturePlace);
+
+                                    donutFixturePlace1.SetActive(true);
 
                                     isSequenceAssigned = false;
                                 });
@@ -610,7 +618,7 @@ public class SurgeryManager : MonoBehaviour
 
                             moveSequence = DOTween.Sequence()
                                 .Append(donutFixturePlace2.transform.DOMove(donutFixturePlace2.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
-                                .Join(fixture1.transform.DOMove(new Vector3(140.5287f, 0.953271f, -6.829498f), 6f).SetEase(Ease.Linear));
+                                .Join(fixture1.transform.DOMove(new Vector3(-28.39375f, 1.012892f, -6.606135f), 6f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
@@ -633,7 +641,9 @@ public class SurgeryManager : MonoBehaviour
                                 .OnComplete(() =>
                                 {
                                     donutFixturePlace2.SetActive(false);
-                                    Player.Instance.ChangeState(Player.PlayerState.FixturePlaceComplete);
+                                    Player.Instance.ChangeState(Player.PlayerState.HAPlace);
+
+                                    donutHAPlace1.SetActive(true);
 
                                     isSequenceAssigned = false;
                                 });
@@ -672,7 +682,7 @@ public class SurgeryManager : MonoBehaviour
 
                             moveSequence = DOTween.Sequence()
                                 .Append(donutHAPlace2.transform.DOMove(donutHAPlace2.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
-                                .Join(healingAbutment1.transform.DOMove(new Vector3(168.6542f, 0.9977663f, -6.752431f), 6f).SetEase(Ease.Linear));
+                                .Join(healingAbutment1.transform.DOMove(new Vector3(-28.39375f, 1.012892f, -6.606135f), 6f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
