@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: f0f5c951c318b7248b8862713a3a2069
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AbutYellow
+    second: {fileID: 2100000, guid: da1f72d8f5f8e584e979cf48f0eaefb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Antideslizante
+    second: {fileID: 2100000, guid: 9e1b076151da8164f90fb391d56ef24a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BLACK A
+    second: {fileID: 2100000, guid: cf01bb45a231a4444b1f50acb4bf2f5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 2bdc0a728f0a887468bf554eb861d6c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bell
+    second: {fileID: 2100000, guid: 2380bdf8b77ee784ba7c45ba00acb766, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branch
+    second: {fileID: 2100000, guid: b695f82287d89414b94b7e8780ac558c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bricks
+    second: {fileID: 2100000, guid: 0bb4398f0ca3c284982999d8af901902, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BurntFireWood
+    second: {fileID: 2100000, guid: 5d8c0832842e16745a00d0d6cdfcad82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet
+    second: {fileID: 2100000, guid: 0f42259ec7e1a5546a1f391776331bff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceramic
+    second: {fileID: 2100000, guid: c16d6b433642b59419af229f454a4976, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Christmas
+    second: {fileID: 2100000, guid: dc665b9c06987264b9b568fcd7a736a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChristmasTree
+    second: {fileID: 2100000, guid: b2d071d0b3f461c4e99036f9afa0ba25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorBlack
+    second: {fileID: 2100000, guid: 241e766ab43100b4faa8b6f9da2d739e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorBlackMatte
+    second: {fileID: 2100000, guid: 32accea5f30545547b9281e57e4c0df4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorWhite
+    second: {fileID: 2100000, guid: 9e82da60983d63c43b50c737ca2b8adb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cookie
+    second: {fileID: 2100000, guid: a7bc9626b5a4b1d4ab7fe47c67700d09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CookieG
+    second: {fileID: 2100000, guid: d4918b302ff829c44ae525e72e35040f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CookieR
+    second: {fileID: 2100000, guid: 695160e23fbe82c4da7dd57b71b0e99b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FairyLightB
+    second: {fileID: 2100000, guid: af40d86577e118a43be0c39bb8cef1d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FairyLightG
+    second: {fileID: 2100000, guid: 701eccae71513ac41880a4c540aad5db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FairyLightP
+    second: {fileID: 2100000, guid: ba34d13e938ee1e4d993c489bba3f6cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FairyLightR
+    second: {fileID: 2100000, guid: 2cbefa02a06d8ad4ca0d2b4dea68ee57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FireWood
+    second: {fileID: 2100000, guid: a22c960ed6ff05f49baa2864727f2c43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 2ac3cd9140d39074789d37ccbe638963, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GREEN A
+    second: {fileID: 2100000, guid: 3aa7070b0d1b47c4a972d52d9b092dc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Garland
+    second: {fileID: 2100000, guid: 0edf2705422ee2c4bb46eb931fdc3e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gifts
+    second: {fileID: 2100000, guid: 5a2e452397b2d604799e97734a97d602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: e04daf3779701f74983274342aafe737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Merry
+    second: {fileID: 2100000, guid: 65b6a6dba92323142bbcd2a4f531440d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalLight
+    second: {fileID: 2100000, guid: 7a49451cc19adbd409ca9fe4ebedc0f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticGold
+    second: {fileID: 2100000, guid: b1a4d289b70a4f043a70a3f531756d36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RED A
+    second: {fileID: 2100000, guid: 56fc472767716f74fb67c865d7e444f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnowFlake
+    second: {fileID: 2100000, guid: b0e0a78607a8d6c4ea9b27efe93395c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnowManL
+    second: {fileID: 2100000, guid: 2877da2bb1b4f6843a374f1a747907b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnowManS
+    second: {fileID: 2100000, guid: 9309e60ca857b7d408fb1ddf769ff3bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture2K
+    second: {fileID: 2100000, guid: afcd4eab52161964da1136aab7af8482, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WHITE A
+    second: {fileID: 2100000, guid: 6e12773dcdc6e984dbcfeb762e0df94c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WineGlass
+    second: {fileID: 2100000, guid: 16b08ea67eade8e4baecdbfc0b52f2ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: a0b9b648444dc33408a7b0c3379834e1, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
