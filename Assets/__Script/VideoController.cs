@@ -21,8 +21,6 @@ public class VideoController : MonoBehaviour
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
         videoPlayer.SetTargetAudioSource(0, audioSource);
         videoPlayer.loopPointReached += HandleVideoEnd;
-
-        PlayCurrentVideo();
     }
 
     // 현재 비디오 재생
