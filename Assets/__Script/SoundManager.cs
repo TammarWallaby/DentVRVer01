@@ -1,58 +1,65 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // UI 관련 네임스페이스 추가
 
 public class SoundManager : MonoBehaviour
 {
     [Header("Audio Sources")]
-    public AudioSource backgroundAudio;
-    public AudioSource[] effectAudios; // 여러 효과음을 처리하기 위한 배열
+    public AudioSource backgroundAudio; // 배경음 오디오 소스
+    public AudioSource[] effectAudios; // 효과음 오디오 소스 배열
 
     [Header("Sliders")]
-    public Transform backgroundVolumeSlider;
-    public Transform effectVolumeSlider;
+    public Slider backgroundVolumeSlider; // 배경음 슬라이더
+    public Slider effectVolumeSlider; // 효과음 슬라이더
 
-    [Header("Slider Settings")]
-    public float sliderHeight = 0.2f; // 슬라이더가 이동할 수 있는 높이 범위
-    public float minVolume = 0f;
-    public float maxVolume = 1f;
-
-    private Vector3 backgroundSliderStartPos;
-    private Vector3 effectSliderStartPos;
+    [Header("Volume Settings")]
+    public float minVolume = 0f; // 최소 볼륨
+    public float maxVolume = 1f; // 최대 볼륨
 
     void Start()
     {
-        // 슬라이더의 초기 위치를 저장
-        if (backgroundVolumeSlider != null)
-            backgroundSliderStartPos = backgroundVolumeSlider.localPosition;
-
-        if (effectVolumeSlider != null)
-            effectSliderStartPos = effectVolumeSlider.localPosition;
-    }
-
-    void Update()
-    {
+        // 슬라이더 초기화
         if (backgroundVolumeSlider != null && backgroundAudio != null)
         {
-            // 슬라이더 위치를 기반으로 배경음 볼륨 계산
-            float backgroundVolume = Mathf.Clamp01((backgroundVolumeSlider.localPosition.y - backgroundSliderStartPos.y) / sliderHeight);
-            backgroundAudio.volume = Mathf.Lerp(minVolume, maxVolume, backgroundVolume);
+            // 배경음 초기 볼륨을 슬라이더 값에 맞춤
+            backgroundVolumeSlider.value = backgroundAudio.volume;
+            backgroundVolumeSlider.onValueChanged.AddListener(SetBackgroundVolume);
         }
 
         if (effectVolumeSlider != null && effectAudios != null)
         {
-            // 슬라이더 위치를 기반으로 효과음 볼륨 계산
-            float effectVolume = Mathf.Clamp01((effectVolumeSlider.localPosition.y - effectSliderStartPos.y) / sliderHeight);
+            // 효과음 초기 볼륨을 슬라이더 값에 맞춤
+            effectVolumeSlider.value = effectAudios.Length > 0 ? effectAudios[0].volume : 0f;
+            effectVolumeSlider.onValueChanged.AddListener(SetEffectVolume);
+        }
 
-            // 배열에 있는 모든 효과음의 볼륨 적용
+        // 배경음 재생
+        if (backgroundAudio != null)
+        {
+            backgroundAudio.loop = true;
+            backgroundAudio.Play();
+        }
+    }
+
+    // 슬라이더 값 변경 시 호출되는 메서드
+    public void SetBackgroundVolume(float value)
+    {
+        if (backgroundAudio != null)
+        {
+            backgroundAudio.volume = Mathf.Lerp(minVolume, maxVolume, value);
+        }
+    }
+
+    public void SetEffectVolume(float value)
+    {
+        if (effectAudios != null)
+        {
             foreach (var effectAudio in effectAudios)
             {
                 if (effectAudio != null)
                 {
-                    effectAudio.volume = Mathf.Lerp(minVolume, maxVolume, effectVolume);
+                    effectAudio.volume = Mathf.Lerp(minVolume, maxVolume, value);
                 }
             }
         }
     }
 }
-
