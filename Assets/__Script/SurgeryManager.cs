@@ -92,7 +92,6 @@ public class SurgeryManager : MonoBehaviour
 
     [Header("CrownPlace")]
     public GameObject donutCrownPlace1;
-    public GameObject donutCrownPlace2;
     public GameObject crown1;
 
 
