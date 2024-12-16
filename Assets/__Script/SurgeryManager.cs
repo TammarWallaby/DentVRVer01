@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
+
 public class SurgeryManager : MonoBehaviour
 {
     [Header("Main Setting")]
@@ -24,7 +25,7 @@ public class SurgeryManager : MonoBehaviour
     [Header("Anesthesia")]
     public GameObject donutAnesthesia1; // 도넛은 모두 씬에 있는 오브젝트를 넣음
     public GameObject syringe; // 프리팹 모델 넣어야 함!
-    public GameObject syringeHandle; // 프리팹 모델 넣어야 함!
+    private GameObject syringeHandle; // syringe에서 자식 오브젝트 참조해야할듯
 
     [Header("Incision")]
     public GameObject donutIncision1;
@@ -102,12 +103,14 @@ public class SurgeryManager : MonoBehaviour
     private bool isSequenceAssigned = false;
     private RaycastHit hit;
     private string donutName;
+    private Coroutine hapticCoroutine;
 
     private void Awake()
     {
         if (triggerRef != null)
         {
             triggerRef.action.started += HandleActionStarted;
+            triggerRef.action.performed += HandleActionPerformed;
             triggerRef.action.canceled += HandleActionCanceled;
         }
     }
@@ -135,6 +138,7 @@ public class SurgeryManager : MonoBehaviour
         if(triggerRef != null)
         {
             triggerRef.action.started -= HandleActionStarted;
+            triggerRef.action.performed -= HandleActionPerformed;
             triggerRef.action.canceled -= HandleActionCanceled;
         }
     }
@@ -484,7 +488,6 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutDrill1.SetActive(false);
                                     donutDrill2.SetActive(true);
-                                    gumElevation2.SetActive(false);
                                     gumDrill1.SetActive(true);
 
                                     isSequenceAssigned = false;
@@ -606,7 +609,7 @@ public class SurgeryManager : MonoBehaviour
                         fixture1.SetActive(true);
                     }
                 }
-                else if (controller.currentModel.CompareTag("Handpiece2"))
+                else if (controller.currentModel.CompareTag("Handpiece"))
                 {
                     if (donutName == "DonutFixturePlace2")
                     {
@@ -1236,9 +1239,31 @@ public class SurgeryManager : MonoBehaviour
         }
     }
 
+    void HandleActionPerformed(InputAction.CallbackContext context)
+    {
+        if (controller.currentModel.CompareTag("Handpiece") || controller.currentModel.CompareTag("HandpieceWithDrill2") 
+            || controller.currentModel.CompareTag("HandpieceWithDrill3")||controller.currentModel.CompareTag("HandpieceWithDrill4"))
+        {
+            // 기존 코루틴이 있다면 먼저 멈추고
+            if (hapticCoroutine != null)
+            {
+                StopCoroutine(hapticCoroutine);
+            }
+
+            // 새 코루틴 시작
+            hapticCoroutine = StartCoroutine(ContinuousHapticFeedback());
+        }
+    }
+
     void HandleActionCanceled(InputAction.CallbackContext context)
     {
         PauseSequence();
+
+        if (hapticCoroutine != null)
+        {
+            StopCoroutine(hapticCoroutine);
+            hapticCoroutine = null;
+        }
     }
 
 
@@ -1265,6 +1290,16 @@ public class SurgeryManager : MonoBehaviour
                 gaugeSequence?.Pause();
                 isSequenceRunning = false;
             }
+        }
+    }
+
+    IEnumerator ContinuousHapticFeedback()
+    {
+        while (true)
+        {
+            // 지속적으로 진동 
+            controller.controller.SendHapticImpulse(1f, 0.1f);
+            yield return new WaitForSeconds(0.1f); // 짧은 대기 시간으로 연속 진동 효과
         }
     }
 }
