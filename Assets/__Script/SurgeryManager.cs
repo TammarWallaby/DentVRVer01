@@ -49,6 +49,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject drill2; // 프리팹 모델
     public GameObject drill3; // 프리팹
     public GameObject drill4; // 프
+    public GameObject gumDientesOrigin;
     public GameObject gumDrill1;
     public GameObject gumDrill2;
     public GameObject gumDrill3;
@@ -488,6 +489,7 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutDrill1.SetActive(false);
                                     donutDrill2.SetActive(true);
+                                    gumDientesOrigin.SetActive(false);
                                     gumDrill1.SetActive(true);
 
                                     isSequenceAssigned = false;
@@ -719,7 +721,10 @@ public class SurgeryManager : MonoBehaviour
                             PlaySequence();
                         }
                     }
-                    else if (donutName == "DonutElevation3")
+                }
+                else if (controller.currentModel.CompareTag("Elevator"))
+                {
+                    if (donutName == "DonutElevation3")
                     {
                         if (isSequenceAssigned == false)
                         {
@@ -1117,7 +1122,7 @@ public class SurgeryManager : MonoBehaviour
 
                             moveSequence = DOTween.Sequence()
                                 .Append(donutHARemove1.transform.DOMove(donutHARemove1.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
-                                .Join(healingAbutment2.transform.DOMove(new Vector3(28.39375f, 1.0644f, -6.5075f), 6f).SetEase(Ease.Linear));
+                                .Join(healingAbutment2.transform.DOMove(new Vector3(28.19559f, 1.0644f, -6.5075f), 6f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
@@ -1182,7 +1187,7 @@ public class SurgeryManager : MonoBehaviour
 
                             moveSequence = DOTween.Sequence()
                                 .Append(donutAbutmentPlace2.transform.DOMove(donutAbutmentPlace2.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
-                                .Join(abutment1.transform.DOMove(new Vector3(28.39375f, 1.012892f, -6.606135f), 6f).SetEase(Ease.Linear));
+                                .Join(abutment1.transform.DOMove(new Vector3(28.19559f, 1.012892f, -6.606135f), 6f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
