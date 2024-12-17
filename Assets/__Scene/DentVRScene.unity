@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 7416536dbe0334cfd888dd1beb75a9fb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -958,8 +958,10 @@ MonoBehaviour:
   door2RightDoor: {fileID: 383916865}
   colliderA: {fileID: 272635300}
   colliderBC: {fileID: 272635299}
-  materialDoorLightAtoBC: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
-  materialDoorLightBCtoA: {fileID: 2100000, guid: 007d1645fc78d1c4388ffe95dd2f8f4e, type: 2}
+  materialDoorLightRed: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
+  materialDoorLightGreen: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
+  doorLight1: {fileID: 359359030748099116}
+  doorLight2: {fileID: 918599305737476051}
 --- !u!1001 &276624706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1833,13 +1835,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4074,6 +4076,55 @@ Transform:
   - {fileID: 832181701}
   m_Father: {fileID: 1685256673}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &877740959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877740961}
+  - component: {fileID: 877740960}
+  m_Layer: 0
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &877740960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877740959}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 727256e75dc92324785f3f787f1a24f7, type: 2}
+--- !u!4 &877740961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877740959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &924967667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,8 +4791,10 @@ MonoBehaviour:
   door2RightDoor: {fileID: 421355051}
   colliderA: {fileID: 1144921661}
   colliderBC: {fileID: 1144921660}
-  materialDoorLightAtoBC: {fileID: 2100000, guid: 8b9f3ab1a4b5d7549a04d711846c0503, type: 2}
-  materialDoorLightBCtoA: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
+  materialDoorLightRed: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
+  materialDoorLightGreen: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
+  doorLight1: {fileID: 5531175797256766681}
+  doorLight2: {fileID: 4083935046223633715}
 --- !u!1 &1152338078
 GameObject:
   m_ObjectHideFlags: 0
@@ -9614,7 +9667,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 643640423c9086245a5133674064fea2, type: 2}
-  - {fileID: 2100000, guid: 007d1645fc78d1c4388ffe95dd2f8f4e, type: 2}
+  - {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10122,7 +10175,7 @@ Transform:
   m_GameObject: {fileID: 806348179463751071}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.061999727, y: 1.0615, z: 0}
+  m_LocalPosition: {x: 0.028, y: 1.0615, z: 0}
   m_LocalScale: {x: 1.4285713, y: 1.4285715, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12218,7 +12271,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 643640423c9086245a5133674064fea2, type: 2}
-  - {fileID: 2100000, guid: 8b9f3ab1a4b5d7549a04d711846c0503, type: 2}
+  - {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12376,7 +12429,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 643640423c9086245a5133674064fea2, type: 2}
-  - {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
+  - {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13781,7 +13834,7 @@ Transform:
   m_GameObject: {fileID: 7564088781473922009}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.13799939, y: 1.129, z: 0}
+  m_LocalPosition: {x: -0.238, y: 1.129, z: 0}
   m_LocalScale: {x: 1.4285713, y: 1.4285715, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14006,7 +14059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5172979533543439317
 Transform:
   m_ObjectHideFlags: 0
@@ -14299,7 +14352,7 @@ Transform:
   m_GameObject: {fileID: 8024058018682874671}
   serializedVersion: 2
   m_LocalRotation: {x: -0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: -0.03199986, y: 1.1511, z: -0.0176}
+  m_LocalPosition: {x: -0.105, y: 1.176, z: -0.0176}
   m_LocalScale: {x: 1.4285713, y: 1.2903227, z: 1.0810812}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14619,8 +14672,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.2875772, y: 0.027695829, z: -6.8751483}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2295794626530808134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17254,6 +17307,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1186622031}
+  - {fileID: 877740961}
   - {fileID: 1685256673}
   - {fileID: 7382088625644706543}
   - {fileID: 706504430}

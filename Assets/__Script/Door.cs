@@ -25,8 +25,11 @@ public class Door : MonoBehaviour
     public BoxCollider colliderA;
     public BoxCollider colliderBC;
 
-    public Material materialDoorLightAtoBC;
-    public Material materialDoorLightBCtoA;
+    public Material materialDoorLightRed;
+    public Material materialDoorLightGreen;
+
+    public GameObject doorLight1;
+    public GameObject doorLight2;
 
     private void Start()
     {
@@ -55,8 +58,8 @@ public class Door : MonoBehaviour
                         doorOpened = true;
                         doorClosed = false;
                         //문 소리
-                        materialDoorLightAtoBC.color = Color.green;
-                        materialDoorLightBCtoA.color = Color.green;
+                        doorLight1.GetComponent<Renderer>().materials[1] = materialDoorLightGreen;
+                        doorLight2.GetComponent<Renderer>().materials[1] = materialDoorLightGreen;
                     })
                     .AppendInterval(1f)
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
@@ -88,8 +91,8 @@ public class Door : MonoBehaviour
                     .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
                     .AppendCallback(() =>
                     {
-                        materialDoorLightAtoBC.color = Color.red;
-                        materialDoorLightBCtoA.color = Color.red;
+                        doorLight1.GetComponent<Renderer>().materials[1] = materialDoorLightRed;
+                        doorLight2.GetComponent<Renderer>().materials[1] = materialDoorLightRed;
                     });
 
                 if (Player.Instance.CurrentState == Player.PlayerState.StartComplete)
