@@ -357,6 +357,7 @@ public class SurgeryManager : MonoBehaviour
                                     gumIncision2.SetActive(false);
                                     gumIncision3.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.Elevation);
+                                    effectStarB.GetComponent<ParticleSystem>().Play();
 
                                     donutElevation1.SetActive(true);
 
