@@ -46,10 +46,4 @@ public class UIManager : MonoBehaviour
         ChangeUI(nextIndex);
     }
 
-    // UI를 이전으로 전환
-    public void PreviousUI()
-    {
-        int prevIndex = (currentIndex - 1 + uiPanels.Length) % uiPanels.Length;
-        ChangeUI(prevIndex);
-    }
 }
