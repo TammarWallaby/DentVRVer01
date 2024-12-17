@@ -19,6 +19,23 @@ public class SurgeryManager : MonoBehaviour
     public XRController controller;
 
 
+    [Header("UI & Effect")]
+    public GameObject guideStart;
+    public GameObject guideAnesthesia;
+    public GameObject guideIncision;
+    public GameObject guideElevation;
+    public GameObject guideDrill;
+    public GameObject guideFixturePlace;
+    public GameObject guideHAPlace;
+    public GameObject guideSuture;
+    public GameObject guideWait;
+    public GameObject guideHARemove;
+    public GameObject guideAbutmentPlace;
+    public GameObject guideCrownPlace;
+
+    public GameObject effectStarB;
+    public GameObject effectStarC;
+
     [Header("Start")]
     public GameObject donutStart1;
 
@@ -194,6 +211,7 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutAnesthesia1.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Incision);
+                                    effectStarB.GetComponent<ParticleSystem>().Play();
 
                                     donutIncision1.SetActive(true);
 
