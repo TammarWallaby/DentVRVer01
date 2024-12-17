@@ -124,6 +124,8 @@ public class SurgeryManager : MonoBehaviour
     private string donutName;
     private Coroutine hapticCoroutine;
 
+    //-------------------------------------------
+    public UIManager uiManager;
     private void Awake()
     {
         if (triggerRef != null)
@@ -220,6 +222,7 @@ public class SurgeryManager : MonoBehaviour
                                     donutIncision1.SetActive(true);
 
                                     isSequenceAssigned = false;
+                                    uiManager.NextUI();
                                 });
 
                             isSequenceAssigned = true;
