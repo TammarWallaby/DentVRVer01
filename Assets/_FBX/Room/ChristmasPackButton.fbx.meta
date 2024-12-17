@@ -3,7 +3,12 @@ guid: 8f8f0034edec17d40ad7b5c449d4722b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SnowFlake
+    second: {fileID: 2100000, guid: b0e0a78607a8d6c4ea9b27efe93395c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
