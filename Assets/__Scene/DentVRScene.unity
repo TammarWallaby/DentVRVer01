@@ -23376,23 +23376,22 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f83d6b3afde0e4ea9ae77494b7be63, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 150
+    m_MaxSize: 223
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.85
+    m_LineSpacing: 1
   m_Text: " VR \uC0AC\uC6A9 \uBC29\uBC95:\n\n 1.\uC55E\uB4A4 \uC88C\uC6B0 \uC774\uB3D9\n
     2.\uCE74\uBA54\uB77C \uD68C\uC804 (\uC88C\uC6B0\uB85C \uD68C\uC804 \uAC00\uB2A5)\n
-    3.\uB3C4\uAD6C \uC9D1\uAE30 / \uB193\uAE30: IndexTrigger Button\n 4.\uB3C4\uAD6C
-    \uC0AC\uC6A9\uD558\uAE30: HandTrigger Button\n 5.\uC124\uC815\uCC3D\n 6. \uB098\uAC00\uAE30\n\n
-    \uBAA8\uB450 \uD655\uC778 \uD558\uC168\uB2E4\uBA74 \uB3C4\uB11B\uBC84\uD2BC\uC744
-    \uB20C\uB7EC\uC8FC\uC138\uC694"
+    3.\uB3C4\uAD6C \uC9D1\uAE30 / \uB193\uAE30\n 4.\uB3C4\uAD6C \uC0AC\uC6A9\uD558\uAE30\n
+    5.\uC124\uC815\uCC3D\n 6.\uB098\uAC00\uAE30\n\n \uBAA8\uB450 \uD655\uC778 \uD558\uC168\uB2E4\uBA74
+    \uB3C4\uB11B\uBC84\uD2BC\uC744 \uB20C\uB7EC\uC8FC\uC138\uC694 \n\n \u25B6"
 --- !u!222 &1435320309
 CanvasRenderer:
   m_ObjectHideFlags: 0
