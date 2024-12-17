@@ -176,6 +176,7 @@ public class SurgeryManager : MonoBehaviour
                 {
                     donutStart1.SetActive(false);
                     Player.Instance.ChangeState(Player.PlayerState.StartComplete);
+                    effectStarA.Play();
                 }
             }
 
@@ -213,6 +214,8 @@ public class SurgeryManager : MonoBehaviour
                                     donutAnesthesia1.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Incision);
                                     effectStarB.Play();
+                                    guideAnesthesia.SetActive(false);
+                                    guideIncision.SetActive(true);
 
                                     donutIncision1.SetActive(true);
 
@@ -359,6 +362,8 @@ public class SurgeryManager : MonoBehaviour
                                     gumIncision3.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.Elevation);
                                     effectStarB.Play();
+                                    guideIncision.SetActive(false);
+                                    guideElevation.SetActive(true);
 
                                     donutElevation1.SetActive(true);
 
@@ -459,6 +464,9 @@ public class SurgeryManager : MonoBehaviour
                                     gumElevation1.SetActive(false);
                                     gumElevation2.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.Drill);
+                                    effectStarB.Play();
+                                    guideElevation.SetActive(false);
+                                    guideDrill.SetActive(true);
 
                                     donutDrill1.SetActive(true);
 
@@ -601,6 +609,9 @@ public class SurgeryManager : MonoBehaviour
                                     gumDrill2.SetActive(false);
                                     gumDrill3.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.FixturePlace);
+                                    effectStarB.Play();
+                                    guideDrill.SetActive(false);
+                                    guideFixturePlace.SetActive(true);
 
                                     donutFixturePlace1.SetActive(true);
 
@@ -665,6 +676,9 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutFixturePlace2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.HAPlace);
+                                    effectStarB.Play();
+                                    guideFixturePlace.SetActive(false);
+                                    guideHAPlace.SetActive(true);
 
                                     donutHAPlace1.SetActive(true);
 
@@ -822,6 +836,9 @@ public class SurgeryManager : MonoBehaviour
                                     gumIncision3.SetActive(true);
                                     donutElevation4.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Suture);
+                                    effectStarB.Play();
+                                    guideHAPlace.SetActive(false);
+                                    guideSuture.SetActive(true);
 
                                     donutSuture1.SetActive(true);
 
@@ -1102,6 +1119,9 @@ public class SurgeryManager : MonoBehaviour
                                     gumSuture5.SetActive(false);
                                     gumSuture6.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.SutureComplete);
+                                    effectStarB.Play();
+                                    guideStart.SetActive(false);
+                                    guideWait.SetActive(true);
 
                                     donutWait1.SetActive(true); // 임시
 
@@ -1167,6 +1187,9 @@ public class SurgeryManager : MonoBehaviour
                                     donutHARemove1.SetActive(false);
                                     healingAbutment2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.AbutmentPlace);
+                                    effectStarC.Play();
+                                    guideHARemove.SetActive(false);
+                                    guideAbutmentPlace.SetActive(true);
 
                                     donutAbutmentPlace1.SetActive(true);
 
@@ -1231,6 +1254,9 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutAbutmentPlace2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.CrownPlace);
+                                    effectStarC.Play();
+                                    guideAbutmentPlace.SetActive(false);
+                                    guideCrownPlace.SetActive(true);
 
                                     donutCrownPlace1.SetActive(true);
 
@@ -1259,6 +1285,7 @@ public class SurgeryManager : MonoBehaviour
                         donutCrownPlace1.SetActive(false);
                         crown1.SetActive(true);
                         Player.Instance.ChangeState(Player.PlayerState.CrownPlaceComplete);
+                        effectStarC.Play();
                     }
                 }
             }
