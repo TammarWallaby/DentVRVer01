@@ -743,6 +743,7 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutHAPlace2.SetActive(false);
                                     donutElevation3.SetActive(true);
+                                    effectStarB.Play();
 
                                     isSequenceAssigned = false;
                                 });
