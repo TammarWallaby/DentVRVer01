@@ -15,29 +15,29 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
     public enum PlayerState
     {
-        Start,
+        Start, // 시작
         StartComplete,
-        Anesthesia,
+        Anesthesia, // 마취
         AnesthesiaComplete,
-        Incision,
+        Incision, // 절개
         IncisionComplete,
-        Elevation,
+        Elevation, // 박리
         ElevationComplete,
-        Drill,
+        Drill, // 드릴
         DrillComplete,
-        FixturePlace,
+        FixturePlace, // 픽스쳐 식립
         FixturePlaceComplete,
-        HAPlace,
+        HAPlace, // 힐링 어버트먼트 식립 및 박리 덮기
         HAPlaceComplete,
-        Suture,
+        Suture, // 봉합
         SutureComplete,
-        Wait,
+        Wait, // 대기
         WaitComplete,
-        HARemove,
+        HARemove, // 힐링 어버트먼트 제거
         HARemoveComplete,
-        AbutmentPlace,
+        AbutmentPlace, // 어버트먼트 식립
         AbutmentPlaceComplete,
-        CrownPlace,
+        CrownPlace, // 크라운 씌우기
         CrownPlaceComplete,
         Finish
     }

@@ -1280,8 +1280,10 @@ MonoBehaviour:
   door2RightDoor: {fileID: 383916865}
   colliderA: {fileID: 272635300}
   colliderBC: {fileID: 272635299}
-  materialDoorLightAtoBC: {fileID: 2100000, guid: d72a8363e85ee0743b41f87cf011c004, type: 2}
-  materialDoorLightBCtoA: {fileID: 2100000, guid: 007d1645fc78d1c4388ffe95dd2f8f4e, type: 2}
+  materialDoorLightRed: {fileID: 0}
+  materialDoorLightGreen: {fileID: 0}
+  doorLight1: {fileID: 0}
+  doorLight2: {fileID: 0}
 --- !u!1001 &276624706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8740,8 +8742,10 @@ MonoBehaviour:
   door2RightDoor: {fileID: 421355051}
   colliderA: {fileID: 1144921661}
   colliderBC: {fileID: 1144921660}
-  materialDoorLightAtoBC: {fileID: 2100000, guid: 8b9f3ab1a4b5d7549a04d711846c0503, type: 2}
-  materialDoorLightBCtoA: {fileID: 2100000, guid: 07a2de8823fe5db48811287c7b25c4c3, type: 2}
+  materialDoorLightRed: {fileID: 0}
+  materialDoorLightGreen: {fileID: 0}
+  doorLight1: {fileID: 0}
+  doorLight2: {fileID: 0}
 --- !u!1 &1152338078
 GameObject:
   m_ObjectHideFlags: 0
@@ -14773,7 +14777,7 @@ GameObject:
   - component: {fileID: 1870427940}
   - component: {fileID: 1870427939}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SettingPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
