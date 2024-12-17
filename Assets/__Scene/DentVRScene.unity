@@ -8051,7 +8051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e566a27d25a1a941b362bc9efe71b97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3f072207c442ad4dbe92e0f4d20dae9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8619,12 +8619,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.85
-  m_Text: "VR \uC0AC\uC6A9 \uBC29\uBC95:\n\n\uC67C\uCABD \uCEE8\uD2B8\uB864\uB7EC
-    \uC2A4\uD2F1: \uC55E\uB4A4 \uC88C\uC6B0 \uC774\uB3D9\n\uC624\uB978\uCABD \uCEE8\uD2B8\uB864\uB7EC
-    \uC2A4\uD2F1: \uCE74\uBA54\uB77C \uD68C\uC804 (\uC88C\uC6B0\uB85C \uD68C\uC804
-    \uAC00\uB2A5)\n\uC624\uB978\uCABD \uCEE8\uD2B8\uB864\uB7EC A\uBC84\uD2BC: \uC124\uC815\uCC3D\n\uB3C4\uAD6C
-    \uC9D1\uAE30 / \uB193\uAE30: IndexTrigger Button\n\uB3C4\uAD6C \uC0AC\uC6A9\uD558\uAE30:
-    HandTrigger Button\n\n\uBAA8\uB450 \uC77D\uC5C8\uC73C\uBA74 \uB3C4\uB11B \uBC84\uD2BC\uC744
+  m_Text: " VR \uC0AC\uC6A9 \uBC29\uBC95:\n\n 1.\uC55E\uB4A4 \uC88C\uC6B0 \uC774\uB3D9\n
+    2.\uCE74\uBA54\uB77C \uD68C\uC804 (\uC88C\uC6B0\uB85C \uD68C\uC804 \uAC00\uB2A5)\n
+    3.\uB3C4\uAD6C \uC9D1\uAE30 / \uB193\uAE30: IndexTrigger Button\n 4.\uB3C4\uAD6C
+    \uC0AC\uC6A9\uD558\uAE30: HandTrigger Button\n 5.\uC124\uC815\uCC3D\n 6. \uB098\uAC00\uAE30\n\n
+    \uBAA8\uB450 \uD655\uC778 \uD558\uC168\uB2E4\uBA74 \uB3C4\uB11B\uBC84\uD2BC\uC744
     \uB20C\uB7EC\uC8FC\uC138\uC694"
 --- !u!222 &1435320309
 CanvasRenderer:
