@@ -25,7 +25,11 @@ public class Door : MonoBehaviour
     public BoxCollider colliderA;
     public BoxCollider colliderBC;
 
-    public Material materialDoorLight;
+    public Material materialDoorLightRed;
+    public Material materialDoorLightGreen;
+
+    public GameObject doorLight1;
+    public GameObject doorLight2;
 
     private void Start()
     {
@@ -35,9 +39,6 @@ public class Door : MonoBehaviour
         doorClosed = true;
         colliderA.enabled = false;
         colliderBC.enabled = true;
-
-        materialDoorLight.color = Color.red;
-        materialDoorLight.SetColor("_EmissionColor", new Color(100 / 255f, 0, 0));
     }
 
     private void OnDisable()
@@ -56,9 +57,9 @@ public class Door : MonoBehaviour
                     {
                         doorOpened = true;
                         doorClosed = false;
-
-                        materialDoorLight.color = Color.green;
-                        materialDoorLight.SetColor("_EmissionColor", new Color(0, 100 / 255f, 0));
+                        //문 소리
+                        doorLight1.GetComponent<Renderer>().materials[1] = materialDoorLightGreen;
+                        doorLight2.GetComponent<Renderer>().materials[1] = materialDoorLightGreen;
                     })
                     .AppendInterval(1f)
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
@@ -82,6 +83,7 @@ public class Door : MonoBehaviour
                         doorOpened = false;
                         colliderA.enabled = !colliderA.enabled;
                         colliderBC.enabled = !colliderBC.enabled;
+                        //문 소리
                     })
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
                     .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
@@ -89,8 +91,8 @@ public class Door : MonoBehaviour
                     .Join(door2RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
                     .AppendCallback(() =>
                     {
-                        materialDoorLight.color = Color.red;
-                        materialDoorLight.SetColor("_EmissionColor", new Color(100 / 255f, 0, 0));
+                        doorLight1.GetComponent<Renderer>().materials[1] = materialDoorLightRed;
+                        doorLight2.GetComponent<Renderer>().materials[1] = materialDoorLightRed;
                     });
 
                 if (Player.Instance.CurrentState == Player.PlayerState.StartComplete)
