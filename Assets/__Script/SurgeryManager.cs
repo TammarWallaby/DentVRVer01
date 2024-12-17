@@ -33,8 +33,9 @@ public class SurgeryManager : MonoBehaviour
     public GameObject guideAbutmentPlace;
     public GameObject guideCrownPlace;
 
-    public GameObject effectStarB;
-    public GameObject effectStarC;
+    public ParticleSystem effectStarA;
+    public ParticleSystem effectStarB;
+    public ParticleSystem effectStarC;
 
     [Header("Start")]
     public GameObject donutStart1;
@@ -211,7 +212,7 @@ public class SurgeryManager : MonoBehaviour
                                 {
                                     donutAnesthesia1.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Incision);
-                                    effectStarB.GetComponent<ParticleSystem>().Play();
+                                    effectStarB.Play();
 
                                     donutIncision1.SetActive(true);
 
@@ -357,7 +358,7 @@ public class SurgeryManager : MonoBehaviour
                                     gumIncision2.SetActive(false);
                                     gumIncision3.SetActive(true);
                                     Player.Instance.ChangeState(Player.PlayerState.Elevation);
-                                    effectStarB.GetComponent<ParticleSystem>().Play();
+                                    effectStarB.Play();
 
                                     donutElevation1.SetActive(true);
 
