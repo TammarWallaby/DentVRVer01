@@ -222,7 +222,7 @@ public class SurgeryManager : MonoBehaviour
                                     donutIncision1.SetActive(true);
 
                                     isSequenceAssigned = false;
-                                    uiManager.NextUI();
+                                    
                                 });
 
                             isSequenceAssigned = true;
@@ -1150,6 +1150,7 @@ public class SurgeryManager : MonoBehaviour
                 {
                     donutWait1.SetActive(false);
                     Player.Instance.ChangeState(Player.PlayerState.WaitComplete);
+                    effectStarA.Play();
                 }
             }
 
@@ -1166,7 +1167,7 @@ public class SurgeryManager : MonoBehaviour
 
                             moveSequence = DOTween.Sequence()
                                 .Append(donutHARemove1.transform.DOMove(donutHARemove1.GetComponent<Donut>().targetPos, 6f).SetEase(Ease.Linear))
-                                .Join(healingAbutment2.transform.DOMove(new Vector3(28.19559f, 1.0644f, -6.5075f), 6f).SetEase(Ease.Linear));
+                                .Join(healingAbutment2.transform.DOMove(new Vector3(28.19559f, 1.0482f, -6.5258f), 6f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
