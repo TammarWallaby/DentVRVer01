@@ -13,11 +13,13 @@ public class OpenUIPanel : MonoBehaviour
     private bool buttonPressed = false;
     public Camera xrCamera;  // XR 카메라
     public GameObject uiPanel;  // UI 패널
+    public GameObject christmas; 
     public float distanceFromCamera = 0.5f;  // 카메라와 UI 패널 간의 거리
     void Start()
     {
         InitializeInputDevice();
         uiPanel.SetActive(false); // UI 패널 초기 비활성화
+        christmas.SetActive(false);
     }
 
     void Update()
@@ -69,6 +71,15 @@ public class OpenUIPanel : MonoBehaviour
         {
             bool isActive = uiPanel.activeSelf;
             uiPanel.SetActive(!isActive);
+        }
+    }
+
+    public void Christmas()
+    {
+        if (christmas != null)
+        {
+            bool isActive = christmas.activeSelf;
+            christmas.SetActive(!isActive);
         }
     }
 }

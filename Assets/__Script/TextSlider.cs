@@ -3,39 +3,37 @@ using UnityEngine;
 
 public class TextSlider : MonoBehaviour
 {
-    public RectTransform textPanel1;  // 첫 번째 텍스트 패널
-    public RectTransform textPanel2;  // 두 번째 텍스트 패널
+    public RectTransform[] textPanels;  // 텍스트 패널 배열
     public float slideDuration = 0.5f;  // 슬라이드 시간
     public Vector2 slideOffset = new Vector2(1000, 0);  // 슬라이드 방향 (왼쪽)
 
-    private Vector2 initialPos1;  // 첫 번째 텍스트 초기 위치
-    private Vector2 initialPos2;  // 두 번째 텍스트 초기 위치
-    private Vector2 initialPos3;  // 두 번째 텍스트 이동 위치
-    private bool showingFirstText = true;  // 첫 번째 텍스트 표시 여부
+    private Vector2[] initialPositions;  // 텍스트 초기 위치 배열
+    private int currentTextIndex = 0;    // 현재 표시 중인 텍스트 인덱스
 
     void Start()
     {
-        // 초기 위치 설정
-        initialPos1 = textPanel1.anchoredPosition;
-        initialPos2 = initialPos1 - slideOffset;
-        initialPos3 = initialPos2 + slideOffset;
+        // 초기 위치 배열 초기화
+        initialPositions = new Vector2[textPanels.Length];
 
-
-
-        textPanel2.gameObject.SetActive(false);     // 두 번째 텍스트 초기 비활성화
+        for (int i = 0; i < textPanels.Length; i++)
+        {
+            initialPositions[i] = textPanels[i].anchoredPosition;
+            textPanels[i].gameObject.SetActive(i == currentTextIndex); // 첫 번째 텍스트만 활성화
+        }
     }
 
     public void SlideToNextText()
     {
-        if (showingFirstText)
+        if (textPanels == null || textPanels.Length == 0)
         {
-            StartCoroutine(SlideText(textPanel1, textPanel2, initialPos1, initialPos3));
+            Debug.LogWarning("TextPanels 배열이 비어 있습니다. 슬라이드를 수행할 수 없습니다.");
+            return;
         }
-        else
-        {
-            StartCoroutine(SlideText(textPanel2, textPanel1, initialPos3, initialPos1));
-        }
+
+        int nextTextIndex = (currentTextIndex + 1) % textPanels.Length;
+        StartCoroutine(SlideText(textPanels[currentTextIndex], textPanels[nextTextIndex], initialPositions[currentTextIndex], initialPositions[nextTextIndex]));
     }
+
 
     private IEnumerator SlideText(RectTransform fromPanel, RectTransform toPanel, Vector2 fromStart, Vector2 toStart)
     {
@@ -61,7 +59,7 @@ public class TextSlider : MonoBehaviour
         // 슬라이드가 끝난 패널 비활성화
         fromPanel.gameObject.SetActive(false);
 
-        // 표시 상태 전환
-        showingFirstText = !showingFirstText;
+        // 표시 중인 텍스트 인덱스 업데이트
+        currentTextIndex = System.Array.IndexOf(textPanels, toPanel);
     }
 }
