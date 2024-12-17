@@ -65495,6 +65495,7 @@ GameObject:
   - component: {fileID: 6051456773350825937}
   - component: {fileID: 123070753928634661}
   - component: {fileID: 1238050412600689456}
+  - component: {fileID: 6051456773350825938}
   m_Layer: 0
   m_Name: RockingChair
   m_TagString: Untagged
@@ -66060,6 +66061,7 @@ GameObject:
   - component: {fileID: 3694377970281934626}
   - component: {fileID: 1335782576686773906}
   - component: {fileID: 2320398533236248341}
+  - component: {fileID: 3694377970281934627}
   m_Layer: 0
   m_Name: SnowManL
   m_TagString: Untagged
@@ -81789,6 +81791,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2295794626530808134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3694377970281934627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133786935616090460}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1998949, y: 1.7439976, z: 0.889771}
+  m_Center: {x: -0.032016903, y: 0.8719988, z: 0.021249548}
 --- !u!23 &3706834628764442598
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82966,6 +82989,7 @@ GameObject:
   - component: {fileID: 2028610366558921392}
   - component: {fileID: 1194672814641787675}
   - component: {fileID: 413420192416837605}
+  - component: {fileID: 4682818876152560519}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -82973,6 +82997,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4682818876152560519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682818876152560518}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2, y: 4.6451693, z: 2.2}
+  m_Center: {x: 0.09707123, y: 2.7891698, z: 0.11232597}
 --- !u!1 &4697851922403480310
 GameObject:
   m_ObjectHideFlags: 0
@@ -108106,6 +108151,7 @@ GameObject:
   - component: {fileID: 3241305074461635955}
   - component: {fileID: 7517804886918620893}
   - component: {fileID: 7075932539282593300}
+  - component: {fileID: 7517804886918620894}
   m_Layer: 0
   m_Name: FirePlace
   m_TagString: Untagged
@@ -108843,6 +108889,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2295794626530808134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6051456773350825938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418927870840719944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2, y: 1.708017, z: 1.2}
+  m_Center: {x: -0.08146056, y: 0.84801847, z: 0.07875686}
 --- !u!1 &6078664840709686546
 GameObject:
   m_ObjectHideFlags: 0
@@ -110414,6 +110481,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5095856677629570151}
   m_Mesh: {fileID: 8895469901012007955, guid: f0f5c951c318b7248b8862713a3a2069, type: 3}
+--- !u!65 &7517804886918620894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095856677629570151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.9788258, y: 6.5162177, z: 0.73240757}
+  m_Center: {x: 0, y: 3.2581089, z: 0.06856172}
 --- !u!33 &7525387484881263990
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -111241,6 +111329,7 @@ GameObject:
   - component: {fileID: 4820398137090917047}
   - component: {fileID: 7349598542024332660}
   - component: {fileID: 6333575271007839352}
+  - component: {fileID: 8225669632038327511}
   m_Layer: 0
   m_Name: SnowManS
   m_TagString: Untagged
@@ -111248,6 +111337,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8225669632038327511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225669632038327510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.89004767, y: 1.2761964, z: 0.76}
+  m_Center: {x: 0.034729317, y: 0.6380982, z: 0.03872335}
 --- !u!4 &8235234283504300091
 Transform:
   m_ObjectHideFlags: 0
