@@ -894,8 +894,8 @@ MonoBehaviour:
   pauseImage: {fileID: 1543926255}
   audioSource: {fileID: 1037857734}
   videoClips:
-  - {fileID: 32900000, guid: cddbf647b8796ef45945bda095e21296, type: 3}
-  - {fileID: 32900000, guid: 39a42479ac4bb8447a2e03fb55a368f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &198162091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10790,8 +10790,8 @@ MonoBehaviour:
   pauseImage: {fileID: 998009911}
   audioSource: {fileID: 886106011}
   videoClips:
-  - {fileID: 32900000, guid: cddbf647b8796ef45945bda095e21296, type: 3}
-  - {fileID: 32900000, guid: 39a42479ac4bb8447a2e03fb55a368f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1462018402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12329,8 +12329,8 @@ MonoBehaviour:
   pauseImage: {fileID: 492160360}
   audioSource: {fileID: 1372184782}
   videoClips:
-  - {fileID: 32900000, guid: cddbf647b8796ef45945bda095e21296, type: 3}
-  - {fileID: 32900000, guid: 39a42479ac4bb8447a2e03fb55a368f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1657652086
 MonoBehaviour:
   m_ObjectHideFlags: 0
