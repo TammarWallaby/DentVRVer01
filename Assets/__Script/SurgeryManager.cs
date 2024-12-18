@@ -32,6 +32,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject guideHARemove;
     public GameObject guideAbutmentPlace;
     public GameObject guideCrownPlace;
+    public GameObject guideFinish;
 
     public ParticleSystem effectStarA;
     public ParticleSystem effectStarB;
@@ -1291,6 +1292,9 @@ public class SurgeryManager : MonoBehaviour
                         crown1.SetActive(true);
                         Player.Instance.ChangeState(Player.PlayerState.CrownPlaceComplete);
                         effectStarC.Play();
+
+                        guideWait.SetActive(false);
+                        guideFinish.SetActive(true);
                     }
                 }
             }

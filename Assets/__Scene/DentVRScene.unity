@@ -1343,7 +1343,7 @@ MonoBehaviour:
   effectVolumeSlider: {fileID: 1008820161}
   minVolume: 0
   maxVolume: 1
-  backgroundClip1: {fileID: 8300000, guid: 62c2c480e6c87d54797fd8b7a64abb43, type: 3}
+  backgroundClip1: {fileID: 0}
   backgroundClip2: {fileID: 0}
 --- !u!4 &186064957
 Transform:
@@ -20751,6 +20751,7 @@ MonoBehaviour:
   guideHARemove: {fileID: 201204858}
   guideAbutmentPlace: {fileID: 576683220}
   guideCrownPlace: {fileID: 1401020826}
+  guideFinish: {fileID: 474251497}
   effectStarA: {fileID: 620366068}
   effectStarB: {fileID: 4792004520446424196}
   effectStarC: {fileID: 1117339249}
@@ -55867,7 +55868,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08f83d6b3afde0e4ea9ae77494b7be63, type: 3}
-    m_FontSize: 22
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -57916,6 +57917,7 @@ MonoBehaviour:
   guideHARemove: {fileID: 201204858}
   guideAbutmentPlace: {fileID: 576683220}
   guideCrownPlace: {fileID: 1401020826}
+  guideFinish: {fileID: 474251497}
   effectStarA: {fileID: 620366068}
   effectStarB: {fileID: 4792004520446424196}
   effectStarC: {fileID: 1117339249}
