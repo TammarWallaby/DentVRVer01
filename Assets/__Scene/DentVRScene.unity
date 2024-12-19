@@ -805,7 +805,7 @@ MonoBehaviour:
   xrCamera: {fileID: 419600632}
   uiPanel: {fileID: 896253849}
   christmas: {fileID: 1483827912983366652}
-  distanceFromCamera: 0.5
+  distanceFromCamera: 0.8
 --- !u!4 &138795243
 Transform:
   m_ObjectHideFlags: 0
