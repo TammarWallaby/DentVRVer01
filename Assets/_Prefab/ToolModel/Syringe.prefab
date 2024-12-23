@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3808741735078719038}
   - component: {fileID: 213347630603870771}
   m_Layer: 0
-  m_Name: SyringeA
+  m_Name: SyringePusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

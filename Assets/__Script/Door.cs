@@ -27,6 +27,8 @@ public class Door : MonoBehaviour
 
     public Material materialDoorLight;
 
+    public AudioSource doorSound;
+
     private void Start()
     {
         Player.Instance.OnStateChanged += DoorOpen;
@@ -61,6 +63,10 @@ public class Door : MonoBehaviour
                         materialDoorLight.SetColor("_EmissionColor", new Color(0, 100 / 255f, 0));
                     })
                     .AppendInterval(1f)
+                    .AppendCallback(()=>
+                    {
+                        doorSound.Play();
+                    })
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
                     .Join(door1RightDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
                     .Join(door2LeftDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
@@ -82,7 +88,7 @@ public class Door : MonoBehaviour
                         doorOpened = false;
                         colliderA.enabled = !colliderA.enabled;
                         colliderBC.enabled = !colliderBC.enabled;
-                        //문 소리
+                        doorSound.Play();
                     })
                     .Append(door1LeftDoor.transform.DOLocalMoveZ(3, 2f).SetRelative())
                     .Join(door1RightDoor.transform.DOLocalMoveZ(-3, 2f).SetRelative())
