@@ -64474,6 +64474,7 @@ Transform:
   - {fileID: 7852505151494993222}
   - {fileID: 5548509769971089335}
   - {fileID: 927911197727463222}
+  - {fileID: 5444772858374535378}
   m_Father: {fileID: 932816822}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!23 &1403704184
@@ -109994,6 +109995,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8024058018682874671}
   m_Mesh: {fileID: -3229394951374935889, guid: 152d150739816074189aaa6851ea8eda, type: 3}
+--- !u!1 &4666970277784740456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5444772858374535378}
+  - component: {fileID: 8944258280357967735}
+  - component: {fileID: 6612573763324462013}
+  m_Layer: 0
+  m_Name: LocalAnesthetics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!33 &4670815269328445190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -135386,6 +135405,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8626633895252463721}
   m_Mesh: {fileID: 8908027946676760116, guid: 32dd640e3aea0464ca2d9fef7ed33baa, type: 3}
+--- !u!4 &5444772858374535378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666970277784740456}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9107445, z: -0, w: 0.41297048}
+  m_LocalPosition: {x: 0.031, y: 0.8117571, z: 0.154}
+  m_LocalScale: {x: 1.4285711, y: 1, z: 1.4285711}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1403704183}
+  m_LocalEulerAnglesHint: {x: 0, y: 131.217, z: 0}
 --- !u!4 &5446798978499309351
 Transform:
   m_ObjectHideFlags: 0
@@ -136481,6 +136515,52 @@ MeshRenderer:
   - {fileID: 2100000, guid: 7a49451cc19adbd409ca9fe4ebedc0f7, type: 2}
   - {fileID: 2100000, guid: 9922cece330b1ae43912c0904b542270, type: 2}
   - {fileID: 2100000, guid: da1f72d8f5f8e584e979cf48f0eaefb0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!23 &6612573763324462013
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666970277784740456}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7a49451cc19adbd409ca9fe4ebedc0f7, type: 2}
+  - {fileID: 2100000, guid: e04daf3779701f74983274342aafe737, type: 2}
+  - {fileID: 2100000, guid: afcd4eab52161964da1136aab7af8482, type: 2}
+  - {fileID: 2100000, guid: 2bd566ae9174b9342a746a31fcc5cfe7, type: 2}
+  - {fileID: 2100000, guid: ac24c5f4bcef61544a0188231305f353, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143902,6 +143982,14 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1190972515493749291, guid: 152d150739816074189aaa6851ea8eda, type: 3}
+--- !u!33 &8944258280357967735
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666970277784740456}
+  m_Mesh: {fileID: -9146618070568788744, guid: 5b27794dd841b0341aad83eefbbaf9bb, type: 3}
 --- !u!4 &9006114582215674579
 Transform:
   m_ObjectHideFlags: 0
