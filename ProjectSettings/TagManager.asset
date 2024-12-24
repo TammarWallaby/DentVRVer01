@@ -25,6 +25,7 @@ TagManager:
   - Needle
   - Crown
   - Driver2
+  - ObjectUI
   layers:
   - Default
   - TransparentFX
