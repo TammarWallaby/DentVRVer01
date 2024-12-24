@@ -31341,7 +31341,7 @@ MonoBehaviour:
   starSound: {fileID: 1725945550}
   donutStart1: {fileID: 1534848609}
   donutAnesthesia1: {fileID: 2143559613}
-  syringe: {fileID: 8854277051749404787, guid: de195ae2105402648b517740130a99d0, type: 3}
+  donutAnesthesia2: {fileID: 0}
   donutIncision1: {fileID: 1601527277}
   donutIncision2: {fileID: 819012455}
   donutIncision3: {fileID: 20786436}
@@ -58696,7 +58696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1197942153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -84048,7 +84048,7 @@ MonoBehaviour:
   starSound: {fileID: 1725945550}
   donutStart1: {fileID: 1534848609}
   donutAnesthesia1: {fileID: 2143559613}
-  syringe: {fileID: 8854277051749404787, guid: de195ae2105402648b517740130a99d0, type: 3}
+  donutAnesthesia2: {fileID: 0}
   donutIncision1: {fileID: 1601527277}
   donutIncision2: {fileID: 819012455}
   donutIncision3: {fileID: 20786436}
