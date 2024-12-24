@@ -40,14 +40,10 @@ public class OpenUIPanel : MonoBehaviour
             {
                 ToggleUIPanel();
                 buttonPressed = true;
-                leftRayInteractor.maxRaycastDistance = 1f;
-                rightRayInteractor.maxRaycastDistance = 1f;
             }
             else if (!buttonOneValue)
             {
                 buttonPressed = false;
-                leftRayInteractor.maxRaycastDistance = 0.2f;
-                rightRayInteractor.maxRaycastDistance = 0.2f;
             }
         }
 
@@ -78,6 +74,16 @@ public class OpenUIPanel : MonoBehaviour
         {
             bool isActive = uiPanel.activeSelf;
             uiPanel.SetActive(!isActive);
+            if (uiPanel.activeSelf)
+            {
+                leftRayInteractor.maxRaycastDistance = 1f;
+                rightRayInteractor.maxRaycastDistance = 1f;
+            }
+            else
+            {
+                leftRayInteractor.maxRaycastDistance = 0.2f;
+                rightRayInteractor.maxRaycastDistance = 0.2f;
+            }
         }
     }
 
