@@ -23557,6 +23557,89 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
   m_PrefabInstance: {fileID: 461724419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &466894700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 706504430}
+    m_Modifications:
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.50784
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.97618
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.9783
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+      propertyPath: m_Name
+      value: DonutAnesthesia1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+--- !u!4 &466894701 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5219755974287617072, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+  m_PrefabInstance: {fileID: 466894700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &466894702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
+  m_PrefabInstance: {fileID: 466894700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &474251497
 GameObject:
   m_ObjectHideFlags: 0
@@ -30031,6 +30114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1534848610}
+  - {fileID: 466894701}
   - {fileID: 2143559612}
   - {fileID: 1601527276}
   - {fileID: 819012454}
@@ -31340,8 +31424,8 @@ MonoBehaviour:
   effectStarC: {fileID: 1117339249}
   starSound: {fileID: 1725945550}
   donutStart1: {fileID: 1534848609}
-  donutAnesthesia1: {fileID: 2143559613}
-  donutAnesthesia2: {fileID: 0}
+  donutAnesthesia1: {fileID: 466894702}
+  donutAnesthesia2: {fileID: 2143559613}
   donutIncision1: {fileID: 1601527277}
   donutIncision2: {fileID: 819012455}
   donutIncision3: {fileID: 20786436}
@@ -84047,8 +84131,8 @@ MonoBehaviour:
   effectStarC: {fileID: 1117339249}
   starSound: {fileID: 1725945550}
   donutStart1: {fileID: 1534848609}
-  donutAnesthesia1: {fileID: 2143559613}
-  donutAnesthesia2: {fileID: 0}
+  donutAnesthesia1: {fileID: 466894702}
+  donutAnesthesia2: {fileID: 2143559613}
   donutIncision1: {fileID: 1601527277}
   donutIncision2: {fileID: 819012455}
   donutIncision3: {fileID: 20786436}
@@ -91691,11 +91775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
       propertyPath: m_Name
-      value: DonutAnesthesia1
+      value: DonutAnesthesia2
       objectReference: {fileID: 0}
     - target: {fileID: 7582367245054077533, guid: 5c6a0a7527334ca4a80c4f704f12875e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
