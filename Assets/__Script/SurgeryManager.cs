@@ -46,8 +46,7 @@ public class SurgeryManager : MonoBehaviour
 
     [Header("Anesthesia")]
     public GameObject donutAnesthesia1; // 도넛은 모두 씬에 있는 오브젝트를 넣음
-    public GameObject syringe; // 프리팹 모델 넣어야 함!
-    private GameObject syringeHandle; // syringe에서 자식 오브젝트 참조해야할듯
+    public GameObject donutAnesthesia2;
 
     [Header("Incision")]
     public GameObject donutIncision1;
@@ -218,6 +217,46 @@ public class SurgeryManager : MonoBehaviour
                                 .OnComplete(() =>
                                 {
                                     donutAnesthesia1.SetActive(false);
+                                    donutAnesthesia2.SetActive(true);
+
+                                    isSequenceAssigned = false;
+                                });
+
+                            isSequenceAssigned = true;
+                            isSequenceRunning = true;
+                        }
+                        else
+                        {
+                            PlaySequence();
+                        }
+                    }
+                    else if (donutName == "DonutAnesthesia2")
+                    {
+                        if (isSequenceAssigned == false)
+                        {
+                            float gaugeInterval = 5f / 12f;
+
+                            gaugeSequence = DOTween.Sequence()
+                                .AppendInterval(gaugeInterval / 2f);
+                            for (int i = 0; i < 12; i++)
+                            {
+                                int index = i;
+                                gaugeSequence
+                                    .AppendCallback(() =>
+                                    {
+                                        donutAnesthesia2.GetComponent<Donut>().gauge[index].SetActive(true);
+                                    });
+                                if (index < 11)
+                                {
+                                    gaugeSequence
+                                        .AppendInterval(gaugeInterval);
+                                }
+                            }
+                            gaugeSequence
+                                .AppendInterval(gaugeInterval / 2f)
+                                .OnComplete(() =>
+                                {
+                                    donutAnesthesia2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Incision);
                                     effectStarB.Play();
                                     starSound.Play();
