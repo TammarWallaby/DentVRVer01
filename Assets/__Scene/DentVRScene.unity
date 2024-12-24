@@ -11405,7 +11405,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundAudio: {fileID: 547945614}
-  effectAudios: []
+  effectAudios:
+  - {fileID: 1070895794}
+  - {fileID: 1725945550}
   backgroundVolumeSlider: {fileID: 38703780}
   effectVolumeSlider: {fileID: 1008820161}
   minVolume: 0
