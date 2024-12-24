@@ -26,6 +26,9 @@ public class OpenUIPanel : MonoBehaviour
     private Color FreeButtonColor; 
     private Color FixedButtonColor; 
     private Color whiteColor = Color.white; // 흰색
+
+    public ContinuousTurnProviderBase FreeTurn;
+    public SnapTurnProviderBase FixedTurn;
     void Start()
     {
         InitializeInputDevice();
@@ -121,10 +124,14 @@ public class OpenUIPanel : MonoBehaviour
     {
         SetButtonColors(FreeButton, FreeButtonColor); // Free 버튼의 색상을 기본 색상으로 설정
         SetButtonColors(FixedButton, whiteColor); // Fixed 버튼의 색상을 흰색으로 설정
+        FreeTurn.enabled = true;
+        FixedTurn.enabled = false;
     }
     public void FixedButtonClicked()
     {
         SetButtonColors(FreeButton, whiteColor); // Free 버튼의 색상을 흰색으로 설정
         SetButtonColors(FixedButton, FixedButtonColor); // Fixed 버튼의 색상을 기본 색상으로 설정
+        FreeTurn.enabled = false;
+        FixedTurn.enabled = true;
     }
 }

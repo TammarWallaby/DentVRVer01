@@ -10632,6 +10632,8 @@ MonoBehaviour:
   rightRayInteractor: {fileID: 832181705}
   FreeButton: {fileID: 1190456206}
   FixedButton: {fileID: 786077502}
+  FreeTurn: {fileID: 1599492068}
+  FixedTurn: {fileID: 1599492071}
 --- !u!4 &138795243
 Transform:
   m_ObjectHideFlags: 0
@@ -11169,8 +11171,8 @@ MonoBehaviour:
   effectVolumeSlider: {fileID: 1008820161}
   minVolume: 0
   maxVolume: 1
-  backgroundClip1: {fileID: 0}
-  backgroundClip2: {fileID: 0}
+  backgroundClip1: {fileID: 8300000, guid: 62c2c480e6c87d54797fd8b7a64abb43, type: 3}
+  backgroundClip2: {fileID: 8300000, guid: 655fe0c2f300d21489db7d0977800a27, type: 3}
 --- !u!4 &186064957
 Transform:
   m_ObjectHideFlags: 0
@@ -81023,7 +81025,7 @@ MonoBehaviour:
   m_System: {fileID: 0}
   m_MoveSpeed: 2
   m_EnableStrafe: 1
-  m_EnableFly: 0
+  m_EnableFly: 1
   m_UseGravity: 1
   m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 0}

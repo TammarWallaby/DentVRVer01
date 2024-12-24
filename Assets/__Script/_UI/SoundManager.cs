@@ -15,11 +15,11 @@ public class SoundManager : MonoBehaviour
     public float minVolume = 0f; // 최소 볼륨
     public float maxVolume = 1f; // 최대 볼륨
 
-    [Header("Background Clips")]
-    public AudioClip backgroundClip1; // 1번 배경음
-    public AudioClip backgroundClip2; // 2번 배경음
+    [Header("Background Audio Sources")]
+    public AudioSource backgroundSource1; // 1번 배경음 오디오 소스
+    public AudioSource backgroundSource2; // 2번 배경음 오디오 소스
 
-    private bool isPlayingClip1 = true; // 현재 재생 중인 배경음을 추적
+    private bool isPlayingSource1 = true; // 현재 재생 중인 배경음 오디오 소스를 추적
 
     void Start()
     {
@@ -38,12 +38,13 @@ public class SoundManager : MonoBehaviour
         }
 
         // 배경음 초기 설정 및 재생
-        if (backgroundAudio != null)
+        if (backgroundSource1 != null)
         {
-            backgroundAudio.clip = backgroundClip1; // 초기 배경음 설정
-            backgroundAudio.loop = true;
-            backgroundAudio.Play();
+            backgroundSource1.loop = true;
+            backgroundSource1.Play();
         }
+
+
     }
 
     // 배경음 볼륨 설정
@@ -70,23 +71,24 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 버튼 클릭 시 배경음을 전환
+    // 배경음 오디오 소스 전환
     public void ChangeBackgroundMusic()
     {
-        if (backgroundAudio == null) return;
+        if (backgroundSource1 == null || backgroundSource2 == null) return;
 
-        // 배경음 전환
-        if (isPlayingClip1)
+        // 배경음 오디오 소스 전환
+        if (isPlayingSource1)
         {
-            backgroundAudio.clip = backgroundClip2;
+            backgroundSource1.Stop();
+            backgroundSource2.Play();
         }
         else
         {
-            backgroundAudio.clip = backgroundClip1;
+            backgroundSource2.Stop();
+            backgroundSource1.Play();
         }
 
         // 배경음 재생 및 상태 전환
-        backgroundAudio.Play();
-        isPlayingClip1 = !isPlayingClip1;
+        isPlayingSource1 = !isPlayingSource1;
     }
 }
