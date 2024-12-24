@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2dfa9c4329d3e974cba90e48e936a116
+guid: 8b3f96c3f9c0344499434c4fa5f5c7f1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ColorBlackMatte
-    second: {fileID: 2100000, guid: 32accea5f30545547b9281e57e4c0df4, type: 2}
+    second: {fileID: 2100000, guid: 241e766ab43100b4faa8b6f9da2d739e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,8 +17,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MetalLight
-    second: {fileID: 2100000, guid: 7a49451cc19adbd409ca9fe4ebedc0f7, type: 2}
+      name: PorcelainWall
+    second: {fileID: 2100000, guid: 2630f1a9b9831514fb40da326740b504, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
