@@ -11171,8 +11171,8 @@ MonoBehaviour:
   effectVolumeSlider: {fileID: 1008820161}
   minVolume: 0
   maxVolume: 1
-  backgroundClip1: {fileID: 8300000, guid: 62c2c480e6c87d54797fd8b7a64abb43, type: 3}
-  backgroundClip2: {fileID: 8300000, guid: 655fe0c2f300d21489db7d0977800a27, type: 3}
+  backgroundSource1: {fileID: 0}
+  backgroundSource2: {fileID: 0}
 --- !u!4 &186064957
 Transform:
   m_ObjectHideFlags: 0
@@ -81025,7 +81025,7 @@ MonoBehaviour:
   m_System: {fileID: 0}
   m_MoveSpeed: 2
   m_EnableStrafe: 1
-  m_EnableFly: 1
+  m_EnableFly: 0
   m_UseGravity: 1
   m_GravityApplicationMode: 1
   m_ForwardSource: {fileID: 0}
@@ -81081,7 +81081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 0}
   m_TurnAmount: 45
-  m_DebounceTime: 0.5
+  m_DebounceTime: 1000
   m_EnableTurnLeftRight: 1
   m_EnableTurnAround: 1
   m_DelayTime: 0
@@ -90720,7 +90720,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2131586697}
   - component: {fileID: 2131586700}
-  - component: {fileID: 2131586699}
   - component: {fileID: 2131586698}
   m_Layer: 0
   m_Name: CameraGuideC
@@ -90789,14 +90788,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &2131586699
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131586696}
-  m_Enabled: 1
 --- !u!20 &2131586700
 Camera:
   m_ObjectHideFlags: 0
