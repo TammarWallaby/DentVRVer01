@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿/*
+ * 일단 안씀
+ * 
+ */
+using System.Collections;
 using UnityEngine;
 
 public class TextSlider : MonoBehaviour

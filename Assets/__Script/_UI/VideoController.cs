@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*
+ * 일단 안씀
+ * 
+ */
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using System.Collections;

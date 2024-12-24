@@ -1,43 +1,48 @@
+ï»¿/*
+ * AudioManager ì•ˆì— ë„£ìŒ
+ * ë°°ê²½ìŒ íš¨ê³¼ìŒ ì‹¤ë¦°ë”ë¡œ ì„¤ì •
+ * ë°°ê²½ìŒ ëˆˆì†¡ì´ ëˆ„ë¥´ë©´ ë³€ê²½
+ */
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
     [Header("Audio Sources")]
-    public AudioSource backgroundAudio; // ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º
-    public AudioSource[] effectAudios;  // È¿°úÀ½ ¿Àµğ¿À ¼Ò½º ¹è¿­
+    public AudioSource backgroundAudio; // ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤
+    public AudioSource[] effectAudios;  // íš¨ê³¼ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ë°°ì—´
 
     [Header("Sliders")]
-    public Slider backgroundVolumeSlider; // ¹è°æÀ½ ½½¶óÀÌ´õ
-    public Slider effectVolumeSlider;     // È¿°úÀ½ ½½¶óÀÌ´õ
+    public Slider backgroundVolumeSlider; // ë°°ê²½ìŒ ìŠ¬ë¼ì´ë”
+    public Slider effectVolumeSlider;     // íš¨ê³¼ìŒ ìŠ¬ë¼ì´ë”
 
     [Header("Volume Settings")]
-    public float minVolume = 0f; // ÃÖ¼Ò º¼·ı
-    public float maxVolume = 1f; // ÃÖ´ë º¼·ı
+    public float minVolume = 0f; // ìµœì†Œ ë³¼ë¥¨
+    public float maxVolume = 1f; // ìµœëŒ€ ë³¼ë¥¨
 
     [Header("Background Audio Sources")]
-    public AudioSource backgroundSource1; // 1¹ø ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º
-    public AudioSource backgroundSource2; // 2¹ø ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º
+    public AudioSource backgroundSource1; // 1ë²ˆ ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤
+    public AudioSource backgroundSource2; // 2ë²ˆ ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤
 
-    private bool isPlayingSource1 = true; // ÇöÀç Àç»ı ÁßÀÎ ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º¸¦ ÃßÀû
+    private bool isPlayingSource1 = true; // í˜„ì¬ ì¬ìƒ ì¤‘ì¸ ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ë¥¼ ì¶”ì 
 
     void Start()
     {
-        // ¹è°æÀ½ ½½¶óÀÌ´õ ÃÊ±âÈ­
+        // ë°°ê²½ìŒ ìŠ¬ë¼ì´ë” ì´ˆê¸°í™”
         if (backgroundVolumeSlider != null && backgroundAudio != null)
         {
             backgroundVolumeSlider.value = Mathf.InverseLerp(minVolume, maxVolume, backgroundAudio.volume);
             backgroundVolumeSlider.onValueChanged.AddListener(SetBackgroundVolume);
         }
 
-        // È¿°úÀ½ ½½¶óÀÌ´õ ÃÊ±âÈ­
+        // íš¨ê³¼ìŒ ìŠ¬ë¼ì´ë” ì´ˆê¸°í™”
         if (effectVolumeSlider != null && effectAudios != null && effectAudios.Length > 0)
         {
             effectVolumeSlider.value = Mathf.InverseLerp(minVolume, maxVolume, effectAudios[0].volume);
             effectVolumeSlider.onValueChanged.AddListener(SetEffectVolume);
         }
 
-        // ¹è°æÀ½ ÃÊ±â ¼³Á¤ ¹× Àç»ı
+        // ë°°ê²½ìŒ ì´ˆê¸° ì„¤ì • ë° ì¬ìƒ
         if (backgroundSource1 != null)
         {
             backgroundSource1.loop = true;
@@ -47,7 +52,7 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    // ¹è°æÀ½ º¼·ı ¼³Á¤
+    // ë°°ê²½ìŒ ë³¼ë¥¨ ì„¤ì •
     public void SetBackgroundVolume(float value)
     {
         if (backgroundAudio != null)
@@ -56,7 +61,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // È¿°úÀ½ º¼·ı ¼³Á¤
+    // íš¨ê³¼ìŒ ë³¼ë¥¨ ì„¤ì •
     public void SetEffectVolume(float value)
     {
         if (effectAudios != null)
@@ -71,12 +76,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º ÀüÈ¯
+    // ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì „í™˜
     public void ChangeBackgroundMusic()
     {
         if (backgroundSource1 == null || backgroundSource2 == null) return;
 
-        // ¹è°æÀ½ ¿Àµğ¿À ¼Ò½º ÀüÈ¯
+        // ë°°ê²½ìŒ ì˜¤ë””ì˜¤ ì†ŒìŠ¤ ì „í™˜
         if (isPlayingSource1)
         {
             backgroundSource1.Stop();
@@ -88,7 +93,7 @@ public class SoundManager : MonoBehaviour
             backgroundSource1.Play();
         }
 
-        // ¹è°æÀ½ Àç»ı ¹× »óÅÂ ÀüÈ¯
+        // ë°°ê²½ìŒ ì¬ìƒ ë° ìƒíƒœ ì „í™˜
         isPlayingSource1 = !isPlayingSource1;
     }
 }

@@ -1,7 +1,10 @@
 ﻿/*
- * 빈 오브젝트에다가 넣으면 됨(아직 이름 지정안함)
+ * SettingPanel 안에 넣음
  * 설정창 오른손 컨트롤러 A버튼 누르면 나오고 사라짐
  * 설정창이 카메라 기준으로 따라감
+ * 설정창 키면 Ray가 늘어나서 닿음
+ * 카메라 회전 자유도 on off
+ * 눈송이 누르면 크리스마스 모드 on off
  */
 using System.Collections.Generic;
 using UnityEngine;

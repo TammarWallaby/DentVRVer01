@@ -1,45 +1,48 @@
+ï»¿/*
+ * ì¼ë‹¨ ì•ˆì”€
+ */
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject[] uiPanels; // UI ÆĞ³Î ¹è¿­
-    private int currentIndex = 0; // ÇöÀç È°¼ºÈ­µÈ UI ÆĞ³ÎÀÇ ÀÎµ¦½º
+    public GameObject[] uiPanels; // UI íŒ¨ë„ ë°°ì—´
+    private int currentIndex = 0; // í˜„ì¬ í™œì„±í™”ëœ UI íŒ¨ë„ì˜ ì¸ë±ìŠ¤
 
     void Start()
     {
-        // ¸ğµç ÆĞ³Î ºñÈ°¼ºÈ­ ÈÄ Ã¹ ¹øÂ° ÆĞ³Î¸¸ È°¼ºÈ­
+        // ëª¨ë“  íŒ¨ë„ ë¹„í™œì„±í™” í›„ ì²« ë²ˆì§¸ íŒ¨ë„ë§Œ í™œì„±í™”
         InitializeUIPanels();
     }
 
-    // Æ¯Á¤ UI·Î ÀüÈ¯
+    // íŠ¹ì • UIë¡œ ì „í™˜
     public void ChangeUI(int newIndex)
     {
         if (newIndex < 0 || newIndex >= uiPanels.Length)
         {
-            Debug.LogWarning("Àß¸øµÈ UI ÀÎµ¦½ºÀÔ´Ï´Ù.");
+            Debug.LogWarning("ì˜ëª»ëœ UI ì¸ë±ìŠ¤ì…ë‹ˆë‹¤.");
             return;
         }
 
-        // ÇöÀç UI ºñÈ°¼ºÈ­
+        // í˜„ì¬ UI ë¹„í™œì„±í™”
         uiPanels[currentIndex].SetActive(false);
 
-        // »õ UI È°¼ºÈ­
+        // ìƒˆ UI í™œì„±í™”
         uiPanels[newIndex].SetActive(true);
 
-        // ÇöÀç ÀÎµ¦½º °»½Å
+        // í˜„ì¬ ì¸ë±ìŠ¤ ê°±ì‹ 
         currentIndex = newIndex;
     }
 
-    // UI ÃÊ±âÈ­ ÇÔ¼ö
+    // UI ì´ˆê¸°í™” í•¨ìˆ˜
     private void InitializeUIPanels()
     {
         for (int i = 0; i < uiPanels.Length; i++)
         {
-            uiPanels[i].SetActive(i == currentIndex); // Ã¹ ¹øÂ° ÆĞ³Î¸¸ È°¼ºÈ­
+            uiPanels[i].SetActive(i == currentIndex); // ì²« ë²ˆì§¸ íŒ¨ë„ë§Œ í™œì„±í™”
         }
     }
 
-    // UI¸¦ ´ÙÀ½À¸·Î ÀüÈ¯
+    // UIë¥¼ ë‹¤ìŒìœ¼ë¡œ ì „í™˜
     public void NextUI()
     {
         int nextIndex = (currentIndex + 1) % uiPanels.Length;

@@ -1,3 +1,7 @@
+ï»¿/*
+ * ImplantEngine ì•ˆì— Engine ì˜¤ë¸Œì íŠ¸ì— ë“¤ì–´ê°€ìˆìŒ
+ * ë“œë¦´ RPM, í† í¬ ì—…ë‹¤ìš´ ì„¤ì •
+ */
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,19 +16,19 @@ public class ImplantEngineUI : MonoBehaviour
     public Text TorqueValueText;      
 
 
-    private int[] speedValues = { 0, 50, 600, 1200 }; // °ª ¹è¿­
-    public int speedCurrentIndex = 0;               // ÇöÀç ¹è¿­ ÀÎµ¦½º
+    private int[] speedValues = { 0, 50, 600, 1200 }; // ê°’ ë°°ì—´
+    public int speedCurrentIndex = 0;               // í˜„ì¬ ë°°ì—´ ì¸ë±ìŠ¤
 
-    private int[] torqueValues = { 0, 30, 40, 50 }; // °ª ¹è¿­
-    public int torqueCurrentIndex = 0;               // ÇöÀç ¹è¿­ ÀÎµ¦½º
+    private int[] torqueValues = { 0, 30, 40, 50 }; // ê°’ ë°°ì—´
+    public int torqueCurrentIndex = 0;               // í˜„ì¬ ë°°ì—´ ì¸ë±ìŠ¤
 
     void Start()
     {
-        // ÃÊ±â ÅØ½ºÆ® ¼³Á¤
+        // ì´ˆê¸° í…ìŠ¤íŠ¸ ì„¤ì •
         UpdateText();
     }
 
-    // °ª Áõ°¡
+    // ê°’ ì¦ê°€
     public void SpeedIncreaseValue()
     {
         if (speedCurrentIndex < speedValues.Length - 1)
@@ -34,7 +38,7 @@ public class ImplantEngineUI : MonoBehaviour
         }
     }
 
-    // °ª °¨¼Ò
+    // ê°’ ê°ì†Œ
     public void SpeedDecreaseValue()
     {
         if (speedCurrentIndex > 0)
@@ -52,7 +56,7 @@ public class ImplantEngineUI : MonoBehaviour
         }
     }
 
-    // °ª °¨¼Ò
+    // ê°’ ê°ì†Œ
     public void TorqueDecreaseValue()
     {
         if (torqueCurrentIndex > 0)
@@ -61,7 +65,7 @@ public class ImplantEngineUI : MonoBehaviour
             UpdateText();
         }
     }
-    // ÅØ½ºÆ® ¾÷µ¥ÀÌÆ®
+    // í…ìŠ¤íŠ¸ ì—…ë°ì´íŠ¸
     void UpdateText()
     {
         if (SpeedValueText != null)
