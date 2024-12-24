@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class DrilMachineUI : MonoBehaviour
+public class ImplantEngineUI : MonoBehaviour
 {
     public Text SpeedvalueText;      
 
@@ -13,10 +13,10 @@ public class DrilMachineUI : MonoBehaviour
 
 
     private int[] speedvalues = { 0, 50, 600, 1200 }; // 값 배열
-    private int speedcurrentIndex = 0;               // 현재 배열 인덱스
+    public int speedCurrentIndex = 0;               // 현재 배열 인덱스
 
     private int[] torquevalues = { 0, 30, 40, 50 }; // 값 배열
-    private int torquecurrentIndex = 0;               // 현재 배열 인덱스
+    public int torqueCurrentIndex = 0;               // 현재 배열 인덱스
 
     void Start()
     {
@@ -27,9 +27,9 @@ public class DrilMachineUI : MonoBehaviour
     // 값 증가
     public void SpeedIncreaseValue()
     {
-        if (speedcurrentIndex < speedvalues.Length - 1)
+        if (speedCurrentIndex < speedvalues.Length - 1)
         {
-            speedcurrentIndex++;
+            speedCurrentIndex++;
             UpdateText();
         }
     }
@@ -37,17 +37,17 @@ public class DrilMachineUI : MonoBehaviour
     // 값 감소
     public void SpeedDecreaseValue()
     {
-        if (speedcurrentIndex > 0)
+        if (speedCurrentIndex > 0)
         {
-            speedcurrentIndex--;
+            speedCurrentIndex--;
             UpdateText();
         }
     }
     public void TorqueIncreaseValue()
     {
-        if (torquecurrentIndex < torquevalues.Length - 1)
+        if (torqueCurrentIndex < torquevalues.Length - 1)
         {
-            torquecurrentIndex++;
+            torqueCurrentIndex++;
             UpdateText();
         }
     }
@@ -55,9 +55,9 @@ public class DrilMachineUI : MonoBehaviour
     // 값 감소
     public void TorqueDecreaseValue()
     {
-        if (torquecurrentIndex > 0)
+        if (torqueCurrentIndex > 0)
         {
-            torquecurrentIndex--;
+            torqueCurrentIndex--;
             UpdateText();
         }
     }
@@ -66,12 +66,12 @@ public class DrilMachineUI : MonoBehaviour
     {
         if (SpeedvalueText != null)
         {
-            SpeedvalueText.text = speedvalues[speedcurrentIndex].ToString();
+            SpeedvalueText.text = speedvalues[speedCurrentIndex].ToString();
         }
 
         if (TorquevalueText != null)
         {
-            TorquevalueText.text = torquevalues[torquecurrentIndex].ToString();
+            TorquevalueText.text = torquevalues[torqueCurrentIndex].ToString();
         }
     }
 }
