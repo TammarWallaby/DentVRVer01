@@ -34,7 +34,7 @@ public class RayColorChange : MonoBehaviour
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             // 충돌한 물체가 Donut 태그를 가지고 있는지 확인
-            if (hit.collider.CompareTag("Donut")||hit.collider.CompareTag("Tool"))
+            if (hit.collider.CompareTag("Donut")||hit.collider.CompareTag("Tool")||hit.collider.CompareTag("ObjectUI"))
             {
                 SetRayColor(highlightColor);
                 return;
