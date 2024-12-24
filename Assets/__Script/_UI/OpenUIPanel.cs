@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class OpenUIPanel : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class OpenUIPanel : MonoBehaviour
     public GameObject uiPanel;  // UI 패널
     public GameObject christmas; 
     public float distanceFromCamera = 0.5f;  // 카메라와 UI 패널 간의 거리
+    public XRRayInteractor leftRayInteractor;
+    public XRRayInteractor rightRayInteractor;
     void Start()
     {
         InitializeInputDevice();
@@ -37,10 +40,14 @@ public class OpenUIPanel : MonoBehaviour
             {
                 ToggleUIPanel();
                 buttonPressed = true;
+                leftRayInteractor.maxRaycastDistance = 1f;
+                rightRayInteractor.maxRaycastDistance = 1f;
             }
             else if (!buttonOneValue)
             {
                 buttonPressed = false;
+                leftRayInteractor.maxRaycastDistance = 0.2f;
+                rightRayInteractor.maxRaycastDistance = 0.2f;
             }
         }
 
