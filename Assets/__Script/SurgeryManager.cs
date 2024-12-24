@@ -64,6 +64,7 @@ public class SurgeryManager : MonoBehaviour
     public GameObject gumElevation2;
 
     [Header("Drill")]
+    public ImplantEngineUI implantEngineUI;
     public GameObject donutDrill1;
     public GameObject donutDrill2;
     public GameObject donutDrill3;
@@ -537,7 +538,7 @@ public class SurgeryManager : MonoBehaviour
             {
                 if (controller.currentModel.CompareTag("HandpieceWithDrill2"))
                 {
-                    if(donutName=="DonutDrill1")
+                    if(donutName=="DonutDrill1" && implantEngineUI.speedCurrentIndex == 3 && implantEngineUI.torqueCurrentIndex == 2)
                     {
                         if (isSequenceAssigned == false)
                         {
@@ -582,7 +583,7 @@ public class SurgeryManager : MonoBehaviour
                 }
                 else if (controller.currentModel.CompareTag("HandpieceWithDrill3"))
                 {
-                    if (donutName == "DonutDrill2")
+                    if (donutName == "DonutDrill2" && implantEngineUI.speedCurrentIndex == 3&&implantEngineUI.torqueCurrentIndex==2)
                     {
                         if (isSequenceAssigned == false)
                         {
@@ -627,7 +628,7 @@ public class SurgeryManager : MonoBehaviour
                 }
                 else if (controller.currentModel.CompareTag("HandpieceWithDrill4"))
                 {
-                    if (donutName == "DonutDrill3")
+                    if (donutName == "DonutDrill3" && implantEngineUI.speedCurrentIndex == 3 && implantEngineUI.torqueCurrentIndex == 2)
                     {
                         if (isSequenceAssigned == false)
                         {
@@ -693,7 +694,7 @@ public class SurgeryManager : MonoBehaviour
                 }
                 else if (controller.currentModel.CompareTag("Handpiece"))
                 {
-                    if (donutName == "DonutFixturePlace2")
+                    if (donutName == "DonutFixturePlace2" && implantEngineUI.speedCurrentIndex == 1 && implantEngineUI.torqueCurrentIndex == 3)
                     {
                         if (isSequenceAssigned == false)
                         {
@@ -814,10 +815,10 @@ public class SurgeryManager : MonoBehaviour
                     {
                         if (isSequenceAssigned == false)
                         {
-                            float gaugeInterval = 2f / 12f;
+                            float gaugeInterval = 5f / 12f;
 
                             moveSequence = DOTween.Sequence()
-                                .Append(donutElevation3.transform.DOMove(donutElevation3.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+                                .Append(donutElevation3.transform.DOMove(donutElevation3.GetComponent<Donut>().targetPos, 5f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);
@@ -859,10 +860,10 @@ public class SurgeryManager : MonoBehaviour
                     {
                         if (isSequenceAssigned == false)
                         {
-                            float gaugeInterval = 2f / 12f;
+                            float gaugeInterval = 5f / 12f;
 
                             moveSequence = DOTween.Sequence()
-                                .Append(donutElevation4.transform.DOMove(donutElevation4.GetComponent<Donut>().targetPos, 2f).SetEase(Ease.Linear));
+                                .Append(donutElevation4.transform.DOMove(donutElevation4.GetComponent<Donut>().targetPos, 5f).SetEase(Ease.Linear));
 
                             gaugeSequence = DOTween.Sequence()
                                 .AppendInterval(gaugeInterval / 2f);

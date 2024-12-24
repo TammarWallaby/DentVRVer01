@@ -96,8 +96,8 @@ public class OpenUIPanel : MonoBehaviour
             }
             else
             {
-                leftRayInteractor.maxRaycastDistance = 0.2f;
-                rightRayInteractor.maxRaycastDistance = 0.2f;
+                leftRayInteractor.maxRaycastDistance = 0.25f;
+                rightRayInteractor.maxRaycastDistance = 0.25f;
             }
         }
     }
