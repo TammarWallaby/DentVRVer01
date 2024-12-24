@@ -7,15 +7,15 @@ using UnityEngine.UI;
 
 public class ImplantEngineUI : MonoBehaviour
 {
-    public Text SpeedvalueText;      
+    public Text SpeedValueText;      
 
-    public Text TorquevalueText;      
+    public Text TorqueValueText;      
 
 
-    private int[] speedvalues = { 0, 50, 600, 1200 }; // 값 배열
+    private int[] speedValues = { 0, 50, 600, 1200 }; // 값 배열
     public int speedCurrentIndex = 0;               // 현재 배열 인덱스
 
-    private int[] torquevalues = { 0, 30, 40, 50 }; // 값 배열
+    private int[] torqueValues = { 0, 30, 40, 50 }; // 값 배열
     public int torqueCurrentIndex = 0;               // 현재 배열 인덱스
 
     void Start()
@@ -27,7 +27,7 @@ public class ImplantEngineUI : MonoBehaviour
     // 값 증가
     public void SpeedIncreaseValue()
     {
-        if (speedCurrentIndex < speedvalues.Length - 1)
+        if (speedCurrentIndex < speedValues.Length - 1)
         {
             speedCurrentIndex++;
             UpdateText();
@@ -45,7 +45,7 @@ public class ImplantEngineUI : MonoBehaviour
     }
     public void TorqueIncreaseValue()
     {
-        if (torqueCurrentIndex < torquevalues.Length - 1)
+        if (torqueCurrentIndex < torqueValues.Length - 1)
         {
             torqueCurrentIndex++;
             UpdateText();
@@ -64,14 +64,14 @@ public class ImplantEngineUI : MonoBehaviour
     // 텍스트 업데이트
     void UpdateText()
     {
-        if (SpeedvalueText != null)
+        if (SpeedValueText != null)
         {
-            SpeedvalueText.text = speedvalues[speedCurrentIndex].ToString();
+            SpeedValueText.text = speedValues[speedCurrentIndex].ToString();
         }
 
-        if (TorquevalueText != null)
+        if (TorqueValueText != null)
         {
-            TorquevalueText.text = torquevalues[torqueCurrentIndex].ToString();
+            TorqueValueText.text = torqueValues[torqueCurrentIndex].ToString();
         }
     }
 }
