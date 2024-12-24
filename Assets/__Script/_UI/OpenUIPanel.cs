@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.UI;
 
 public class OpenUIPanel : MonoBehaviour
 {
@@ -18,11 +19,22 @@ public class OpenUIPanel : MonoBehaviour
     public float distanceFromCamera = 0.5f;  // 카메라와 UI 패널 간의 거리
     public XRRayInteractor leftRayInteractor;
     public XRRayInteractor rightRayInteractor;
+
+    public Button FreeButton;  
+    public Button FixedButton;  
+
+    private Color FreeButtonColor; 
+    private Color FixedButtonColor; 
+    private Color whiteColor = Color.white; // 흰색
     void Start()
     {
         InitializeInputDevice();
         uiPanel.SetActive(false); // UI 패널 초기 비활성화
-        christmas.SetActive(false);
+        christmas.SetActive(true);
+
+        FreeButtonColor = FreeButton.GetComponent<Image>().color; 
+        FixedButtonColor = FixedButton.GetComponent<Image>().color; 
+        FreeButtonClicked(); // 초기 버튼 상태 설정
     }
 
     void Update()
@@ -94,5 +106,25 @@ public class OpenUIPanel : MonoBehaviour
             bool isActive = christmas.activeSelf;
             christmas.SetActive(!isActive);
         }
+    }
+
+    // 버튼 색상 변경 함수
+    private void SetButtonColors(Button button, Color targetColor)
+    {
+        Image buttonImage = button.GetComponent<Image>(); // 버튼의 이미지 컴포넌트를 가져옴
+        if (buttonImage != null)
+        {
+            buttonImage.color = targetColor; // 이미지 색상을 변경
+        }
+    }
+    public void FreeButtonClicked()
+    {
+        SetButtonColors(FreeButton, FreeButtonColor); // Free 버튼의 색상을 기본 색상으로 설정
+        SetButtonColors(FixedButton, whiteColor); // Fixed 버튼의 색상을 흰색으로 설정
+    }
+    public void FixedButtonClicked()
+    {
+        SetButtonColors(FreeButton, whiteColor); // Free 버튼의 색상을 흰색으로 설정
+        SetButtonColors(FixedButton, FixedButtonColor); // Fixed 버튼의 색상을 기본 색상으로 설정
     }
 }
