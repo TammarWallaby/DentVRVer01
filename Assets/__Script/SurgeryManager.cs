@@ -17,6 +17,7 @@ public class SurgeryManager : MonoBehaviour
     [Header("Main Setting")]
     public InputActionReference triggerRef;
     public XRController controller;
+    public GameObject ending; //RoomA에 있음
 
 
     [Header("UI & Effect")]
@@ -1348,6 +1349,7 @@ public class SurgeryManager : MonoBehaviour
                         Player.Instance.ChangeState(Player.PlayerState.CrownPlaceComplete);
                         effectStarC.Play();
                         starSound.Play();
+                        ending.SetActive(true);
 
                         guideWait.SetActive(false);
                         guideCrownPlaceComplete.SetActive(true);

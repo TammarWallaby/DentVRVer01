@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47dad949114c84b468ea5780534e3ce6
+guid: 8f1b051058e521e4183df1240bf754a2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CrownModel
-    second: {fileID: 2100000, guid: ec0b7bab674c4964b9da1e8a90f15967, type: 2}
+      name: Ch16_Body
+    second: {fileID: 2100000, guid: 1d7ddbb9ca23c5043bed840caac177d7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Gums
-    second: {fileID: 2100000, guid: 0f99a6daf4012c244a3aa7c28765839f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: rp_eric_rigged_001_mat
-    second: {fileID: 2100000, guid: c8639f51701998749829ae21d366402e, type: 2}
+      name: Ch16_body1.001
+    second: {fileID: 2100000, guid: d0917de22be933b44a82e694a84a082d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -39,7 +34,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -108,13 +103,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
