@@ -32198,7 +32198,8 @@ MonoBehaviour:
   handpiece: {fileID: 2620776875675012344}
   healingAbutment: {fileID: 267490295205842345}
   scalpel: {fileID: 8024058018682874671}
-  syringe: {fileID: 0}
+  syringe: {fileID: 85715583891245282}
+  syringeWithFluid: {fileID: 1232837139309518590}
   torqueRatchet: {fileID: 5120273859557962995}
   needleWrapping: {fileID: 3860137876196285931}
   crown: {fileID: 4625180798457240443}
@@ -32216,7 +32217,8 @@ MonoBehaviour:
   handpieceWithDrill4M: {fileID: 5132456948718491016, guid: 9e169d99bc9451048a461c51be311aff, type: 3}
   healingAbutmentM: {fileID: 6148887595220325230, guid: aba21d6d43414c545904f4cc61695464, type: 3}
   scalpelM: {fileID: 7869011782383150010, guid: d17ba230b3bb61d4bbad9a83c527876b, type: 3}
-  syringeM: {fileID: 8854277051749404787, guid: de195ae2105402648b517740130a99d0, type: 3}
+  syringeM: {fileID: 7959389768981561865, guid: de195ae2105402648b517740130a99d0, type: 3}
+  syringeWithFluidM: {fileID: 396924204780440603, guid: df0b4f56b73cab54a8d2c57c8a839587, type: 3}
   torqueRatchetM: {fileID: 8409384704158422803, guid: 92a4c4e926c611947936aac00d4cac3a, type: 3}
   needleM: {fileID: 5363481553589056337, guid: 1b73d1160adc5dd4d9c2e050bfc773c4, type: 3}
   crownM: {fileID: 6789737774825917159, guid: e32cd82c6db9f134fa248594a107cf46, type: 3}
@@ -32242,12 +32244,12 @@ MonoBehaviour:
   guideFixturePlace: {fileID: 1166824862}
   guideHAPlace: {fileID: 476848923}
   guideSuture: {fileID: 1086162855}
-  guideSutureComplete: {fileID: 0}
+  guideSutureComplete: {fileID: 896376728}
   guideWait: {fileID: 942506426}
   guideHARemove: {fileID: 201204858}
   guideAbutmentPlace: {fileID: 576683220}
   guideCrownPlace: {fileID: 1401020826}
-  guideCrownPlaceComplete: {fileID: 0}
+  guideCrownPlaceComplete: {fileID: 2060999870}
   guideFinish: {fileID: 474251497}
   effectStarA1: {fileID: 620366068}
   effectStarA2: {fileID: 97723930}
@@ -37790,7 +37792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &942506427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -86296,7 +86298,8 @@ MonoBehaviour:
   handpiece: {fileID: 2620776875675012344}
   healingAbutment: {fileID: 267490295205842345}
   scalpel: {fileID: 8024058018682874671}
-  syringe: {fileID: 0}
+  syringe: {fileID: 85715583891245282}
+  syringeWithFluid: {fileID: 1232837139309518590}
   torqueRatchet: {fileID: 5120273859557962995}
   needleWrapping: {fileID: 3860137876196285931}
   crown: {fileID: 4625180798457240443}
@@ -86314,7 +86317,8 @@ MonoBehaviour:
   handpieceWithDrill4M: {fileID: 5132456948718491016, guid: 9e169d99bc9451048a461c51be311aff, type: 3}
   healingAbutmentM: {fileID: 6148887595220325230, guid: aba21d6d43414c545904f4cc61695464, type: 3}
   scalpelM: {fileID: 7869011782383150010, guid: d17ba230b3bb61d4bbad9a83c527876b, type: 3}
-  syringeM: {fileID: 8854277051749404787, guid: de195ae2105402648b517740130a99d0, type: 3}
+  syringeM: {fileID: 7959389768981561865, guid: de195ae2105402648b517740130a99d0, type: 3}
+  syringeWithFluidM: {fileID: 396924204780440603, guid: df0b4f56b73cab54a8d2c57c8a839587, type: 3}
   torqueRatchetM: {fileID: 8409384704158422803, guid: 92a4c4e926c611947936aac00d4cac3a, type: 3}
   needleM: {fileID: 5363481553589056337, guid: 1b73d1160adc5dd4d9c2e050bfc773c4, type: 3}
   crownM: {fileID: 6789737774825917159, guid: e32cd82c6db9f134fa248594a107cf46, type: 3}
@@ -86340,12 +86344,12 @@ MonoBehaviour:
   guideFixturePlace: {fileID: 1166824862}
   guideHAPlace: {fileID: 476848923}
   guideSuture: {fileID: 1086162855}
-  guideSutureComplete: {fileID: 0}
+  guideSutureComplete: {fileID: 896376728}
   guideWait: {fileID: 942506426}
   guideHARemove: {fileID: 201204858}
   guideAbutmentPlace: {fileID: 576683220}
   guideCrownPlace: {fileID: 1401020826}
-  guideCrownPlaceComplete: {fileID: 0}
+  guideCrownPlaceComplete: {fileID: 2060999870}
   guideFinish: {fileID: 474251497}
   effectStarA1: {fileID: 620366068}
   effectStarA2: {fileID: 97723930}
@@ -93831,7 +93835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2052390403
 RectTransform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class XRController : MonoBehaviour
     public GameObject healingAbutment;
     public GameObject scalpel;
     public GameObject syringe;
+    public GameObject syringeWithFluid;
     public GameObject torqueRatchet;
     public GameObject needleWrapping;
     public GameObject crown;
@@ -58,6 +59,7 @@ public class XRController : MonoBehaviour
     public GameObject healingAbutmentM;
     public GameObject scalpelM;
     public GameObject syringeM;
+    public GameObject syringeWithFluidM;
     public GameObject torqueRatchetM;
     public GameObject needleM;
     public GameObject crownM;
@@ -182,6 +184,11 @@ public class XRController : MonoBehaviour
                         syringe.SetActive(false);
                         UpdateControllerModel(syringeM);
                     }
+                    else if (goName == "SyringeWithFluid")
+                    {
+                        syringeWithFluid.SetActive(false);
+                        UpdateControllerModel(syringeWithFluidM);
+                    }
                     else if (goName == "TorqueRatchet")
                     {
                         torqueRatchet.SetActive(false);
@@ -268,6 +275,10 @@ public class XRController : MonoBehaviour
                 else if (currentModel.CompareTag("Syringe"))
                 {
                     syringe.SetActive(true);
+                }
+                else if (currentModel.CompareTag("SyringeWithFluid"))
+                {
+                    syringeWithFluid.SetActive(true);
                 }
                 else if (currentModel.CompareTag("TorqueRatchet"))
                 {

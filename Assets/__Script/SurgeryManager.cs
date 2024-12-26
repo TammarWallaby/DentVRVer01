@@ -188,7 +188,7 @@ public class SurgeryManager : MonoBehaviour
             //RoomAnesthesia
             if (Player.Instance.CurrentState == Player.PlayerState.Anesthesia)
             {
-                if (controller.currentModel.CompareTag("Syringe"))
+                if (controller.currentModel.CompareTag("Syringe")||controller.currentModel.CompareTag("SyringeWithFluid"))
                 {
                     if (donutName == "DonutAnesthesia1")
                     {
@@ -216,6 +216,7 @@ public class SurgeryManager : MonoBehaviour
                                 .AppendInterval(gaugeInterval / 2f)
                                 .OnComplete(() =>
                                 {
+                                    controller.UpdateControllerModel(controller.syringeWithFluidM);
                                     donutAnesthesia1.SetActive(false);
                                     donutAnesthesia2.SetActive(true);
 
@@ -256,6 +257,7 @@ public class SurgeryManager : MonoBehaviour
                                 .AppendInterval(gaugeInterval / 2f)
                                 .OnComplete(() =>
                                 {
+                                    controller.UpdateControllerModel(controller.syringeM);
                                     donutAnesthesia2.SetActive(false);
                                     Player.Instance.ChangeState(Player.PlayerState.Incision);
                                     effectStarB.Play();
@@ -1420,11 +1422,11 @@ public class SurgeryManager : MonoBehaviour
             }
             else if (implantEngineUI.speedCurrentIndex == 1)
             {
-                controller.controller.SendHapticImpulse(0.1f, 0.1f);
+                controller.controller.SendHapticImpulse(0.2f, 0.1f);
             }
             else if (implantEngineUI.speedCurrentIndex == 2)
             {
-                controller.controller.SendHapticImpulse(0.5f, 0.1f);
+                controller.controller.SendHapticImpulse(0.6f, 0.1f);
             }
             else if (implantEngineUI.speedCurrentIndex == 3)
             {
