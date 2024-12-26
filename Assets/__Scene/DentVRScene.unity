@@ -24408,7 +24408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.11, y: 137}
+  m_AnchoredPosition: {x: 252.11, y: 152}
   m_SizeDelta: {x: 480, y: 59.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509098589
@@ -66837,8 +66837,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -15}
-  m_SizeDelta: {x: 500, y: 400}
+  m_AnchoredPosition: {x: 270.3, y: -15}
+  m_SizeDelta: {x: 540.6, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435320308
 MonoBehaviour:
@@ -66872,8 +66872,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.2
-  m_Text: "* VR \uC0AC\uC6A9 \uBC29\uBC95 * \uD544\uB3C5 !!\n\n 1. \uC55E\uB4A4 \uC88C\uC6B0
+    m_LineSpacing: 1.1
+  m_Text: "* VR \uC0AC\uC6A9 \uBC29\uBC95 * \uD544\uB3C5 !!\n 1. \uC55E\uB4A4 \uC88C\uC6B0
     \uC774\uB3D9 \uC2A4\uD2F1\n 2. \uCE74\uBA54\uB77C \uD68C\uC804 \uC2A4\uD2F1 (\uC88C\uC6B0\uB85C
     \uD68C\uC804 \uAC00\uB2A5)\n 3. \uB3C4\uAD6C \uC9D1\uAE30 / \uB193\uAE30 \uBC84\uD2BC\n
     4. \uB3C4\uAD6C \uC0C1\uD638\uC791\uC6A9 \uBC84\uD2BC\n 5. \uC124\uC815 \uBC84\uD2BC
@@ -66882,9 +66882,9 @@ MonoBehaviour:
     \uBC84\uC804\n\n\uBAA8\uB450 \uD655\uC778 \uD558\uC168\uB2E4\uBA74 \uC88C\uCE21
     \uBB38 \uC6B0\uCE21\uC5D0 \uC788\uB294 \uB3C4\uB11B\uC5D0 \uCEE8\uD2B8\uB864\uB7EC\uC758
     \uC870\uC900\uC120\uC744 \uB300\uACE0 \uB3C4\uAD6C \uC0C1\uD638\uC791\uC6A9 \uBC84\uD2BC\uC744
-    \uB20C\uB7EC\uC8FC\uC138\uC694!\n* \uC870\uC900\uC120\uC774 \uB3C4\uB11B\uC5D0
-    \uB2FF\uC73C\uBA74 \uC870\uC900\uC120\uC758 \uC0C9\uAE54\uC774 \uBC14\uB00C\uC5B4\uC694!
-    *\n"
+    \uB20C\uB7EC\uC8FC\uC138\uC694!\n\n* \uC870\uC900\uC120\uC774 \uB3C4\uB11B\uC5D0
+    \uB2FF\uC73C\uBA74 \uC870\uC900\uC120\uC758 \uC0C9\uAE54\uC774 \uBD84\uD64D\uC0C9\uC73C\uB85C
+    \uBC14\uB00C\uC5B4\uC694! *\n"
 --- !u!222 &1435320309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -83537,8 +83537,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.11, y: -70}
-  m_SizeDelta: {x: 480, y: 206.73}
+  m_AnchoredPosition: {x: 252.11, y: -64.86}
+  m_SizeDelta: {x: 480, y: 245.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591853180
 MonoBehaviour:
@@ -83581,7 +83581,8 @@ MonoBehaviour:
     \uAC00\uB4DD \uCC30 \uB54C\uAE4C\uC9C0 \uAFB8\uC6B1 \uB20C\uB7EC \uB9C8\uCDE8\uC561\uC744
     \uCC44\uC6CC\uC8FC\uC138\uC694.\n\n\uC774\uD6C4 \uB9C8\uCC2C\uAC00\uC9C0\uB85C
     \uC8FC\uC0AC\uAE30\uB97C \uC9D1\uC740 \uC0C1\uD0DC\uC5D0\uC11C \uC787\uBAB8\uC5D0
-    \uC0DD\uAE34 \uB3C4\uB11B\uC744 \uAFB9 \uB20C\uB7EC \uB9C8\uCDE8\uD574\uC8FC\uC138\uC694.\n"
+    \uC0DD\uAE34 \uB3C4\uB11B\uC744 \uAFB9 \uB20C\uB7EC \uB9C8\uCDE8\uD574\uC8FC\uC138\uC694.\n\n*\uC870\uC900\uC120\uC774
+    \uC798 \uB2FF\uC744 \uC218 \uC788\uAC8C \uAC00\uAE4C\uC774\uC5D0\uC11C \uC791\uC5C5\uD574\uC8FC\uC138\uC694!"
 --- !u!222 &1591853181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92232,7 +92233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.10991, y: 74}
+  m_AnchoredPosition: {x: 252.10991, y: 95}
   m_SizeDelta: {x: 480, y: 54.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1812109155
