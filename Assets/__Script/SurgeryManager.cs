@@ -1414,8 +1414,22 @@ public class SurgeryManager : MonoBehaviour
     {
         while (true)
         {
-            // 지속적으로 진동 
-            controller.controller.SendHapticImpulse(1f, 0.1f);
+            if (implantEngineUI.speedCurrentIndex == 0)
+            {
+                yield return null;
+            }
+            else if (implantEngineUI.speedCurrentIndex == 1)
+            {
+                controller.controller.SendHapticImpulse(0.1f, 0.1f);
+            }
+            else if (implantEngineUI.speedCurrentIndex == 2)
+            {
+                controller.controller.SendHapticImpulse(0.5f, 0.1f);
+            }
+            else if (implantEngineUI.speedCurrentIndex == 3)
+            {
+                controller.controller.SendHapticImpulse(1f, 0.1f);
+            }
             yield return null;
         }
     }
