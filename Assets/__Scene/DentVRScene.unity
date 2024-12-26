@@ -23995,7 +23995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &476848924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43173,8 +43173,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD790\uB9C1 \uC5B4\uBC84\uD2B8\uBA3C\uD2B8 \uC2DD\uB9BD \uBC0F \uBC15\uB9AC
-    \uB36E\uAE30"
+  m_Text: "\uD790\uB9C1 \uC5B4\uBC84\uD2B8\uBA3C\uD2B8 \uC2DD\uB9BD"
 --- !u!222 &1019412509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60554,7 +60553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1225345319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61152,9 +61151,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\uD790\uB9C1 \uC5B4\uBC84\uD2B8\uBA3C\uD2B8\uB97C \uB4E4\uACE0 \uB3C4\uB11B\uC744
     \uB204\uB974\uACE0 \uD790\uB9C1\uC5B4\uBC84\uD2B8\uBA3C\uD2B8\uAC00 \uBCF4\uC774\uBA74,
-    \uB4DC\uB77C\uC774\uBC84\uB97C \uB4E4\uACE0 \uB3C4\uB11B\uC758 \uAC8C\uC774\uC9C0
-    \uCC44\uC6B0\uAE30\n\n\uACE8\uB9C9\uAE30\uB97C \uB4E4\uACE0 \uB3C4\uB11B\uC744
-    \uB20C\uB7EC\uC11C \uBC15\uB9AC \uD588\uB358 \uBD80\uBD84 \uB36E\uAE30"
+    \uB4DC\uB77C\uC774\uBC84\uB97C \uB4E4\uACE0 \uB3C4\uB11B\uC758 \uAC8C\uC774\uC9C0\uB97C
+    \uCC44\uC6CC\uC8FC\uC138\uC694\n\n\uACE8\uB9C9\uAE30\uB97C \uB4E4\uACE0 \uB3C4\uB11B\uC744
+    \uB20C\uB7EC\uC11C \uBC15\uB9AC \uD588\uB358 \uBD80\uBD84\uC744 \uB36E\uC5B4\uC8FC\uC138\uC694"
 --- !u!222 &1279940668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -84666,7 +84665,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b76c84f8ac22076409f35fe9b278ce3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d59bc60949cfe7f4abf38136d61a7384, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -93054,8 +93053,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5B4\uBC84\uD2B8\uBA3C\uD2B8\uB97C \uC0AC\uC6A9\uD558\uAE30 \uC704\uD574
-    \uD790\uB9C1 \uC5B4\uBC84\uD2B8\uBA3C\uD2B8 \uC81C\uAC70"
+  m_Text: "\uC5B4\uBC84\uD2B8\uBA3C\uD2B8\uB97C \uC2DD\uB9BD\uD558\uAE30 \uC704\uD574
+    \uD790\uB9C1 \uC5B4\uBC84\uD2B8\uBA3C\uD2B8\uB97C \uC81C\uAC70"
 --- !u!222 &1907722850
 CanvasRenderer:
   m_ObjectHideFlags: 0

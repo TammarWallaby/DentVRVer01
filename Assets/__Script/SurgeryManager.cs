@@ -1177,8 +1177,9 @@ public class SurgeryManager : MonoBehaviour
                                     Player.Instance.ChangeState(Player.PlayerState.SutureComplete);
                                     effectStarB.Play();
                                     starSound.Play();
-                                    guideStart.SetActive(false);
+                                    guideSuture.SetActive(false);
                                     guideSutureComplete.SetActive(true);
+                                    guideStart.SetActive(false);
                                     guideWait.SetActive(true);
 
                                     donutWait1.SetActive(true); 
@@ -1351,8 +1352,9 @@ public class SurgeryManager : MonoBehaviour
                         starSound.Play();
                         ending.SetActive(true);
 
-                        guideWait.SetActive(false);
+                        guideCrownPlace.SetActive(false);
                         guideCrownPlaceComplete.SetActive(true);
+                        guideWait.SetActive(false);
                         guideFinish.SetActive(true);
                     }
                 }
