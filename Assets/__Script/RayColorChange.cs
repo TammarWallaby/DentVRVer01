@@ -1,3 +1,7 @@
+ï»¿/* ì¢Œìš° ì»¨íŠ¸ë¡¤ëŸ¬ì— ë“¤ì–´ê°ˆ ìŠ¤í¬ë¦½íŠ¸
+ * Rayì˜ ìƒ‰ ë³€ê²½
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +15,12 @@ public class RayColorChange : MonoBehaviour
     [SerializeField] private XRInteractorLineVisual lineVisual;
 
     [Header("Colors")]
-    [SerializeField] private Color defaultColor = Color.white;
-    [SerializeField] private Color highlightColor = Color.yellow;
+    [SerializeField] private Color defaultColor;
+    [SerializeField] private Color highlightColor;
 
     private void Start()
     {
-        // ÄÄÆ÷³ÍÆ®µéÀÌ ÇÒ´çµÇÁö ¾Ê¾Ò´Ù¸é ÀÚµ¿À¸·Î °¡Á®¿À±â
+        // ì»´í¬ë„ŒíŠ¸ë“¤ì´ í• ë‹¹ë˜ì§€ ì•Šì•˜ë‹¤ë©´ ìë™ìœ¼ë¡œ ê°€ì ¸ì˜¤ê¸°
         if (rayInteractor == null)
             rayInteractor = GetComponent<XRRayInteractor>();
         if (lineRenderer == null)
@@ -24,16 +28,16 @@ public class RayColorChange : MonoBehaviour
         if (lineVisual == null)
             lineVisual = GetComponent<XRInteractorLineVisual>();
 
-        // ±âº» »ö»ó ¼³Á¤
+        // ê¸°ë³¸ ìƒ‰ìƒ ì„¤ì •
         SetRayColor(defaultColor);
     }
 
     private void Update()
     {
-        // Ray°¡ ¹°Ã¼¿Í Ãæµ¹Çß´ÂÁö È®ÀÎ
+        // Rayê°€ ë¬¼ì²´ì™€ ì¶©ëŒí–ˆëŠ”ì§€ í™•ì¸
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
-            // Ãæµ¹ÇÑ ¹°Ã¼°¡ Donut ÅÂ±×¸¦ °¡Áö°í ÀÖ´ÂÁö È®ÀÎ
+            // ì¶©ëŒí•œ ë¬¼ì²´ê°€ Donut íƒœê·¸ë¥¼ ê°€ì§€ê³  ìˆëŠ”ì§€ í™•ì¸
             if (hit.collider.CompareTag("Donut")||hit.collider.CompareTag("Tool")||hit.collider.CompareTag("ObjectUI"))
             {
                 SetRayColor(highlightColor);
@@ -41,20 +45,20 @@ public class RayColorChange : MonoBehaviour
             }
         }
 
-        // Ãæµ¹ÇÏÁö ¾Ê¾Ò°Å³ª DonutÀÌ ¾Æ´Ñ °æ¿ì ±âº» »ö»óÀ¸·Î µÇµ¹¸®±â
+        // ì¶©ëŒí•˜ì§€ ì•Šì•˜ê±°ë‚˜ Donutì´ ì•„ë‹Œ ê²½ìš° ê¸°ë³¸ ìƒ‰ìƒìœ¼ë¡œ ë˜ëŒë¦¬ê¸°
         SetRayColor(defaultColor);
     }
 
     private void SetRayColor(Color color)
     {
-        // Line Renderer »ö»ó º¯°æ
+        // Line Renderer ìƒ‰ìƒ ë³€ê²½
         if (lineRenderer != null)
         {
             lineRenderer.startColor = color;
             lineRenderer.endColor = color;
         }
 
-        // XR Interactor Line Visual »ö»ó º¯°æ
+        // XR Interactor Line Visual ìƒ‰ìƒ ë³€ê²½
         if (lineVisual != null)
         {
             lineVisual.validColorGradient = new Gradient()

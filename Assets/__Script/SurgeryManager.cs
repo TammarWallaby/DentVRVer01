@@ -68,9 +68,6 @@ public class SurgeryManager : MonoBehaviour
     public GameObject donutDrill1;
     public GameObject donutDrill2;
     public GameObject donutDrill3;
-    public GameObject drill2; // 프리팹 모델
-    public GameObject drill3; // 프리팹
-    public GameObject drill4; // 프
     public GameObject gumDientesOrigin;
     public GameObject gumDrill1;
     public GameObject gumDrill2;
