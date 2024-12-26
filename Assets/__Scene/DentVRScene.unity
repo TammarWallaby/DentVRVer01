@@ -11795,7 +11795,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 7, y: 6, z: 21}
+  m_Size: {x: 9, y: 6, z: 21}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &272635301
 MonoBehaviour:
@@ -54335,7 +54335,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 7, y: 6, z: 21}
+  m_Size: {x: 9, y: 6, z: 21}
   m_Center: {x: 0, y: 3, z: 0}
 --- !u!114 &1144921662
 MonoBehaviour:
@@ -95073,7 +95073,7 @@ Camera:
   far clip plane: 15
   field of view: 60
   orthographic: 1
-  orthographic size: 4.9
+  orthographic size: 5.1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
