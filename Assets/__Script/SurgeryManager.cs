@@ -28,10 +28,12 @@ public class SurgeryManager : MonoBehaviour
     public GameObject guideFixturePlace;
     public GameObject guideHAPlace;
     public GameObject guideSuture;
+    public GameObject guideSutureComplete;
     public GameObject guideWait;
     public GameObject guideHARemove;
     public GameObject guideAbutmentPlace;
     public GameObject guideCrownPlace;
+    public GameObject guideCrownPlaceComplete;
     public GameObject guideFinish;
 
     public ParticleSystem effectStarA1;
@@ -1173,9 +1175,10 @@ public class SurgeryManager : MonoBehaviour
                                     effectStarB.Play();
                                     starSound.Play();
                                     guideStart.SetActive(false);
+                                    guideSutureComplete.SetActive(true);
                                     guideWait.SetActive(true);
 
-                                    donutWait1.SetActive(true); // 임시
+                                    donutWait1.SetActive(true); 
 
                                     isSequenceAssigned = false;
                                 });
@@ -1345,6 +1348,7 @@ public class SurgeryManager : MonoBehaviour
                         starSound.Play();
 
                         guideWait.SetActive(false);
+                        guideCrownPlaceComplete.SetActive(true);
                         guideFinish.SetActive(true);
                     }
                 }
