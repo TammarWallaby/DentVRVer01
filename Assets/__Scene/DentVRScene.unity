@@ -24100,7 +24100,7 @@ MonoBehaviour:
     \uC190\uC73C\uB85C \uC6D0\uD558\uB294 \uB4DC\uB9B4\uC744 \uC9D1\uC740 \uD6C4
     \uB3C4\uAD6C \uC0C1\uD638\uC791\uC6A9 \uBC84\uD2BC\uC744 \uB204\uB974\uBA74 \uD578\uB4DC\uD53C\uC2A4\uC5D0
     \uB4DC\uB9B4\uC774 \uACB0\uD569\uB3FC\uC694!\n\n\uBA3C\uC800 \uC784\uD50C\uB780\uD2B8
-    \uC5D4\uC9C4\uC758 \uBC84\uD2BC\uC744 \uB20C\uB7EC \uC544\uB798 \uC218\uCE58\uB9CC\uD07C
+    \uC5D4\uC9C4\uC758 + - \uBC84\uD2BC\uC744 \uB20C\uB7EC \uC544\uB798 \uC218\uCE58\uB9CC\uD07C
     \uB9DE\uCDB0\uC8FC\uC2DC\uACE0, \uC791\uC740 \uB4DC\uB9B4\uBD80\uD130 \uD070
     \uB4DC\uB9B4 \uC21C\uC11C\uB300\uB85C \uC787\uBAB8\uC5D0 \uAD6C\uBA4D\uC744 \uB6AB\uC5B4\uC8FC\uC138\uC694.\n\n-
     \uD578\uB4DC\uD53C\uC2A4\uC758 \uC9C4\uB3D9\uC5D0 \uB180\uB77C\uC9C0 \uB9C8\uC138\uC694!
@@ -43488,7 +43488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1068197026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60490,7 +60490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1225345319
 RectTransform:
   m_ObjectHideFlags: 0
