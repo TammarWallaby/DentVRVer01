@@ -78100,6 +78100,7 @@ GameObject:
   - component: {fileID: 1548120387}
   - component: {fileID: 1548120386}
   - component: {fileID: 1548120385}
+  - component: {fileID: 1548120388}
   m_Layer: 5
   m_Name: Torque-Button
   m_TagString: ObjectUI
@@ -78220,6 +78221,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548120383}
   m_CullTransparentMesh: 1
+--- !u!65 &1548120388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548120383}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 60, z: 8}
+  m_Center: {x: 0, y: 0, z: 3}
 --- !u!1 &1551570623
 GameObject:
   m_ObjectHideFlags: 0
@@ -85102,6 +85124,7 @@ GameObject:
   - component: {fileID: 1701539960}
   - component: {fileID: 1701539959}
   - component: {fileID: 1701539958}
+  - component: {fileID: 1701539961}
   m_Layer: 5
   m_Name: Torque+Button
   m_TagString: ObjectUI
@@ -85222,6 +85245,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701539956}
   m_CullTransparentMesh: 1
+--- !u!65 &1701539961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701539956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 60, z: 8}
+  m_Center: {x: 0, y: 0, z: 3}
 --- !u!1 &1702417168
 GameObject:
   m_ObjectHideFlags: 0
@@ -85374,6 +85418,7 @@ GameObject:
   - component: {fileID: 1713103362}
   - component: {fileID: 1713103361}
   - component: {fileID: 1713103360}
+  - component: {fileID: 1713103364}
   m_Layer: 5
   m_Name: Speed-Button
   m_TagString: ObjectUI
@@ -85494,6 +85539,27 @@ RectTransform:
   m_AnchoredPosition: {x: 323.3, y: 104.4}
   m_SizeDelta: {x: 100.9, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &1713103364
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713103359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 60, z: 8}
+  m_Center: {x: 0, y: 0, z: 3}
 --- !u!1 &1715304744
 GameObject:
   m_ObjectHideFlags: 0
@@ -94100,6 +94166,7 @@ GameObject:
   - component: {fileID: 2010906825}
   - component: {fileID: 2010906824}
   - component: {fileID: 2010906823}
+  - component: {fileID: 2010906827}
   m_Layer: 5
   m_Name: Speed+Button
   m_TagString: ObjectUI
@@ -94220,6 +94287,27 @@ RectTransform:
   m_AnchoredPosition: {x: 619.6, y: 106}
   m_SizeDelta: {x: 100.9, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &2010906827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010906822}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 60, z: 8}
+  m_Center: {x: 0, y: 0, z: 3}
 --- !u!1 &2014153755
 GameObject:
   m_ObjectHideFlags: 0
