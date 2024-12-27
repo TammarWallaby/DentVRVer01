@@ -11494,7 +11494,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -11612,7 +11612,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -22936,7 +22936,7 @@ GameObject:
   - component: {fileID: 383916869}
   - component: {fileID: 383916868}
   - component: {fileID: 383916867}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorRight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23042,7 +23042,7 @@ GameObject:
   - component: {fileID: 385756208}
   - component: {fileID: 385756207}
   - component: {fileID: 385756206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorLeft1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23399,7 +23399,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -23801,7 +23801,7 @@ GameObject:
   - component: {fileID: 421355055}
   - component: {fileID: 421355054}
   - component: {fileID: 421355053}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorRight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24485,7 +24485,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -24770,7 +24770,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -25283,7 +25283,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -25608,7 +25608,7 @@ GameObject:
   - component: {fileID: 569579226}
   - component: {fileID: 569579225}
   - component: {fileID: 569579224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorRight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25846,7 +25846,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -31000,7 +31000,7 @@ GameObject:
   - component: {fileID: 654864053}
   - component: {fileID: 654864052}
   - component: {fileID: 654864051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorLeft2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31919,7 +31919,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -31944,7 +31944,7 @@ GameObject:
   - component: {fileID: 734260166}
   - component: {fileID: 734260165}
   - component: {fileID: 734260164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorLeft2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33718,7 +33718,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -38902,7 +38902,7 @@ GameObject:
   - component: {fileID: 924967671}
   - component: {fileID: 924967670}
   - component: {fileID: 924967669}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorLeft1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39177,7 +39177,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -45301,10 +45301,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.6886792, g: 0.6591992, b: 0.58147913, a: 1}
-  m_Intensity: 30
+  m_Intensity: 20
   m_Range: 20
   m_SpotAngle: 179
-  m_InnerSpotAngle: 100
+  m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -45338,7 +45338,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -56586,7 +56586,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -61816,7 +61816,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -62788,7 +62788,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -79118,7 +79118,7 @@ GameObject:
   - component: {fileID: 1496165276}
   - component: {fileID: 1496165275}
   - component: {fileID: 1496165274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorRight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85421,7 +85421,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -86054,7 +86054,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -89144,7 +89144,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 3072
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -94509,7 +94509,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -95378,7 +95378,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2551
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -111239,7 +111239,7 @@ GameObject:
   - component: {fileID: 8361667199468609913}
   - component: {fileID: 4437519744708845654}
   - component: {fileID: 4727492515783441954}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PassageAtoB_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111551,7 +111551,7 @@ GameObject:
   - component: {fileID: 6441946832988088883}
   - component: {fileID: 6132235414882587540}
   - component: {fileID: 4561880049846246407}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: PassageAtoC_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
