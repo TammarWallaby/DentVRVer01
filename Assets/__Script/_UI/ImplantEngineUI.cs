@@ -11,9 +11,9 @@ using UnityEngine.UI;
 
 public class ImplantEngineUI : MonoBehaviour
 {
-    public Text SpeedValueText;      
+    public Text SpeedValueText;      // RPM 값 테스트
 
-    public Text TorqueValueText;      
+    public Text TorqueValueText;     // 토크 값 텍스트
 
 
     private int[] speedValues = { 0, 50, 600, 1200 }; // 값 배열
@@ -29,7 +29,7 @@ public class ImplantEngineUI : MonoBehaviour
     }
 
     // 값 증가
-    public void SpeedIncreaseValue()
+    public void SpeedIncreaseValue() //후위 증가 연산자 활용
     {
         if (speedCurrentIndex < speedValues.Length - 1)
         {
@@ -39,7 +39,7 @@ public class ImplantEngineUI : MonoBehaviour
     }
 
     // 값 감소
-    public void SpeedDecreaseValue()
+    public void SpeedDecreaseValue() //후위 감소 연산자 활용
     {
         if (speedCurrentIndex > 0)
         {
@@ -47,7 +47,7 @@ public class ImplantEngineUI : MonoBehaviour
             UpdateText();
         }
     }
-    public void TorqueIncreaseValue()
+    public void TorqueIncreaseValue() //후위 증가 연산자 활용
     {
         if (torqueCurrentIndex < torqueValues.Length - 1)
         {
@@ -57,7 +57,7 @@ public class ImplantEngineUI : MonoBehaviour
     }
 
     // 값 감소
-    public void TorqueDecreaseValue()
+    public void TorqueDecreaseValue() //후위 감소 연산자 활용
     {
         if (torqueCurrentIndex > 0)
         {
@@ -66,7 +66,7 @@ public class ImplantEngineUI : MonoBehaviour
         }
     }
     // 텍스트 업데이트
-    void UpdateText()
+    void UpdateText() // 배열값 텍스트로 변경
     {
         if (SpeedValueText != null)
         {

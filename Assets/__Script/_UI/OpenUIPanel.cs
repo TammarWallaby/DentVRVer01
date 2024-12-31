@@ -18,20 +18,20 @@ public class OpenUIPanel : MonoBehaviour
     private bool buttonPressed = false;
     public Camera xrCamera;  // XR 카메라
     public GameObject uiPanel;  // UI 패널
-    public GameObject christmas; 
+    public GameObject christmas; // 눈송이
     public float distanceFromCamera = 0.5f;  // 카메라와 UI 패널 간의 거리
-    public XRRayInteractor leftRayInteractor;
-    public XRRayInteractor rightRayInteractor;
+    public XRRayInteractor leftRayInteractor; // XR의 왼쪽 컨트롤러의 RAY 참조
+    public XRRayInteractor rightRayInteractor; // XR의 오른쪽 컨트롤러의 RAY 참조
 
-    public Button FreeButton;  
-    public Button FixedButton;  
+    public Button FreeButton;  // 버튼 색
+    public Button FixedButton;  // 버튼 색
 
     private Color FreeButtonColor; 
     private Color FixedButtonColor; 
     private Color whiteColor = Color.white; // 흰색
 
-    public ContinuousTurnProviderBase FreeTurn;
-    public SnapTurnProviderBase FixedTurn;
+    public ContinuousTurnProviderBase FreeTurn; // XR의 Locomotion System 오브젝트 내에 있는 스크립트 참조
+    public SnapTurnProviderBase FixedTurn; // XR의 Locomotion System 오브젝트 내에 있는 스크립트 참조
     void Start()
     {
         InitializeInputDevice();
@@ -74,7 +74,7 @@ public class OpenUIPanel : MonoBehaviour
     }
 
     // InputDevice 초기화 함수
-    private void InitializeInputDevice()
+    private void InitializeInputDevice() // XR 컨트롤러 관련 스크립트
     {
         var inputDevices = new List<InputDevice>();
         InputDevices.GetDevicesAtXRNode(XRNode.RightHand, inputDevices);
@@ -92,12 +92,12 @@ public class OpenUIPanel : MonoBehaviour
         {
             bool isActive = uiPanel.activeSelf;
             uiPanel.SetActive(!isActive);
-            if (uiPanel.activeSelf)
+            if (uiPanel.activeSelf) // 설정창이 활성화 일 때, Ray의 길이가 길어짐
             {
                 leftRayInteractor.maxRaycastDistance = 1f;
                 rightRayInteractor.maxRaycastDistance = 1f;
             }
-            else
+            else // 설정창이 비활성화 일 때, Ray의 길이 초기값
             {
                 leftRayInteractor.maxRaycastDistance = 0.25f;
                 rightRayInteractor.maxRaycastDistance = 0.25f;
@@ -105,7 +105,7 @@ public class OpenUIPanel : MonoBehaviour
         }
     }
 
-    public void Christmas()
+    public void Christmas() // 크리스마스 모드
     {
         if (christmas != null)
         {
@@ -115,7 +115,7 @@ public class OpenUIPanel : MonoBehaviour
     }
 
     // 버튼 색상 변경 함수
-    private void SetButtonColors(Button button, Color targetColor)
+    private void SetButtonColors(Button button, Color targetColor) // 이미지 색상 변경
     {
         Image buttonImage = button.GetComponent<Image>(); // 버튼의 이미지 컴포넌트를 가져옴
         if (buttonImage != null)
@@ -123,18 +123,18 @@ public class OpenUIPanel : MonoBehaviour
             buttonImage.color = targetColor; // 이미지 색상을 변경
         }
     }
-    public void FreeButtonClicked()
+    public void FreeButtonClicked() // 자유 회전 버전일 때
     {
         SetButtonColors(FreeButton, FreeButtonColor); // Free 버튼의 색상을 기본 색상으로 설정
         SetButtonColors(FixedButton, whiteColor); // Fixed 버튼의 색상을 흰색으로 설정
-        FreeTurn.enabled = true;
-        FixedTurn.enabled = false;
+        FreeTurn.enabled = true; // ContinuousTurnProviderBase 스크립트 활성화
+        FixedTurn.enabled = false; // SnapTurnProviderBase 스크립트 비활성화
     }
-    public void FixedButtonClicked()
+    public void FixedButtonClicked() // 고정 회전 버튼일 때
     {
         SetButtonColors(FreeButton, whiteColor); // Free 버튼의 색상을 흰색으로 설정
         SetButtonColors(FixedButton, FixedButtonColor); // Fixed 버튼의 색상을 기본 색상으로 설정
-        FreeTurn.enabled = false;
-        FixedTurn.enabled = true;
+        FreeTurn.enabled = false; // ContinuousTurnProviderBase 스크립트 비활성화
+        FixedTurn.enabled = true; // SnapTurnProviderBase 스크립트 활성화
     }
 }

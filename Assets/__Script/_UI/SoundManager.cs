@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour
     }
 
     // 배경음 오디오 소스 전환
-    public void ChangeBackgroundMusic()
+    public void ChangeBackgroundMusic() //크리스마스 모드 on/off 일 때, 배경음 교체
     {
         if (backgroundSource1 == null || backgroundSource2 == null) return;
 

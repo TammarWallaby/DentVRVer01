@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class ChristmasButton : MonoBehaviour
 {
-    public float rotationSpeed = 20f;
+    public float rotationSpeed = 20f; // 눈송이 회전 속도값 조절
 
     void Update()
     {
