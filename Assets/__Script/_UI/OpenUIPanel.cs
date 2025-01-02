@@ -137,4 +137,14 @@ public class OpenUIPanel : MonoBehaviour
         FreeTurn.enabled = false; // ContinuousTurnProviderBase 스크립트 비활성화
         FixedTurn.enabled = true; // SnapTurnProviderBase 스크립트 활성화
     }
+
+    public void End()
+    {
+        Application.Quit(); // 애플리케이션 종료
+
+        // Unity 에디터에서 실행 중일 경우:
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
 }
