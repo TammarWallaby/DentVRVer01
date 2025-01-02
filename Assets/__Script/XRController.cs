@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/* XR Origin의 Left Controller와 Right Controller에 들어갈 스크립트
+ * 컨트롤러의 현재 도구 교체 및 도구 결합
+ */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +11,20 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class XRController : MonoBehaviour
 {
+    [Header("Main Setting")]
+    public XRController oppositeController;
+    public GameObject controllerM;
+    public ActionBasedController controller;
+    public XRRayInteractor interactor;
+    public float combineDistance = 10f; // 결합 도구 결합 시, 좌우 컨트롤러 거리
+    public InputActionReference selectRef; // 그립 버튼 전용
+    public InputActionReference triggerRef; // 트리거 버튼 전용
+    public GameObject currentModel; // 현재 모델 추적용 오브젝트
+
+    [Header("Interaction LayerMask")]
+    public InteractionLayerMask defaultMask; // 기본 레이어마스크
+    public InteractionLayerMask maskWithTool; // 도구 사용 중인 경우 상호작용 레이어마스크
+
     [Header("Tools in Scene")] // Scene에 배치할 관상용 도구들, Tag와 Layer 모두 Tool로 설정
     public GameObject abutment;
     public GameObject drill2;
@@ -13,54 +32,40 @@ public class XRController : MonoBehaviour
     public GameObject drill4;
     public GameObject driver;
     public GameObject driver2;
-    public GameObject driver3;
     public GameObject elevator;
     public GameObject fixture;
     public GameObject handpiece;
-    public GameObject handpiece2;
     public GameObject healingAbutment;
     public GameObject scalpel;
     public GameObject syringe;
+    public GameObject syringeWithFluid;
     public GameObject torqueRatchet;
+    public GameObject needleWrapping;
+    public GameObject crown;
 
-    [Header("Tools Model")] // Prefab에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
+    [Header("Tools Model")] // Prefab 폴더에서 가져오는 건데, Tag를 설정해줘야 함. Layer는 일단 없음
     public GameObject abutmentM;
     public GameObject drill2M;
     public GameObject drill3M;
     public GameObject drill4M;
     public GameObject driverM;
     public GameObject driver2M;
-    public GameObject driver3M;
-    public GameObject driverWithAbutmentM;
-    public GameObject driverWithHealingAbutmentM;
     public GameObject elevatorM;
     public GameObject fixtureM;
     public GameObject handpieceM;
-    public GameObject handpiece2M;
     public GameObject handpieceWithDrill2M;
     public GameObject handpieceWithDrill3M;
     public GameObject handpieceWithDrill4M;
-    public GameObject handpieceWithFixtureM;
     public GameObject healingAbutmentM;
     public GameObject scalpelM;
     public GameObject syringeM;
+    public GameObject syringeWithFluidM;
     public GameObject torqueRatchetM;
+    public GameObject needleM;
+    public GameObject crownM;
 
-    [Header("Interaction LayerMask")]
-    public InteractionLayerMask defaultMask; // 기본 레이어마스크
-    public InteractionLayerMask maskWithoutTool; // 도구 사용 중인 경우 상호작용 레이어마스크
 
-    [Header("Main Setting")]
-    public XRController oppositeController;
-    public GameObject controllerM;
-    public ActionBasedController controller;
-    public XRRayInteractor interactor;
-    public float combineDistance = 10f;
-    [SerializeField] private InputActionReference selectRef; // 그립 버튼 전용
-    [SerializeField] private InputActionReference triggerRef; // 트리거 버튼 전용
-    [SerializeField] private GameObject currentModel; // 현재 모델 추적용 오브젝트
-
-    private RaycastHit raycastHit;
+    public RaycastHit hit;
 
     private void Awake()
     {
@@ -68,6 +73,7 @@ public class XRController : MonoBehaviour
         {
             selectRef.action.started += SelectTool;
         }
+
         if (triggerRef != null)
         {
             triggerRef.action.started += CombineTool;
@@ -81,13 +87,19 @@ public class XRController : MonoBehaviour
 
     private void Update()
     {
-        if (currentModel.tag == "Controller") // 이거 나중에 수정해야 함 
+        if (currentModel.tag == "Controller")
         {
-            interactor.interactionLayers = defaultMask;
+            if(interactor.interactionLayers!=defaultMask)
+            {
+                interactor.interactionLayers = defaultMask;
+            }
         }
         else
         {
-            interactor.interactionLayers = maskWithoutTool;
+            if (interactor.interactionLayers != maskWithTool)
+            {
+                interactor.interactionLayers = maskWithTool;
+            }
         }
     }
 
@@ -107,10 +119,10 @@ public class XRController : MonoBehaviour
     {
         if (currentModel.tag == "Controller")
         {
-            if (interactor.TryGetCurrent3DRaycastHit(out raycastHit))
+            if (interactor.TryGetCurrent3DRaycastHit(out hit))
             {
-                string goName = raycastHit.collider.gameObject.name;
-                if (raycastHit.collider.CompareTag("Tool"))
+                string goName = hit.collider.gameObject.name;
+                if (hit.collider.CompareTag("Tool"))
                 {
                     if (goName == "Abutment")
                     {
@@ -142,11 +154,6 @@ public class XRController : MonoBehaviour
                         driver2.SetActive(false);
                         UpdateControllerModel(driver2M);
                     }
-                    else if (goName == "Driver3")
-                    {
-                        driver3.SetActive(false);
-                        UpdateControllerModel(driver3M);
-                    }
                     else if (goName == "Elevator")
                     {
                         elevator.SetActive(false);
@@ -161,11 +168,6 @@ public class XRController : MonoBehaviour
                     {
                         handpiece.SetActive(false);
                         UpdateControllerModel(handpieceM);
-                    }
-                    else if (goName == "Handpiece2")
-                    {
-                        handpiece2.SetActive(false);
-                        UpdateControllerModel(handpiece2M);
                     }
                     else if (goName == "HealingAbutment")
                     {
@@ -182,11 +184,27 @@ public class XRController : MonoBehaviour
                         syringe.SetActive(false);
                         UpdateControllerModel(syringeM);
                     }
+                    else if (goName == "SyringeWithFluid")
+                    {
+                        syringeWithFluid.SetActive(false);
+                        UpdateControllerModel(syringeWithFluidM);
+                    }
                     else if (goName == "TorqueRatchet")
                     {
                         torqueRatchet.SetActive(false);
                         UpdateControllerModel(torqueRatchetM);
                     }
+                    else if (goName == "NeedleWrapping")
+                    {
+                        needleWrapping.SetActive(false);
+                        UpdateControllerModel(needleM);
+                    }
+                    else if (goName == "Crown")
+                    {
+                        crown.SetActive(false);
+                        UpdateControllerModel(crownM);
+                    }
+                    
                 }
             }
         }
@@ -207,21 +225,6 @@ public class XRController : MonoBehaviour
             {
                 drill4.SetActive(true);
                 UpdateControllerModel(handpieceM);
-            }
-            else if (currentModel.CompareTag("HandpieceWithFixture"))
-            {
-                fixture.SetActive(true);
-                UpdateControllerModel(handpiece2M);
-            }
-            else if (currentModel.CompareTag("DriverWithHealingAbutment"))
-            {
-                healingAbutment.SetActive(true);
-                UpdateControllerModel (driverM);
-            }
-            else if (currentModel.CompareTag("DriverWithAbutment"))
-            {
-                abutment.SetActive(true);
-                UpdateControllerModel(driver3M);
             }
             else // 결합 도구 이외 판정
             {
@@ -249,10 +252,6 @@ public class XRController : MonoBehaviour
                 {
                     driver2.SetActive(true);
                 }
-                else if (currentModel.CompareTag("Driver3"))
-                {
-                    driver3.SetActive(true);
-                }
                 else if (currentModel.CompareTag("Elevator"))
                 {
                     elevator.SetActive(true);
@@ -264,10 +263,6 @@ public class XRController : MonoBehaviour
                 else if (currentModel.CompareTag("Handpiece"))
                 {
                     handpiece.SetActive(true);
-                }
-                else if (currentModel.CompareTag("Handpiece2"))
-                {
-                    handpiece2.SetActive(true);
                 }
                 else if (currentModel.CompareTag("HealingAbutment"))
                 {
@@ -281,9 +276,21 @@ public class XRController : MonoBehaviour
                 {
                     syringe.SetActive(true);
                 }
+                else if (currentModel.CompareTag("SyringeWithFluid"))
+                {
+                    syringeWithFluid.SetActive(true);
+                }
                 else if (currentModel.CompareTag("TorqueRatchet"))
                 {
                     torqueRatchet.SetActive(true);
+                }
+                else if (currentModel.CompareTag("Needle"))
+                {
+                    needleWrapping.SetActive(true);
+                }
+                else if (currentModel.CompareTag("Crown"))
+                {
+                    crown.SetActive(true);
                 }
                 UpdateControllerModel(controllerM);
             }
@@ -309,25 +316,25 @@ public class XRController : MonoBehaviour
                 UpdateControllerModel(controllerM);
                 oppositeController.UpdateControllerModel(handpieceWithDrill4M);
             }
-            else if (currentModel.CompareTag("Fixture") && oppositeController.currentModel.CompareTag("Handpiece2"))
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill2"))
             {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(handpieceWithFixtureM);
+                UpdateControllerModel(handpieceWithDrill2M);
+                oppositeController.UpdateControllerModel(controllerM);
             }
-            else if (currentModel.CompareTag("HealingAbutment") && oppositeController.currentModel.CompareTag("Driver"))
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill3"))
             {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(driverWithHealingAbutmentM);
+                UpdateControllerModel(handpieceWithDrill3M);
+                oppositeController.UpdateControllerModel(controllerM);
             }
-            else if (currentModel.CompareTag("Abutment") && oppositeController.currentModel.CompareTag("Driver3"))
+            else if (currentModel.CompareTag("Handpiece") && oppositeController.currentModel.CompareTag("Drill4"))
             {
-                UpdateControllerModel(controllerM);
-                oppositeController.UpdateControllerModel(driverWithAbutmentM);
+                UpdateControllerModel(handpieceWithDrill4M);
+                oppositeController.UpdateControllerModel(controllerM);
             }
         }
     }
 
-    private void UpdateControllerModel(GameObject newModelPrefab)
+    public void UpdateControllerModel(GameObject newModelPrefab)
     {
         // 기존 모델이 있다면 제거
         if (currentModel != null)
@@ -339,6 +346,11 @@ public class XRController : MonoBehaviour
         if (newModelPrefab != null)
         {
             currentModel = Instantiate(newModelPrefab.gameObject, controller.transform);
+        }
+
+        if (controller != null)
+        {
+            controller.SendHapticImpulse(0.2f, 0.1f);
         }
     }
 }
